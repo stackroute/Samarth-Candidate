@@ -1,14 +1,126 @@
-<my-questionbox flex-xs="100" flex-gt-xs="100"></my-questionbox>
-<div flex layout="row" layout-align="end end" id="card">
+<my-questionbox ng-show="showQuestionBox" flex-xs="100" flex-gt-xs="100"></my-questionbox>
+<!-- <div flex layout="row" layout-align="end end" id="card">
     <my-skillcard flex-xs="100" flex-gt-xs="100"></my-skillcard>
-</div>
-<div layout="column" layout-align="center center">
-    <mysection-skill-card></mysection-skill-card>
-    <md-divider></md-divider>
-    <my-educationcard></my-educationcard>
-    <md-divider></md-divider>
-    <my-projectsectioncard></my-projectsectioncard>
-    <my-personalinfocard></my-personalinfocard>
-    <md-divider></md-divider>
-    <my-workexperiencecard></my-workexperiencecard>
+</div> -->
+<div layout="column">
+
+    <div layout="row" >
+        <div flex="10" flex-offset="15" hide-xs hide-sm>
+            <h2>Skills:</h2>
+        </div>
+        <div flex="60" flex-xs="100" flex-sm="100">
+            <mysection-skill-card></mysection-skill-card>
+
+        </div>
+
+    </div>
+
+    <div layout="row">
+        <div flex="10" flex-offset="15" hide-xs hide-sm>
+
+        </div>
+        <div flex="60" flex-xs="100" flex-sm="100" >
+            <md-divider></md-divider>
+
+        </div>
+
+
+    </div>
+
+    <div layout="row">
+        <div flex="10" hide-xs hide-sm flex-offset="15">
+            <h2>Qualifications:</h2>
+        </div>
+        <div flex="60" flex-xs="100" flex-sm="100">
+            <my-educationcard></my-educationcard>
+
+        </div>
+
+
+    </div>
+
+    <div layout="row">
+        <div flex="10" flex-offset="15" hide-xs hide-sm>
+
+        </div>
+        <div flex="60" flex-xs="100" flex-sm="100">
+            <md-divider></md-divider>
+
+        </div>
+
+
+    </div>
+
+    <div layout="row">
+        <div flex="10" flex-offset="15" hide-xs hide-sm>
+            <h2>Project:</h2>
+        </div>
+        <div flex="60" flex-xs="100" flex-sm="100" >
+            <my-projectsectioncard></my-projectsectioncard>
+
+        </div>
+
+
+    </div>
+
+    <div layout="row">
+        <div flex="10" flex-offset="15" hide-xs hide-sm>
+
+        </div>
+        <div flex="60" flex-xs="100" flex-sm="100">
+            <md-divider></md-divider>
+
+        </div>
+
+
+    </div>
+
+    <div layout="row">
+        <div flex="10" hide-xs hide-sm flex-offset="15">
+            <h2>Personal info:</h2>
+        </div>
+        <div flex="60" flex-xs="100" flex-sm="100">
+            <my-personalinfocard></my-personalinfocard>
+
+        </div>
+
+
+    </div>
+
+    <div layout="row">
+        <div flex="10" flex-offset="15" hide-xs hide-sm>
+
+        </div>
+        <div flex="60" flex-xs="100" flex-sm="100">
+            <md-divider></md-divider>
+
+        </div>
+
+
+    </div>
+
+    <div layout="row">
+        <div flex="10" hide-xs hide-sm flex-offset="15">
+            <h2>Work Experience:</h2>
+        </div>
+        <div flex="60" flex-xs="100" flex-sm="100">
+            <my-workexperiencecard></my-workexperiencecard>
+
+        </div>
+
+
+    </div>
+
+    <div layout="row">
+        <div flex="10" flex-offset="15" hide-xs hide-sm>
+
+        </div>
+        <div flex="60" flex-xs="100" flex-sm="100">
+            <md-divider></md-divider>
+
+        </div>
+
+
+    </div>
+
 </div>
