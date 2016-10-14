@@ -1,0 +1,10 @@
+<div layout-gt-xs="row" layout-xs="column" layout-align="center center" layout-wrap>
+   <div layout="column" layout-gt-xs="row" layout-align="center center">
+   	      <input type="text" class="input" placeholder="Search" ng-model="$ctrl.find" />
+          <md-button class="md-raised" ng-click="$ctrl.search()">search</md-button>
+   </div>
+</div>
+<div  layout-gt-xs="row" layout-xs="column" layout-align="center center" flex-gt-xs>
+    <my-searchskillcard results="$ctrl.message"></my-searchskillcard>
+</div>
+

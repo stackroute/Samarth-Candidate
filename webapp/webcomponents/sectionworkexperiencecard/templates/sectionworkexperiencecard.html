@@ -1,0 +1,117 @@
+<div>
+    <md-card class="card">
+        <md-card-title>
+            <md-card-title-text layout="row">
+                <div flex="90" class="md-headline">{{$ctrl.items.workexpheader}}</div>
+                <div flex="5">({{$ctrl.totalworkexperience}})</div>
+            </md-card-title-text>
+        </md-card-title>
+        <div>
+            <md-card-content layout-wrap layout="column">
+                <div layout="column" ng-repeat="value in $ctrl.workexperiences | limitTo: $ctrl.limitval" ng-model="$ctrl.limitval">
+                    <div flex="10">
+                        <dr/>
+                    </div>
+                    <div layout="row">
+                        <div flex="20" flex-xs="30">
+                            <span class="circle" layout layout-align="center-center">
+                                {{value.duration.duration}}
+                            </span>
+                        </div>
+                        <div flex="80" flex="70" class="designation">
+                            <span class="md-headline">
+                                {{value.designation|capitalize}}
+                            </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div layout="row">
+                        <div flex="10">
+                        </div>
+                        <div layout="column" flex="90">
+                            <div layout-gt-xs="row" layout-xs="column">
+                                <div flex>
+                                    <md-icon class="material-icons">business_center</md-icon>{{value.workplace|capitalize}}
+                                </div>
+                                <div flex>
+                                    <md-icon class="material-icons">place</md-icon>{{value.Location|capitalize}}
+                                </div>
+                            </div>
+                            <div layout-gt-xs="row" layout-xs="column" hide-xs>
+                                <div flex>
+                                    <md-icon class="material-icons">date_range</md-icon>{{value.duration.from|date:'dd-MM-yyyy'}}
+                                </div>
+                                <div flex>
+                                    <md-icon class="material-icons">date_range</md-icon>{{value.duration.to|date:'dd-MM-yyyy'}}
+                                </div>
+                            </div>
+                            <div layout-gt-xs="row" layout-xs="row" layout-wrap>
+                                <span ng-repeat="skill in value.skills" flex-xs="100">
+                                    <md-button flex-xs="100"  ng-disabled="true" class="md-raised">{{skill}}
+                                    </md-button>    
+                                </span>
+                            </div>
+                        </div>
+                        <div flex="16">
+                            <md-button ng-click="$ctrl.showAdvanced($event,'Edit work',value)">
+                                <md-icon>mode_edit</md-icon>
+                            </md-button>
+                        </div>
+                    </div>
+                    <md-divider></md-divider>
+                    <br>
+                </div>
+                <!-- <md-list>
+                <md-list-item ng-repeat="value in $ctrl.workexperiences | limitTo: $ctrl.limitval" ng-model="$ctrl.limitval">
+                    <div class="md-list-item-text"  layout="column" class="" layout="row" layout-align="start center">
+                       
+                        <span class="circle" layout layout-align="center-center">
+                         {{value.duration.duration}}
+                     </span>
+                    </div>
+                    <div class="" flex="50" >
+                        <p class="md-headline">
+                       {{value.designation|capitalize}}</p>
+                        <p>
+                            <md-icon class="material-icons">business_center</md-icon>{{value.workplace|capitalize}}
+                            <md-icon class="material-icons">place</md-icon>{{value.Location|capitalize}}
+                        </p>
+                        <p hide-xs>
+                            <md-icon class="material-icons">date_range</md-icon>{{value.duration.from|date:'dd-MM-yyyy'}}
+                            <md-icon class="material-icons">date_range</md-icon>{{value.duration.to|date:'dd-MM-yyyy'}}
+                        </p>
+                        <div layout-wrap >
+                            <p layout-xs="column" layout-wrap flex-xs="30">
+                                <span  ng-repeat="skill in value.skills" >
+                                <md-button flex-xs="20" ng-disabled="true" class="md-raised">{{skill}}
+                                </md-button>    
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                        <div layout="column" style="width: 250px;">
+                            <md-button ng-click="$ctrl.showAdvanced($event,'Edit work',value)">
+                                <md-icon>mode_edit</md-icon>
+                            </md-button>
+                        </div>
+
+                        <md-divider></md-divider>
+                    </div>
+                </md-list-item>
+            </md-list> -->
+            </md-card-content>
+            <div layout="row" flex-offset="90" layout-align="center center">
+                <a ng-model="$ctrl.collapsed" ng-hide="$ctrl.collapsed" ng-click="$ctrl.collapsed=!$ctrl.collapsed ;$ctrl.increaseLimit()" class="pointCursor">
+                    <md-icon class="material-icons" ng-hide="$ctrl.collapsed">expand_more</md-icon>
+                </a>
+                <a ng-model="$ctrl.collapsed" ng-show="$ctrl.collapsed" ng-click="$ctrl.collapsed=!$ctrl.collapsed;$ctrl.decreaseLimit()" class="pointCursor ">
+                    <md-icon class="material-icons " ng-show="$ctrl.collapsed ">expand_less</md-icon>
+                </a>
+            </div>
+            <md-card-actions layout="row " layout-align="end center">
+                <md-button ng-click="$ctrl.showAdvanced($event, 'Add Workexperience', '') ">{{$ctrl.items.addworkexp}}
+                </md-button>
+            </md-card-actions>
+        </div>
+    </md-card>
+</div>

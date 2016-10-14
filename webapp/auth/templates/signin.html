@@ -1,0 +1,73 @@
+ <div layout="column"  layout-align="center center" hide-gt-sm >
+            <strong>
+                <div layout="row" layout-align="center center" layout-wrap>
+                    <div flex="30" align="center"><md-button >English</md-button></div>
+                    <div flex="30" align="center"><md-button >Hindi</md-button></div>
+                    <div flex="30" align="center"><md-button >Punjabi</md-button></div>
+                    <div flex="30" align="center"><md-button >Telegu</md-button></div><!-- 
+                </div>
+                <div layout="row" layout-align="center center"> -->
+                    <div flex="30" align="center"><md-button >Malyalam</md-button></div>
+                    <div flex="30" align="center"><md-button >Kannada</md-button></div>
+                    <div flex="30" align="center"><md-button >Bengali</md-button></div>
+                    <div flex="30" align="center"><md-button >Gujrati</md-button></div><!-- 
+                </div>
+                <div layout="row" layout-align="center center">    -->
+                    <div flex="30" align="center"><md-button >Marathi</md-button></div>
+                </div>
+            </strong>
+</div>
+<div layout-align="center center" md-whiteframe="md-whiteframe-1dp" class="md-padding main">
+    <form name="signinForm" id="form1" ng-submit="signin()" >
+        <div layout="row" layout-align="center center">
+            <h3 class="md-title">{{resourceData.signin}}</h3>
+        </div>
+        <div layout="row" layout-align="center center">
+            <md-input-container class="md-icon-float" flex>
+                <label>{{resourceData.mobile}}</label>
+                <md-icon class="material-icons" style="font-size:30px">phone</md-icon>
+                <input type="tel" ng-model="user.uname" name="number"  required md-no-asterisk ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
+                <div ng-messages="signinForm.number.$error">
+                    <div ng-message="required">Enter registered mobile number</div>
+                </div>
+            </md-input-container>
+          <!--   <input type="text" class="test" name=""></input> -->
+        </div>
+        <div layout="row" layout-align="center center">
+            <md-input-container class="md-icon-float" flex>
+                <label>{{resourceData.password}}</label>
+                <md-icon class="material-icons">lock</md-icon>
+                <input type="password" name="password" required md-no-asterisk ng-model="user.pwd">
+                <div ng-messages="signinForm.password.$error">
+                    <div ng-message="required">Password is required.</div>
+                </div>
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="start center" ng-model="error" style="color:red">{{error}} </div>
+        <div layout="row" layout-align="center center" class="signin">
+            <md-button type="submit" class="md-primary" style="background-color:#4DFFF3" flex>{{resourceData.signin}}</md-button>
+        </div>
+        <div class="clearfix"> </div>
+        <div layout="row" layout-align="center">
+          <a ui-sref="skillprofile.signup" flex style="text-align:center">{{resourceData.create}}</a>
+        </div>
+    </form>
+</div>
+
+<div layout="column"  layout-align="center center" hide-gt-sm >
+    <strong>
+        <div layout="row" layout-align="center center" layout-wrap>
+            <div flex="30" align="center"><md-button >Urdu</md-button></div>
+            <div flex="30" align="center"><md-button >Assamese</md-button></div>
+            <div flex="30" align="center"><md-button >Tamil</md-button></div>
+            <div flex="30" align="center"><md-button >Odia</md-button></div>
+            <div flex="30" align="center"><md-button >Sindhi</md-button></div><!-- 
+        </div>
+        <div layout="row" layout-align="center center"> -->
+            <div flex="30" align="center"><md-button >Dogri</md-button></div>
+            <div flex="30" align="center"><md-button >Kashmiri</md-button></div>
+            <div flex="30" align="center"><md-button >Konkoni</md-button></div>
+            <div flex="30" align="center"><md-button >Manipuri</md-button></div>
+        </div>
+    </strong>
+</div>

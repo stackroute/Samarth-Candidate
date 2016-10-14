@@ -1,0 +1,63 @@
+/* .org{
+	font-size: 100px;
+}
+.decreasemdIconFont md-icon{
+    font-size: 15px;
+} */
+
+.circle {
+    
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    /* background: #E1E1BB; */  
+            /*background:#E0C8F7;*/
+            background:#A1BAB7;
+            /*background: #72E9FF;*/
+    text-align:center;
+
+}my-workexperiencecard{
+    width:100%;
+} 
+.md-raised {
+    margin-right: 1px;
+}
+
+ .designation{
+    padding-top: 17px;
+} 
+
+
+
+ .projectTitle {
+     background-color: #e6e6e6;
+ }
+ 
+ .changeProjectNameFont {
+    font-size: 16px; 
+}
+
+.changeProjectDurationFont {
+    font-size: 14px;
+}
+
+.changeProjectLocationFont {
+    font-size: 12px;
+}
+
+.changeProjectClientFont {
+    font-size: 12px;
+}
+
+.changeProjectSalaryFont {
+    font-size: 14px;
+}
+.pointCursor{
+  cursor: pointer;
+}
+.decreasemdIconFont md-icon{
+    font-size: 20px;
+}
+
+
+

@@ -1,0 +1,30 @@
+
+    <div layout-gt-xs="row" layout-xs="column" ng-repeat="result in $ctrl.results">
+        <md-card flex md-theme="default" md-theme-watch layout-wrap>
+            <div class="experience" style="background-color:{{$ctrl.exp(result.skilllevel)}};">
+                <br>
+            </div>
+            <md-card-header>
+                <md-card-header-text layout-align="center start">
+                    <br>
+                    <br>
+                    <span class="md-headline heading">{{result.name}}</span>
+                    <span class="md-subhead heading" ng-model=skill>{{result.skill}}</span>
+                    <br>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-title style="padding-top:0px;padding-bottom:0px">
+                <md-card-title-text layout-align="center start">
+                    <span class="md-subhead"><md-icon class="material-icons">phone</md-icon><span class="subheading">{{result.phone}}</span></span>
+                    <span class="md-subhead"><md-icon class="material-icons">room</md-icon><span class="subheading">{{result.location}}</span></span>
+                    <span class="md-subhead"><md-icon class="material-icons">mail outline</md-icon><span class="subheading">{{result.email}}</span></span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="center center">
+                <md-button class="md-raised md-icon-button" ng-click="$ctrl.shareCard()">
+                    <md-icon class="material-icons">send</md-icon>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+

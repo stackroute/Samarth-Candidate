@@ -1,0 +1,33 @@
+
+ .projectTitle {
+     background-color: #e6e6e6;
+ }
+ 
+ .changeProjectNameFont {
+    font-size: 16px; 
+}
+
+.changeProjectDurationFont {
+    font-size: 14px;
+}
+
+.changeProjectLocationFont {
+    font-size: 12px;
+}
+
+.changeProjectClientFont {
+    font-size: 12px;
+}
+
+.changeProjectSalaryFont {
+    font-size: 14px;
+}
+.pointCursor{
+  cursor: pointer;
+}
+.decreasemdIconFont md-icon{
+    font-size: 15px;
+}
+
+
+

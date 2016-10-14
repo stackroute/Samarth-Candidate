@@ -1,0 +1,51 @@
+.wrapper {
+    border: 1px solid #e3e3e3;
+    display: inline-block;
+    position: relative;
+}
+
+#jobsearchbox,
+body {
+    background-color: white;
+}
+
+#searchicon {
+    background-color: transparent;
+    border: 0;
+}
+
+#searchicon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+#searchicon:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+#jobsearchbox {
+    padding-right: 30px;
+    /* button padding */
+    line-height: 40px;
+    width: 450px;
+    padding-left: 20px;
+}
+
+
+/*typography*/
+
+#jobsearchheader {
+    font-style: italic;
+}
+
+#jobsearchheading {
+    font-size: 42px;
+}
+
+#jobsearchsubheading {
+    font-size: 18px;
+}

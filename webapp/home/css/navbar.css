@@ -1,0 +1,18 @@
+.md-toolbar-tools>div>md-input-container {
+    font-size: small;
+}
+
+.md-toolbar-tools>div>a {
+    cursor: pointer;
+    font-size: small;
+}
+
+.md-toolbar-tools>a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+md-content>md-toolbar{
+	position: fixed;
+}

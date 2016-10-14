@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Samarth - SkillProfile | NIIT Foundation</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/angular-material/angular-material.css">
+    <link rel="stylesheet" href="/google-material-icons/dist/material-icons-font.css">
+    <link rel="stylesheet" href="/assets/css/smskillhome.css">
+    <link rel="stylesheet" href="/assets/css/smskillprofile.css">
+    <link rel="stylesheet" href="/webcomponents/skillcard/css/skillcard.css">
+    <link rel="stylesheet" href="/webcomponents/questionbox/css/questionbox.css">
+    <link rel="stylesheet" href="/webcomponents/sectionpersonalinfocard/css/sectionpersonalinfocard.css">
+    <link rel="stylesheet" href="/webcomponents/sectionprojectcard/css/sectionprojectcard.css">
+    <link rel="stylesheet" href="/webcomponents/sectionskillcard/css/sectionskillcard.css">
+    <link rel="stylesheet" href="/webcomponents/sectionseducationcard/css/sectionseducationcard.css">
+    <link rel="stylesheet" href="/webcomponents/sectionworkexperiencecard/css/workexpriencecard.css">
+    <link rel="stylesheet" href="/skillhome/css/skillhome.css">
+    <link rel="stylesheet" href="/jobsearch/css/jobsearch.css">
+    <link rel="stylesheet" href="/skillsearch/css/skillsearch.css">
+    <link rel="stylesheet" href="/auth/css/auth.css">
+    <link rel="stylesheet" type="text/css" href="/home/css/navbar.css">
+</head>
+
+<body ng-app="sm-skillprofile" ng-controller="skillprofilectrl" ng-cloak>
+    <div ui-view="navbar"></div>
+    <div layout="row" class="login_background_setter" flex>
+        <div ui-view="content" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
+    </div>
+    <div ui-view="footer"></div>
+</body>
+<script src="/angular/angular.js"></script>
+<script src="/angular-animate/angular-animate.js"></script>
+<script src="/angular-aria/angular-aria.js"></script>
+<script src="/angular-material/angular-material.js"></script>
+<script src="/angular-messages/angular-messages.js"></script>
+<script src="/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="/angular-local-storage/dist/angular-local-storage.js"></script>
+<script src="/webcomponents/skillcard/services/blob.js"></script>
+<script src="/html2canvas/build/html2canvas.js"></script>
+<script src="smskillprofileapp.js"></script>
+<script src="/app/services/langservice.js"></script>
+<script src="/skillhome/skillhomemodule.js"></script>
+<script src="/skillhome/controller/skillhomectrl.js"></script>
+<script src="/skillhome/controller/skillhomenavctrl.js"></script>
+<script src="/skillhome/services/sidenavservice.js"></script>
+<script src="/webcomponents/skillcard/skillcard.js"></script>
+<script src="/webcomponents/sectionpersonalinfocard/sectionpersonalinfocard.js"></script>
+<script src="/webcomponents/sectionseducationcard/sectionseducationcard.js"></script>
+<script src="/webcomponents/questionbox/questionbox.js"></script>
+<script src="/webcomponents/questionbox/services/questionboxService.js"></script>
+<script src="/webcomponents/sectionprojectcard/sectionprojectcard.js"></script>
+<script src="/webcomponents/sectionskillcard/sectionskillcard.js"></script>
+<script src="/webcomponents/sectionskillcard/services/sectionskillservices.js"></script>
+<script src="/webcomponents/skillcard/services/skillcardservice.js"></script>
+<script src="/skillsearch/skillsearchmodule.js"></script>
+<script src="/skillsearch/controller/skillsearchctrl.js"></script>
+<script src="/skillsearch/ngcomponents/skillsearch.js"></script>
+<script src="/skillsearch/ngcomponents/skillsearchresultsctrl.js"></script>
+<script src="/jobsearch/jobsearchmodule.js"></script>
+<script src="/jobsearch/controller/jobsearchctrl.js"></script>
+<script src="/notifications/notificationmodule.js"></script>
+<script src="/notifications/controller/notificationctrl.js"></script>
+<script src="/messages/messagesmodule.js"></script>
+<script src="/messages/controller/messagesctrl.js"></script>
+<script src="/auth/controllers/signoutctrl.js"></script>
+<script src="/auth/controllers/signinctrl.js"></script>
+<script src="/auth/authmodule.js"></script>
+<script src="/app/controller/skillprofilectrl.js"></script>
+<script src="/home/controller/navctrl.js"></script>
+<script src="/home/services/languagechange.js"></script>
+<script src="/auth/services/userauthservice.js"></script>
+<script src="/auth/services/userauthinterceptor.js"></script>
+<script src="/auth/controllers/authctrl.js"></script>
+<script src="/home/homemodule.js"></script>
+<script src="/home/controller/signinpagectrl.js"></script>
+<script src="/webcomponents/sectionworkexperiencecard/sectionworkexperiencecard.js"></script>
+
+</html>

@@ -1,0 +1,78 @@
+ .card >div > md-whiteframe {
+     margin: 5px 5px;
+ }
+ 
+ .card >div > md-whiteframe>div>div>md-icon {
+     font-size: small;
+     cursor: pointer;
+ }
+ 
+ .card >div > md-whiteframe>div>div {
+     margin-left: 0.5em;
+     font-size: small;
+ }
+ 
+ .names {
+     margin-left: 0.5em;
+     font-size: small;
+     font-weight: bold;
+     margin-bottom: 0.5em;
+ }
+ 
+ .card >div>div >md-button {
+     /*font-weight: bold;*/
+     /*cursor: pointer;*/
+ }
+ 
+ .card >.items>div >md-button>md-icon {
+     color: black;
+     font-weight: bolder;
+     /*font-size: x-large;*/
+     /*cursor: pointer;*/
+ }
+ 
+ .items {
+     /*margin:30px;*/
+ }
+ 
+ .numbers {
+     font-size: small;
+ }
+ 
+ .card> md-card-title {
+     /*background-color: #e3e3e3;*/
+     background-color: #D9D9D9;
+ }
+ 
+ .card > .md-title {
+     margin: 10px 10px;
+ }
+ 
+ .md-dialog-content>md-input-container>input {
+     margin-top: 20px;
+ }
+ 
+ #secondary {
+     background-color: #ECF2F6;
+ }
+ 
+ #Proficient {
+     background: linear-gradient(to right, #63EB6C 3%, white 0%);
+     /*background-color: #DAF9D6     ;*/
+ }
+ 
+ #Begginner {
+     /*background-color: #F0CACA  ;*/
+     /*background-color: red  ;*/
+     background: linear-gradient(to right, #EC4C39 3%, white 0%);
+ }
+ 
+ #Expert {
+     background: linear-gradient(to right, #587DE6 3%, white 0%);
+     /*background-color: #E6FBFC     ;*/
+ }
+ 
+ #Skilled {
+     background: linear-gradient(to right, #E5EA5C 3%, white 0%);
+     /*background-color: #F8F4D2   ;*/
+ }

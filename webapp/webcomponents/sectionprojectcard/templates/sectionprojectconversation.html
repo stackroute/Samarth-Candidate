@@ -1,0 +1,66 @@
+<md-dialog aria-label="Education">
+    <form ng-cloak>
+        <md-toolbar id="conversationDialogtoolbar">
+            <div class="md-toolbar-tools">
+                <h2 id="headingtext">{{header}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon id="headingtext">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content layout="column">
+            <div id="conversationDialogcontent" layout-padding layout-wrap>
+                <p layout-wrap>
+                    I have done
+                    <md-input-container>
+                        <label>Projectname</label>
+                        <input id="input1" type="text" ng-model="Project">
+                        <md-icon>mic</md-icon>
+                    </md-input-container> Project with duration
+                    <md-input-container>
+                        <label>Duration</label>
+                        <input type="text" ng-model="Duration" id="input1">
+                        <md-icon>mic</md-icon>
+                    </md-input-container>
+                    in
+                    <md-input-container>
+                        <label>Location</label>
+                        <input type="text" ng-model="Location" id="input1">
+                        <md-icon>mic</md-icon>
+                    </md-input-container>
+                    with skills
+                    <md-input-container>
+                        <label>Skills</label>
+                        <input type="text" ng-model="skills" id='input1'>
+                        <md-icon>mic</md-icon>
+                    </md-input-container>
+                    at
+                    <md-input-container>
+                        <label>Client</label>
+                        <input type="text" ng-model="Client" id="input1">
+                        <md-icon>mic</md-icon>
+                    </md-input-container>
+                    and Salary was
+                    <md-input-container>
+                        <label>Salary</label>
+                        <input type="text" ng-model="Salary" id="input1">
+                        <md-icon>mic</md-icon>
+                    </md-input-container>
+                </p>
+            </div>
+            <div id="savebtn" flex layout="row" layout-align="center center" ng-click="cancel()">
+                <div id="btntxt" contenteditable="false" ng-click="save(header)">
+                    <a>Save Details</a>
+                </div>
+                <div id="btn">
+                    <a ng-click="save(header)">
+                        <md-icon id="icon">play_arrow</md-icon>
+                    </a>
+                </div>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions class="conversationDialog" layout="row" layout-align="center center">
+        </md-dialog-actions>
+    </form>
+</md-dialog>

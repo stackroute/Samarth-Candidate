@@ -1,0 +1,53 @@
+<div>
+    <md-content>
+        <md-toolbar flex>
+            <div class="md-toolbar-tools" layout="row" layout-align="start center">
+                <div layout="row" layout-align="start center" flex>
+                    <md-button ng-show="displaysidenav" hide-gt-sm show-xs class="md-icon-button" aria-label="Settings" ng-click="togglemenu()">
+                        <md-icon>menu</md-icon>
+                    </md-button>
+                    <h2>
+                <span>{{title}}</span>
+               </h2>
+                </div>
+                <div layout="row" layout-align="end center" flex>
+                    <md-input-container>
+                        <!-- <label>Language</label> -->
+                        <md-select ng-model="selectlang" ng-change="onChange()">
+                            <md-option ng-repeat="lang in language" ng-value="lang">
+                                {{lang}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                    <a ui-sref="skillprofile.signout" ng-show="displaysidenav">Signout</a>
+                </div>
+            </div>
+            <div layout="row" layout-align="center center" hide-sm hide-xs>
+                <div><md-button>English</md-button></div>
+                <div><md-button>Hindi</md-button></div>
+                <div><md-button>Punjabi</md-button></div>
+                <div><md-button>Telegu</md-button></div>
+                <div><md-button>Malyalam</md-button></div>
+                <div><md-button>Kannada</md-button></div>
+                <div><md-button>Bengali</md-button></div>
+                <div><md-button>Gujrati</md-button></div>
+                <div><md-button>Marathi</md-button></div>
+                <div><md-button>Urdu</md-button></div>
+                <div><md-button>Assamese</md-button></div>
+                <div><md-button>Tamil</md-button></div>
+                <div><md-button>Odia</md-button></div>
+                <div><md-button>Sindhi</md-button></div>
+                <div><md-button>Dogri</md-button></div>
+                <div><md-button>Kashmiri</md-button></div>
+                <div><md-button>Konkoni</md-button></div>
+                <div><md-button>Manipuri</md-button></div>
+            </div>
+        </md-toolbar>
+    </md-content>
+</div>
+<div>
+    <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
+        <md-content ng-include src="'home/templates/sidenavcontents.html'" ng-click="togglemenu()"></md-content>
+    </md-sidenav>
+</div>
+<hr>

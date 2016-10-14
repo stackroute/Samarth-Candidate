@@ -1,0 +1,88 @@
+<md-dialog>
+    <form ng-cloak>
+        <md-toolbar id="conversationDialogtoolbar">
+            <div class="md-toolbar-tools">
+                <h1 id="headingtext">{{header}}</h1>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon id="headingtext">close</md-icon>.
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content layout="column">
+            <div id="conversationDialogcontent" layout-padding layout-wrap>
+                <p layout-wrap>
+                    I am
+                    <md-input-container>
+                        <label>Name</label>
+                        <input ng-model="personalObject.name" id='input1'>
+                        <md-icon>mic</md-icon>
+                    </md-input-container>
+                    and I live in
+                    <md-input-container>
+                        <label>Current Location</label>
+                        <input ng-model="personalObject.location" id='input1'>
+                        <md-icon>mic</md-icon>
+                    </md-input-container>. I was born on
+                    <md-input-container>
+                        <label>DOB (mm/dd/yyyy)</label>
+                        <input ng-model="personalObject.dob" id='input1' formatted-date format="small" />
+                        <md-icon>mic</md-icon>
+                    </md-input-container>
+                    .My marital status is
+                    <md-input-container>
+                        <label>Marital Status</label>
+                        <input ng-model="personalObject.maritialstatus" id='input1'>
+                        <md-icon>mic</md-icon>
+                    </md-input-container>
+                    and gender is
+                    <md-input-container>
+                        <label>Gender</label>
+                        <input ng-model="personalObject.gender" id='input1'>
+                        <md-icon>mic</md-icon>
+                    </md-input-container>
+                    .I communicate in
+                    <md-input-container>
+                        <label>Language</label>
+                        <input ng-model="personalObject.mothertongue" id='input1'>
+                        <md-icon>mic</md-icon>
+                    </md-input-container>
+                    and you can drop me a mail at
+                    <md-input-container>
+                        <label>Email-id</label>
+                        <input ng-model="personalObject.email" id='input1'>
+                        <md-icon>mic</md-icon>
+                    </md-input-container>
+                    . My permanent address is
+                    <md-input-container>
+                        <label>Address</label>
+                        <input ng-model="personalObject.address" id='input1'>
+                        <md-icon>mic</md-icon>
+                    </md-input-container>, with pincode
+                    <md-input-container>
+                        <label>Pincode</label>
+                        <input ng-model="personalObject.pincode" id='input1'>
+                        <md-icon>mic</md-icon>
+                    </md-input-container>
+                </p>
+            </div>
+            <div flex layout="row" layout-align="center center" ng-click="save(personalObject,header)">
+                <div id="btntxt" contenteditable="false">
+                    <a>Save Details</a>
+                </div>
+                <div id="btn">
+                    <a>
+                        <md-icon id="icon">play_arrow</md-icon>
+                    </a>
+                </div>
+            </div>
+        </md-dialog-content>
+        <!-- <md-dialog-actions layout="row">
+    <span flex></span>
+    <md-button ng-click="save(personalObject,header)">
+        Save
+    </md-button>
+</md-dialog-actions>
+ -->
+    </form>
+</md-dialog>
