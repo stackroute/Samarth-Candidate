@@ -33,46 +33,54 @@ angular.module("sm-candidateprofile")
 
         // Url routing starts here
         $stateProvider
-            .state('login', {
-                url: '/login',
-                views: {
-                    "content": {
-                        templateUrl: '/candidatelogin/templates/login.html',
-                        controller: 'LoginCtrl',
-                        controllerAs: 'login',
-                        resolve: {
-                            skipIfLoggedIn: skipIfLoggedIn /*passing skipIfLoggedIn function here enables skipping login view if the user is already authenticated*/
-                        }
+        .state('login', {
+            url: '/login',
+            views: {
+                "content": {
+                    templateUrl: '/candidatelogin/templates/login.html',
+                    controller: 'LoginCtrl',
+                    controllerAs: 'login',
+                    resolve: {
+                        skipIfLoggedIn: skipIfLoggedIn /*passing skipIfLoggedIn function here enables skipping login view if the user is already authenticated*/
+                    }
 
-                    }
+                },
+                "navbar": {
+                    templateUrl: '/candidatelogin/templates/navbar.html',
+                    controller: 'navCtrl'
+                },
+                "footer": {
+                    templateUrl: '/candidatelogin/templates/footer.html'
                 }
-            })
-            .state('register', {
-                url: '/register',
-                views: {
-                    "content": {
-                        templateUrl: 'registercandidate/templates/register.html',
-                        controller: 'RegisterCtrl as register',
-                        resolve: {
-                            skipIfLoggedIn: skipIfLoggedIn /*passing skipIfLoggedIn function here enables skipping login view if the user is already authenticated*/
-                        }
-                    }
-                }
-            })
-            .state('dashboard', {
-                url: '/dashboard',
 
-                views: {
-                    "content": {
-                        templateUrl: 'candidatehome/templates/dashboard.html',
-                        controller: 'DashboardCtrl',
-                        controllerAs: 'dashboard',
-                        resolve: {
-                            loginRequired: loginRequired /*passing loginRequired function here enables redirecting user to the login view if the user is not authenticated . This will prevent user form accessing this state*/
-                        }
+            }
+        })
+        .state('register', {
+            url: '/register',
+            views: {
+                "content": {
+                    templateUrl: 'registercandidate/templates/register.html',
+                    controller: 'RegisterCtrl as register',
+                    resolve: {
+                        skipIfLoggedIn: skipIfLoggedIn /*passing skipIfLoggedIn function here enables skipping login view if the user is already authenticated*/
                     }
                 }
-            });
+            }
+        })
+        .state('dashboard', {
+            url: '/dashboard',
+
+            views: {
+                "content": {
+                    templateUrl: 'candidatehome/templates/dashboard.html',
+                    controller: 'DashboardCtrl',
+                    controllerAs: 'dashboard',
+                    resolve: {
+                        loginRequired: loginRequired /*passing loginRequired function here enables redirecting user to the login view if the user is not authenticated . This will prevent user form accessing this state*/
+                    }
+                }
+            }
+        });
 
         // redirects to login page if user request a non-existing state
         $urlRouterProvider.otherwise('/login');
@@ -130,11 +138,11 @@ var Interceptor = (function() {
         /*responseError handler of the interceptor*/
         this.responseError = function(rejection) {
 
-                if (rejection.status === 401 || rejection.status === 403) {
-                    $rootScope.$emit("member-unauthorized");
-                }
+            if (rejection.status === 401 || rejection.status === 403) {
+                $rootScope.$emit("member-unauthorized");
+            }
 
-                return $q.reject(rejection);
+            return $q.reject(rejection);
             } // response end
 
     } //Interceptor function ends
