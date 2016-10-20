@@ -13,11 +13,13 @@
 </head>
 
 <body ng-app="sm-candidateprofile" ng-cloak>
+<div class="login_background_setter" flex>
     <div ui-view="navbar"></div>
-    <div layout="row" class="login_background_setter" flex>
+    <div layout="row" >
         <div ui-view="content" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
     </div>
     <div ui-view="footer"></div>
+</div>
 </body>
 <script src="/angular/angular.js"></script>
 <script src="/angular-animate/angular-animate.js"></script>
