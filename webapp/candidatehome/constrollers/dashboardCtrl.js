@@ -9,6 +9,6 @@ angular.module('sm-candidateprofile').controller('DashboardCtrl', function($stat
     	/*$auth.logout() is a predefined function provided by satellizer for destroying session or 
     	deleting JWT of the user. */
         $auth.logout();
-        $state.go('login'); // redirects to a mentioned state if successfull
+        $state.go('candidate.login'); // redirects to a mentioned state if successfull
     };//logout ends
 });

@@ -19,7 +19,7 @@ angular.module('sm-candidateprofile').controller('LoginCtrl', ['$state', '$auth'
             pwd: vm.user.password // username of the user entered in the login form
         }).then(function(response) {
 
-            $state.go('dashboard'); // redirects to a mentioned state if successfull
+            $state.go('candidate.dashboard'); // redirects to a mentioned state if successfull
 
         }).catch(function(response) {
 

@@ -1,13 +1,12 @@
 /* sm-candidateprofile Module is in root folder in smcandidateprofile.js */
 angular.module("sm-candidateprofile")
     .config(function($stateProvider, $urlRouterProvider, $authProvider) {
-
         /* skipIfLoggedIn() function redirects user to a particular page based on its authentication status i.e if user is logged in he will be automatically redirected to a defined state in this case it is "/dashboard" and hence skipping the view where it is called */
         var skipIfLoggedIn = ['$q', '$auth', '$location', function($q, $auth, $location) {
             var deferred = $q.defer();
             if ($auth.isAuthenticated()) {
                 console.log('from inside helper');
-                $location.path('/dashboard');
+                $location.path('/home/dashboard');
             } else {
                 deferred.resolve();
             }
@@ -22,7 +21,7 @@ angular.module("sm-candidateprofile")
             if ($auth.isAuthenticated()) {
                 deferred.resolve();
             } else {
-                $location.path('/login');
+                $location.path('/home/login');
             }
             return deferred.promise;
         }];
@@ -31,56 +30,48 @@ angular.module("sm-candidateprofile")
 
         // Url routing starts here
         $stateProvider
-        .state('login', {
-            url: '/login',
-            views: {
-                "content": {
-                    templateUrl: '/candidatelogin/templates/login.html',
-                    controller: 'LoginCtrl',
-                    controllerAs: 'login',
-                    resolve: {
-                        skipIfLoggedIn: skipIfLoggedIn /*passing skipIfLoggedIn function here enables skipping login view if the user is already authenticated*/
+            .state('candidate.login', {
+                parent: 'candidate',
+                url: '/login',
+                views: {
+                    "midcontent@candidate": {
+                        templateUrl: '/candidatelogin/templates/login.html',
+                        controller: 'LoginCtrl',
+                        controllerAs: 'login',
+                        resolve: {
+                            skipIfLoggedIn: skipIfLoggedIn /*passing skipIfLoggedIn function here enables skipping login view if the user is already authenticated*/
+                        }
                     }
 
-                },
-                "navbar": {
-                    templateUrl: '/candidatelogin/templates/navbar.html',
-                    
-                },
-                "footer": {
-                    templateUrl: '/candidatelogin/templates/footer.html'
                 }
-
-            }
-        })
-        .state('register', {
-            url: '/register',
-            views: {
-                "content": {
-                    templateUrl: 'registercandidate/templates/register.html',
-                    controller: 'RegisterCtrl as register',
-                    resolve: {
-                        skipIfLoggedIn: skipIfLoggedIn /*passing skipIfLoggedIn function here enables skipping login view if the user is already authenticated*/
+            })
+        .state('candidate.register', {
+                parent: 'candidate',
+                url: '/register',
+                views: {
+                    "midcontent@candidate": {
+                        templateUrl: 'registercandidate/templates/register.html',
+                        controller: 'RegisterCtrl as register',
+                        resolve: {
+                            skipIfLoggedIn: skipIfLoggedIn /*passing skipIfLoggedIn function here enables skipping login view if the user is already authenticated*/
+                        }
                     }
                 }
-            }
-        })
-        .state('dashboard', {
-            url: '/dashboard',
-
-            views: {
-                "content": {
-                    templateUrl: 'candidatehome/templates/dashboard.html',
-                    controller: 'DashboardCtrl',
-                    controllerAs: 'dashboard',
-                    resolve: {
-                        loginRequired: loginRequired /*passing loginRequired function here enables redirecting user to the login view if the user is not authenticated . This will prevent user form accessing this state*/
+            })
+            .state('candidate.dashboard', {
+                parent: 'candidate',
+                url: '/dashboard',
+                views: {
+                    "midcontent@candidate": {
+                        templateUrl: 'candidatehome/templates/dashboard.html',
+                        controller: 'DashboardCtrl',
+                        controllerAs: 'dashboard',
+                        resolve: {
+                            loginRequired: loginRequired /*passing loginRequired function here enables redirecting user to the login view if the user is not authenticated . This will prevent user form accessing this state*/
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        // redirects to login page if user request a non-existing state
-        $urlRouterProvider.otherwise('/login');
 
     });
