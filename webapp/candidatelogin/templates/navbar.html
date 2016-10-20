@@ -1,54 +1,45 @@
- <div layout="column"  layout-align="center center" hide-gt-sm >
- 
-            <strong>
-                <div layout="row" layout-align="center center" layout-wrap>
 
-                    <div flex="30" align="center"><md-button >English</md-button></div>
-                    <div flex="30" align="center"><md-button >Hindi</md-button></div>
-                    <div flex="30" align="center"><md-button >Punjabi</md-button></div>
-                    <div flex="30" align="center"><md-button >Telegu</md-button></div> 
-                
-                    <div flex="30" align="center"><md-button >Malyalam</md-button></div>
-                    <div flex="30" align="center"><md-button >Kannada</md-button></div>
-                    <div flex="30" align="center"><md-button >Bengali</md-button></div>
-                    <div flex="30" align="center"><md-button >Gujrati</md-button></div> 
-                
-                    <div flex="30" align="center"><md-button >Marathi</md-button></div>
-                </div>
-                
-            </strong>
-</div>
 <div>
     <md-content>
         <md-toolbar flex>
             <div class="md-toolbar-tools" layout="row" layout-align="start center">
                 <div layout="row" layout-align="start center" flex>
-                    <md-button ng-show="displaysidenav" hide-gt-sm show-xs class="md-icon-button" aria-label="Settings" ng-click="togglemenu()">
+                    <md-button ng-show="displaysidenav" hide-gt-sm show-xs class="md-icon-button" aria-label="Settings">
                         <md-icon>menu</md-icon>
                     </md-button>
                     <h2>
                 <span>Samarth</span>
                </h2>
-                </div>  
+                </div> 
+
                 <div layout="row" layout-align="end center" flex>
-                    <md-input-container>
-                        <!-- <label>Language</label> -->
-                        <md-select ng-model="selectlang" ng-change="onChange()">
-                            <md-option ng-repeat="lang in language" ng-value="lang">
-                                {{lang}}
-                            </md-option>
-                        </md-select>
-                    </md-input-container>
+                    
                     <a>Signout</a>
                 </div>
              </div>
+              <div layout="column"  layout-align="center center" >
+ 
+            <strong>
+                <div layout="row" layout-align="center center" layout-wrap>
+
+                    <div flex="10" align="center"><md-button >English</md-button></div>
+                    <div flex="10" align="center"><md-button >Hindi</md-button></div>
+                    <div flex="10" align="center"><md-button >Punjabi</md-button></div>
+                    <div flex="10" align="center"><md-button >Telegu</md-button></div> 
+                
+                    <div flex="10" align="center"><md-button >Malyalam</md-button></div>
+                    <div flex="10" align="center"><md-button >Kannada</md-button></div>
+                    <div flex="10" align="center"><md-button >Bengali</md-button></div>
+                    <div flex="10" align="center"><md-button >Gujrati</md-button></div> 
+                
+                    <div flex="10" align="center"><md-button >Marathi</md-button></div>
+                </div>
+                
+            </strong>
+</div>
 
         </md-toolbar>
     </md-content>
 </div>
-<div>
-    <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
-        <md-content ng-include src="'home/templates/sidenavcontents.html'" ng-click="togglemenu()"></md-content>
-    </md-sidenav>
-</div>
+
 <hr>
