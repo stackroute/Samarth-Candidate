@@ -1,6 +1,5 @@
-
 <div layout-align="center center" md-whiteframe="md-whiteframe-1dp" class="md-padding main" >
-    <form name="signinForm" id="form1">
+    <form name="signinForm" id="formdata">
         <div layout="row" layout-align="center center">
             <h3 class="md-title">Signin</h3>
         </div>
@@ -8,12 +7,11 @@
             <md-input-container class="md-icon-float" flex>
                 <label>Enter mobile number</label>
                 <md-icon class="material-icons" style="font-size:30px">phone</md-icon>
-                <input type="tel"  name="number"  required md-no-asterisk ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" ng-model="login.user.number">
+                <input type="tel"  name="number"  required md-no-asterisk  ng-model="login.user.number">
                 <div ng-messages="signinForm.number.$error">
                     <div ng-message="required">Enter registered mobile number</div>
                 </div>
             </md-input-container>
-          <!--   <input type="text" class="test" name=""></input> -->
         </div>
         <div layout="row" layout-align="center center">
             <md-input-container class="md-icon-float" flex>
