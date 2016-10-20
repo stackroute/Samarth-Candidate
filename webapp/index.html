@@ -9,14 +9,17 @@
     <link href='//fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/angular-material/angular-material.css">
     <link rel="stylesheet" href="/google-material-icons/dist/material-icons-font.css">
+    <link rel="stylesheet" type="text/css" href="candidatelogin/css/login.css">
 </head>
 
 <body ng-app="sm-candidateprofile" ng-cloak>
+<div class="login_background_setter" flex>
     <div ui-view="navbar"></div>
-    <div layout="row" class="login_background_setter" flex>
+    <div layout="row" >
         <div ui-view="content" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
     </div>
     <div ui-view="footer"></div>
+</div>
 </body>
 <script src="/angular/angular.js"></script>
 <script src="/angular-animate/angular-animate.js"></script>
@@ -27,6 +30,7 @@
 <script src="/angular-local-storage/dist/angular-local-storage.js"></script>
 <script src="/satellizer/dist/satellizer.js"></script>
 <script src="/html2canvas/build/html2canvas.js"></script>
+
 <script src="smcandidateprofile.js"></script>
 <script src="auth/authmodule.js"></script>
 <script src="applayout/appconfig.js"></script>
