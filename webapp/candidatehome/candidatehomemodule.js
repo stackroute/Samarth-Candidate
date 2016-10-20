@@ -98,7 +98,7 @@ angular.module("sm-candidateprofile")
 
 */
 var Interceptor = (function() {
-    function Interceptor(SatellizerConfig, SatellizerShared, SatellizerStorage, $q) {
+    function Interceptor(SatellizerConfig, SatellizerShared, SatellizerStorage, $q , $rootScope) {
 
         var _this = this;
         this.SatellizerConfig = SatellizerConfig;
@@ -132,6 +132,7 @@ var Interceptor = (function() {
 
                 if (rejection.status === 401 || rejection.status === 403) {
                     $rootScope.$emit("member-unauthorized");
+                    console.log('signin failed from interceptor handler');
                 }
 
                 return $q.reject(rejection);
@@ -139,17 +140,17 @@ var Interceptor = (function() {
 
     } //Interceptor function ends
 
-    Interceptor.Factory = function(SatellizerConfig, SatellizerShared, SatellizerStorage, $q) {
-        return new Interceptor(SatellizerConfig, SatellizerShared, SatellizerStorage, $q);
+    Interceptor.Factory = function(SatellizerConfig, SatellizerShared, SatellizerStorage, $q , $rootScope) {
+        return new Interceptor(SatellizerConfig, SatellizerShared, SatellizerStorage, $q , $rootScope);
     };
-    Interceptor.$inject = ['SatellizerConfig', 'SatellizerShared', 'SatellizerStorage', '$q'];
+    Interceptor.$inject = ['SatellizerConfig', 'SatellizerShared', 'SatellizerStorage', '$q' , '$rootScope'];
     return Interceptor;
 
 }()); // Interceptor declaration change
 
 
 // Injecting all the required dependencies into the interceptor declared above
-Interceptor.Factory.$inject = ['SatellizerConfig', 'SatellizerShared', 'SatellizerStorage', '$q'];
+Interceptor.Factory.$inject = ['SatellizerConfig', 'SatellizerShared', 'SatellizerStorage', '$q' , '$rootScope'];
 
 //Pushing the interceptor into $httpProvider
 var HttpProviderConfig = (function() {
