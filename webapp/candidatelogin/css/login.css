@@ -178,9 +178,6 @@ a {
     -webkit-appearance: none;
     background:#1C6EB2;
     font-family: 'Raleway', sans-serif;
-
-
-
 /* border-radius: 25px;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
@@ -189,4 +186,9 @@ a {
 
 
    cursor: pointer;
+}
+ .samarth{
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
 }
