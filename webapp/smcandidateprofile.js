@@ -7,4 +7,4 @@ var myApp = angular.module("sm-candidateprofile", ['ngMaterial',
 ]);
 
 
-/*Module's config is in file candidatehome/candidatehome.js*/
+/*Module's config with routes is in file candidatehome/candidatehome.js*/
