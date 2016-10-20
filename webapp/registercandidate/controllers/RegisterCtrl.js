@@ -15,10 +15,13 @@ angular.module('sm-candidateprofile').controller('RegisterCtrl', function($state
         $auth.signup({
 
             name: vm.user.name,
+            mobile:vm.user.number,
             email: vm.user.email,
-            password: vm.user.password
+            location:vm.user.location,
+            pwd: vm.user.password
 
         }).then(function(response) {
+
 
             $state.go('dashboard'); // redirects to a mentioned state if successfull
 
