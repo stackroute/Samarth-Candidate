@@ -1,12 +1,10 @@
 /* RegisterCtrl controller -> responsible for authentication and hhaving $state, $auth as dependencies*/
-angular.module('sm-candidateprofile').controller('RegisterCtrl', ['$state', '$auth', '$rootScope', function($state, $auth, $rootScope) {
+angular.module('sm-candidateprofile').controller('RegisterCtrl', ['$state', '$auth', '$rootScope', '$mdToast', function($state, $auth, $rootScope, $mdToast) {
     var vm = this;
     vm.user = {};
     /*Login() function which will be actually called in the associated view for 
     registering the user*/
     vm.register = function __register() {
-
-        $rootScope.success_register = "Successfully completed signup..!You can login now";
 
         /*$auth.signup() is a predefined function provided by satellizer for initiating registration
         of the user . This returns a promise and accepts an object with all the required fields which 
@@ -24,6 +22,13 @@ angular.module('sm-candidateprofile').controller('RegisterCtrl', ['$state', '$au
 
         }).then(function(response) {
 
+           $mdToast.show(
+                $mdToast.simple()
+                .textContent('Successfully completed signup..!You can login now')
+                .position("right")
+                .hideDelay(4000)
+            );
+
             $state.go('candidate.dashboard'); // redirects to a mentioned state if successfull
 
         }).catch(function(response) {
@@ -33,4 +38,5 @@ angular.module('sm-candidateprofile').controller('RegisterCtrl', ['$state', '$au
 
         }); // $auth.signup ends
     };
-}])
+
+}]);
