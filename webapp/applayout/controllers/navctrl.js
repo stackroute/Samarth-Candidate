@@ -8,7 +8,7 @@
 
          datagenerate.getjson("nav", "language").then(function(result) {
              // console.log(JSON.stringify(result));    
-             console.log("[[[[[[[[[[[[[[[[[[", result[0]);
+             console.log("result inside datagenerate", result[0]);
              $scope.language = {
                  English: result[0].English,
                  Hindi: result[0].Hindi,

@@ -25,3 +25,5 @@ angular.module("sm-candidateprofile")
         // redirects to login page if user request a non-existing state
         $urlRouterProvider.otherwise('/home/login');
     });
+
+/* NOTE :- home state child  routes are in candidatehome/candidatehomemodules.js*/
