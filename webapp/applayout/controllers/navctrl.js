@@ -1,5 +1,5 @@
  angular.module("sm-candidateprofile")
- .controller('navCtrl',function($scope,datagenerate,$rootScope) {
+ .controller('navCtrl',['$scope','datagenerate',function($scope,datagenerate) {
 
           //this function is used to get the data from resources.json file in language object
            $scope.loadnavlang=function(){
@@ -28,6 +28,6 @@
                      }); //end datagenerate
         };
         $scope.loadnavlang();
-      });
+      }]);
 
   
