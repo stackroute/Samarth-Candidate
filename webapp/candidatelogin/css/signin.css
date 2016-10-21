@@ -4,25 +4,6 @@
     padding: 4em 4em 5em;
     background: #FFFFFF;
 }
-
-.maincontent {
-    margin: 60px 10px 40px 10px;
-    min-height: 80vh;
-    width: 100%;
-}
-
-.login_background_setter {
-    background-image: url('../../candidatelogin/images/background.jpg');
-    -moz-background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    background-size: 100% 100%;
-}
-
-.appfooter {
-    background: #545454;
-    color: #919191;
-    padding: 5px;
-}
 .md-primary {
     float: center;
     height: 6%;
@@ -76,9 +57,4 @@ a {
 
 #form1 input[type="submit"]:hover {
     background-color: white;
-}
- .samarth{
-  font-size: 25px;
-  font-weight: bold;
-  font-family: 'Raleway', sans-serif;
 }
