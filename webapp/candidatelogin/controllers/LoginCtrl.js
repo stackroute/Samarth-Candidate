@@ -6,7 +6,7 @@ angular.module('sm-candidateprofile').controller('LoginCtrl', ['$state', '$auth'
     /*Login() function which will be actually called in the associated view for 
     authentication of the user*/
     vm.login = function() {
-        console.log(vm.user);
+        // console.log(vm.user);
 
         /*$auth.login() is a predefined function provided by satellizer for initiating authentication
         of the user . This returns a promise and accepts an object with all the required fields which 
