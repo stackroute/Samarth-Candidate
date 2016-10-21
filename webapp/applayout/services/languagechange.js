@@ -2,7 +2,11 @@
 angular.module('sm-candidateprofile')
     .factory('datagenerate', function($http) {
         return {
-            getjson: function(key, lang) {
+            //getjson is a function which fetch the data from the api
+            /**
+             this is the link of API "http://localhost:8081/resource/"
+             */
+            getjson: function(key, lang) {  
 
                 console.log("key -----------> " + key + "    lang ----->" + lang);
                 var data = {};
