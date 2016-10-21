@@ -1,5 +1,5 @@
 /* Login controller -> responsible for authentication and hhaving $state, $auth as dependencies*/
-angular.module('sm-candidateprofile').controller('LoginCtrl', ['$state', '$auth', function($state, $auth) {
+angular.module('sm-candidateprofile').controller('LoginCtrl', ['$state', '$auth' , function($state, $auth) {
 
     var vm = this;
     vm.user = {};

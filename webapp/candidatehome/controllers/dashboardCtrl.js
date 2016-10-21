@@ -1,14 +1,31 @@
-/* DashboardCtrl controller -> responsible for dashboard and having $state, $auth as dependencies*/
-angular.module('sm-candidateprofile').controller('DashboardCtrl', ['$state', '$auth',function($state, $auth) {
+/* DashboardCtrl controller -> responsible for dashboard and having $state, $auth and $rootScope as dependencies*/
+angular.module('sm-candidateprofile').controller('DashboardCtrl', ['$state', '$auth', '$rootScope', function($state, $auth, $rootScope) {
 
-    var vm = this;
+    /*=============================================
+    =  Checking whether the user is authenticated 
+       or not.Based on user's authenticity .
 
-    /*logout() function which will be actually called in the associated view for 
-    loggin out the user*/
-    vm.logout = function __logout() {
-    	/*$auth.logout() is a predefined function provided by satellizer for destroying session or 
-    	deleting JWT of the user. */
-        $auth.logout();
-        $state.go('candidate.login'); // redirects to a mentioned state if successfull
-    };//logout ends
+           if return of $auth.isAuthenticated() is->
+               "true" ->   signout flag in root 
+                           scope is set to true 
+                           i.e signout button is 
+                           will be displayed in 
+                           the navbar .
+               "false" ->  signout flag in root scope 
+                           is set to false i.e signout
+                           button is will be hidden in 
+                           the navbar .
+
+       NOTE :- to check the sign declaration in rootscope 
+               , check applayout/controllers/navctr =
+    =============================================*/
+
+    if ($auth.isAuthenticated()) {
+        $rootScope.signout = true; // set to true if not authenticated
+    } else {
+        $rootScope.signout = false; // set to false if not authenticated ex: in case session expiration
+    }
+
+    /*=====  End of Section comment block  ======*/
+
 }]);
