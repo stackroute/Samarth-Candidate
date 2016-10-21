@@ -1,5 +1,5 @@
 /* RegisterCtrl controller -> responsible for authentication and hhaving $state, $auth as dependencies*/
-angular.module('sm-candidateprofile').controller('RegisterCtrl', function($state, $auth) {
+angular.module('sm-candidateprofile').controller('RegisterCtrl', ['$state', '$auth',function($state, $auth) {
     var vm = this;
     vm.user = {};
     /*Login() function which will be actually called in the associated view for 
@@ -11,7 +11,7 @@ angular.module('sm-candidateprofile').controller('RegisterCtrl', function($state
         needs to be sent to the api for registration
         
         NOTE :- To change the registration api endpoint/URI , please override $authProvider.signupUrl with new 
-        value in candidatehome/candidatehomemodule.js */
+        value in /auth/authmodule.js */
         $auth.signup({
 
             name: vm.user.name,
@@ -31,4 +31,4 @@ angular.module('sm-candidateprofile').controller('RegisterCtrl', function($state
 
         });// $auth.signup ends
     };
-})
+}])

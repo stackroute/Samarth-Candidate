@@ -1,5 +1,5 @@
 /* DashboardCtrl controller -> responsible for dashboard and having $state, $auth as dependencies*/
-angular.module('sm-candidateprofile').controller('DashboardCtrl', function($state, $auth) {
+angular.module('sm-candidateprofile').controller('DashboardCtrl', ['$state', '$auth',function($state, $auth) {
 
     var vm = this;
 
@@ -11,4 +11,4 @@ angular.module('sm-candidateprofile').controller('DashboardCtrl', function($stat
         $auth.logout();
         $state.go('candidate.login'); // redirects to a mentioned state if successfull
     };//logout ends
-});
+}]);
