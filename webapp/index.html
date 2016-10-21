@@ -13,13 +13,16 @@
 </head>
 
 <body ng-app="sm-candidateprofile" ng-cloak>
-<div class="login_background_setter" flex>
-    <div ui-view="navbar"></div>
-    <div layout="row" >
-        <div ui-view="content" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
+    <div class="login_background_setter" flex>
+        <!--template=applayout/template/navbar.html,controller=applayout/controllers/navctrl.js-->
+        <div ui-view="navbar"></div>
+        <div layout="row">
+            <!--template=applayout/template/content.html-->
+            <div ui-view="content" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
+        </div>
+        <!--template=applayout/template/footer.html-->
+        <div ui-view="footer"></div>
     </div>
-    <div ui-view="footer"></div>
-</div>
 </body>
 <script src="/angular/angular.js"></script>
 <script src="/angular-animate/angular-animate.js"></script>
@@ -30,7 +33,6 @@
 <script src="/angular-local-storage/dist/angular-local-storage.js"></script>
 <script src="/satellizer/dist/satellizer.js"></script>
 <script src="/html2canvas/build/html2canvas.js"></script>
-
 <script src="smcandidateprofile.js"></script>
 <script src="auth/authmodule.js"></script>
 <script src="applayout/appconfig.js"></script>
@@ -38,5 +40,7 @@
 <script type="text/javascript" src="candidatehome/constrollers/dashboardCtrl.js"></script>
 <script type="text/javascript" src="candidatelogin/controllers/LoginCtrl.js"></script>
 <script type="text/javascript" src="registercandidate/controllers/RegisterCtrl.js"></script>
+<script type="text/javascript" src="applayout/controllers/navctrl.js"></script>
+<script type="text/javascript" src="applayout/services/languagechange.js"></script>
 
 </html>

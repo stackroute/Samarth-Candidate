@@ -12,6 +12,7 @@ angular.module("sm-candidateprofile")
                     },
                     "navbar": {
                         templateUrl: '/applayout/templates/navbar.html',
+                        controller:'navCtrl'
 
                     },
                     "footer": {
