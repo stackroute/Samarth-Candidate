@@ -1,5 +1,6 @@
 <div layout-align="center center" md-whiteframe="md-whiteframe-1dp" class="md-padding main" >
     <form name="signinForm" id="form1">
+    <div layout="row" layout-align="start center" ng-model="success_register" style="color:blue" flex>{{success_register}} </div>
         <div layout="row" layout-align="center center">
             <h3 class="md-title">Signin</h3>
         </div>
@@ -27,6 +28,7 @@
         <div layout="row" layout-align="center center" class="signin">
             <md-button type="submit" class="md-primary" style="background-color:#1E88E5;color:white" flex ng-click="login.login()">Sign In</md-button>
         </div>
+
         <div class="clearfix"> </div>
         <div layout="row" layout-align="center">
           <a  flex style="text-align:center" ui-sref="candidate.register">Don’t have an account?</a>

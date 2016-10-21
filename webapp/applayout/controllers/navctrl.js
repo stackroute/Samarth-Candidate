@@ -40,4 +40,19 @@
              $state.go('candidate.login'); // redirects to a mentioned state if successfull
          }; //logout ends
 
+          console.log("not"+$auth.isAuthenticated());
+          console.log("===============",$auth.login.unane);
+
+         if($auth.isAuthenticated()==false)
+         {
+            console.log("not-------"+$auth.isAuthenticated());
+           
+         }
+         else
+         {
+
+            $scope.signout=true;
+            console.log("inelse inhr");
+         }
+
      }]);
