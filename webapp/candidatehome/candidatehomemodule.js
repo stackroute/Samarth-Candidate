@@ -44,7 +44,7 @@ angular.module("sm-candidateprofile")
                         }
     
                     }
-                }])
+                })
         .state('candidate.register', {
                 parent: 'candidate',
                 url: '/register',
