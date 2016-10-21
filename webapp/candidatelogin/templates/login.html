@@ -1,11 +1,11 @@
 <div layout-align="center center" md-whiteframe="md-whiteframe-1dp" class="md-padding main" >
-    <form name="signinForm" id="formdata">
+    <form name="signinForm" id="form1">
         <div layout="row" layout-align="center center">
             <h3 class="md-title">Signin</h3>
         </div>
         <div layout="row" layout-align="center center">
             <md-input-container class="md-icon-float" flex>
-                <label>Enter mobile number</label>
+                <label>Mobile number</label>
                 <md-icon class="material-icons" style="font-size:30px">phone</md-icon>
                 <input type="tel"  name="number"  required md-no-asterisk  ng-model="login.user.number">
                 <div ng-messages="signinForm.number.$error">
@@ -15,7 +15,7 @@
         </div>
         <div layout="row" layout-align="center center">
             <md-input-container class="md-icon-float" flex>
-                <label>Enter the password</label>
+                <label>Password</label>
                 <md-icon class="material-icons">lock</md-icon>
                 <input type="password" name="password" required md-no-asterisk ng-model="login.user.password">
                 <div ng-messages="signinForm.password.$error">
@@ -33,3 +33,4 @@
         </div>
     </form>
 </div>
+
