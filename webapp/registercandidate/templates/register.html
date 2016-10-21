@@ -4,7 +4,7 @@
             <h3 md-title>Sign up</h3>
         </div>
         <div layout="row" layout-align="center center">
-            <md-input-container  class="md-icon-float" flex>
+            <md-input-container class="md-icon-float" flex>
                 <label>Name</label>
                 <md-icon class="material-icons">person</md-icon>
                 <input type="text" required md-no-asterisk ng-model="register.user.name" name="name">
@@ -14,7 +14,7 @@
             </md-input-container>
         </div>
         <div layout="row" layout-align="center center">
-            <md-input-container  class="md-icon-float" flex>
+            <md-input-container class="md-icon-float" flex>
                 <label>Phone number</label>
                 <md-icon class="material-icons">phone</md-icon>
                 <input type="tel" name="number" required md-no-asterisk ng-model="register.user.number" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
@@ -24,7 +24,7 @@
             </md-input-container>
         </div>
         <div layout="row" layout-align="center center">
-            <md-input-container  class="md-icon-float" flex>
+            <md-input-container class="md-icon-float" flex>
                 <label>Email address</label>
                 <md-icon class="material-icons">mail</md-icon>
                 <input type="email" name="email" required md-no-asterisk ng-model="register.user.email" ng-pattern="/^.+@.+\..+$/">
@@ -34,7 +34,7 @@
             </md-input-container>
         </div>
         <div layout="row" layout-align="center center">
-            <md-input-container  class=" md-icon-float" flex >
+            <md-input-container class=" md-icon-float" flex>
                 <label>Place</label>
                 <md-icon class="material-icons">place</md-icon>
                 <input type="text" name="Location" required md-no-asterisk ng-model="register.user.location">
@@ -44,7 +44,7 @@
             </md-input-container>
         </div>
         <div layout="row" layout-align="center center">
-            <md-input-container  class="md-icon-float" flex>
+            <md-input-container class="md-icon-float" flex>
                 <label>Password</label>
                 <md-icon class="material-icons">lock</md-icon>
                 <input ng-model="register.user.password" type="password" name="password" required md-no-asterisk ng-required="true" minlength="8" maxlength="20" ng-pattern="/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^*()_+])[A-Za-z\d][A-Za-z\d!@#$%^*()_+]{7,19}$/">
@@ -54,7 +54,7 @@
             </md-input-container>
         </div>
         <div layout="row" layout-align="center center">
-            <md-input-container  class="md-icon-float" flex>
+            <md-input-container class="md-icon-float" flex>
                 <label>Confirm Password</label>
                 <md-icon class="material-icons">lock</md-icon>
                 <input ng-model="register.user.cpwd" type="password" required md-no-asterisk name="Cfpassword" valid-password-c required>
@@ -67,11 +67,11 @@
         </div>
         <div layout="row" layout-align="start center" ng-model="error" style="color:red"></div>
         <div layout="row" layout-align="center center">
-            <md-button type="submit" class="md-primary" style="background-color:#1E88E5;color:white" ng-click="register.register()" flex >
+            <md-button type="submit" class="md-primary" style="background-color:#1E88E5;color:white" ng-click="register.register()" flex>
                 Create account
             </md-button>
         </div>
-         <div class="clearfix"> </div>
+        <div class="clearfix"> </div>
         <div layout="row" layout-align="center center">
             <a flex style="text-align:center" ui-sref="candidate.login">Have a account ?????</a>
         </div>
