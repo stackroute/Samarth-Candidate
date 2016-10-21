@@ -1,7 +1,9 @@
+/* Datagenerate is responsible for navbar and having $http as dependencies*/
 angular.module('sm-candidateprofile')
     .factory('datagenerate', function($http) {
         return {
             getjson: function(key, lang) {
+
                 console.log("key -----------> " + key + "    lang ----->" + lang);
                 var data = {};
                 return $http({
