@@ -13,7 +13,7 @@ angular.module('sm-candidateprofile').controller('LoginCtrl', ['$state', '$auth'
         needs to be sent to the api for authentication
         
         NOTE :- To change the login api endpoint/URI , please override $authProvider.loginUrl with new 
-        value in candidatehome/candidatehomemodule.js */
+        value in /auth/authmodule.js */
         $auth.login({
             uname: vm.user.number, // username of the user entered in the login form
             pwd: vm.user.password // username of the user entered in the login form
