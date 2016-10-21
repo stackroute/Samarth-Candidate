@@ -3,6 +3,10 @@
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
 }
+/*
+.landingpage {
+    margin-top: 400px;
+}*/
 .maincontent {
     margin: 60px 10px 40px 10px;
     min-height: 80vh;
