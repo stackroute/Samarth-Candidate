@@ -15,12 +15,16 @@
 </head>
 
 <body ng-app="sm-candidateprofile" ng-cloak>
-    <div class="login_background_setter" flex>
+    <div layout="column" flex="grow" layout-fill>
         <!--template=applayout/template/navbar.html,controller=applayout/controllers/navctrl.js-->
         <div ui-view="navbar"></div>
-        <div layout="row">
-            <!--template=applayout/template/content.html-->
-            <div ui-view="content" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
+        <div flex="noshrink" flex="100" ng-class="loggedinbackground"> <!-- loggedinbackground root variable 
+            is declared in applayout / controllers/navctrl.js -->
+            
+            <div layout="row">
+                <!--template=applayout/template/content.html-->
+                <div ui-view="content" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
+            </div> 
         </div>
         <!--template=applayout/template/footer.html-->
         <div ui-view="footer"></div>

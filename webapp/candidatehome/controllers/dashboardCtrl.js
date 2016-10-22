@@ -1,5 +1,6 @@
 /* DashboardCtrl controller -> responsible for dashboard and having $state, $auth and $rootScope as dependencies*/
 angular.module('sm-candidateprofile').controller('DashboardCtrl', ['$state', '$auth', '$rootScope', function($state, $auth, $rootScope) {
+ 
 
     /*=============================================
     =  Checking whether the user is authenticated 
@@ -21,9 +22,11 @@ angular.module('sm-candidateprofile').controller('DashboardCtrl', ['$state', '$a
     =============================================*/
 
     if ($auth.isAuthenticated()) {
-        $rootScope.signout = true; // set to true if not authenticated
+        $rootScope.signout = true; // set to true if authenticated
+        $rootScope.loggedinbackground = "loggedinbackground";//set to loggedinbackground if authenticated i.e set the background as white
     } else {
         $rootScope.signout = false; // set to false if not authenticated ex: in case session expiration
+        $rootScope.loggedinbackground = "loggedoutbackground";// set to loggedoutbackground if not authenticated
     }
 
     /*=====  End of Section comment block  ======*/
