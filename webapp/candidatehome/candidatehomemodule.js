@@ -9,7 +9,7 @@ angular.module("sm-candidateprofile")
                     $location.path('/home/dashboard');
                 } else {
                     deferred.resolve();
-                }
+                };
                 return deferred.promise;
             }];
             //skipIfLoggedIn ends

@@ -5,20 +5,22 @@
 }
 
 .maincontent {
-    margin: 40px 10px 40px 10px;
-    min-height: 80vh;
     width: 100%;
-}
-
-.login_background_setter {
-    background-image: url('../../applayout/images/background.jpg');
-    -moz-background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    background-size: 100% 100%;
 }
 
 .appfooter {
     background: #545454;
     color: #919191;
     padding: 5px;
+}
+
+.loggedinbackground{
+  background-color: white;
+}
+
+.loggedoutbackground{
+    background-image: url('../../applayout/images/background.jpg');
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
 }

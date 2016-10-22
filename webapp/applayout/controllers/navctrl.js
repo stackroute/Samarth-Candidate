@@ -13,8 +13,13 @@ angular.module("sm-candidateprofile")
 
         /* Global element signout exists in the root scope of the application and is used to control
         the visiblility of the signout button in the navbar */
-
         $rootScope.signout = false;
+
+        /* loggedinbackground is defined in rootscope and sets the classname for the content ui-view declared
+        in index.html dynamically .
+        NOTE :- classes with required is defined in applayout/css/applayout.css
+        */
+        $rootScope.loggedinbackground = "loggedoutbackground";
 
         //loadnavlang() function is used to get the data from resources.json file in language object
         $scope.loadnavlang = function() {
@@ -54,6 +59,7 @@ angular.module("sm-candidateprofile")
             deleting JWT of the user. */
             $auth.logout();
             $rootScope.signout = false; // resetting the visibility of the flag to hide signout button on logout
+            $rootScope.loggedinbackground = "loggedoutbackground"; // resetting the visibility of the content view backgound  in index.html
             $state.go('candidate.login'); // redirects to a mentioned state if successfull
         }; //logout ends
 
