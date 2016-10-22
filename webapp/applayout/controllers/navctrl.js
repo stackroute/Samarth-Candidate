@@ -20,7 +20,7 @@ angular.module("sm-candidateprofile")
         $scope.loadnavlang = function() {
 
             /* getjson() function is defined in factory datagenerate */
-            
+
             datagenerate.getjson("nav", "language").then(function(result) {
 
                 //console.log("result inside datagenerate", result[0]);
