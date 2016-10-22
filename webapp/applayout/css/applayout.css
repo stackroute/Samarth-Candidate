@@ -7,6 +7,10 @@
 .maincontent {
     width: 100%;
 }
+.languagebar
+{
+  font-weight: bold;
+}
 
 .appfooter {
     background: #545454;

@@ -12,6 +12,10 @@ a {
     color: black;
     font-size: 15px;
 }
+.languagebar
+{
+    font-weight: bold;
+}
 
 #form1 h3 {
     color: #53599A;
@@ -22,10 +26,9 @@ a {
 }
 
 #form1 {
-    width: 50%;
-    margin: 4em auto 4em;
+    width: 97%;
+    margin: 4em auto 1em;
     padding: 2em 2em 3em;
-    /*padding: 15px 10px;*/
     background-color: white;
     font-size: 1.2em;
     font-family: 'Raleway', sans-serif;

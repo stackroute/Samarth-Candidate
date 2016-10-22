@@ -5,20 +5,16 @@
                 <div layout="row" layout-align="start center" flex>
                     <h2>
                         <span class="samarth">Samarth</span>
-                    </h2>
+                    </h2>   
                 </div>
                 <div layout="row" layout-align="end center" flex>
                     <md-button ng-click="logout()" ng-show="signout">Signout</md-button>
                 </div>
             </div>
             <div layout="row" layout-align="center center" hide-sm hide-xs layout-wrap>
-            <div ng-repeat="(key,val) in language"><md-button title="{{key}}">{{val}}</md-button></div>
+            <div ng-repeat="(key,val) in language"><md-button class="languagebar" title="{{key}}">{{val}}</md-button></div>
     
              </div>
-
-             <div layout="row" layout-align="center center" hide-gt-sm layout-wrap>
-                <div ng-repeat="(key,val) in language"><md-button title="{{key}}">{{val[0]}}</md-button></div>
-            </div>
         </md-toolbar>
     </md-content>
 </div>

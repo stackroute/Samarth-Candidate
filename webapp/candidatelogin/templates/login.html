@@ -1,6 +1,6 @@
-<!-- <div layout="column" layout-align="center center" > -->
-<div layout="row" layout-align="center center">
-    <form name="signinForm" id="form1">
+
+<div layout="row" layout-align="center center" flex >
+    <form name="signinForm" id="form1" flex-gt-md="50">
         <div layout="row" layout-align="center center">
             <h3 class="md-title">Sign In</h3>
         </div>
@@ -8,7 +8,7 @@
             <md-input-container class="md-icon-float" flex>
                 <label>Mobile number</label>
                 <md-icon class="material-icons" style="font-size:30px">phone</md-icon>
-                <input type="tel"  name="number"  required md-no-asterisk  ng-model="login.user.number">
+                <input type="tel" name="number" required md-no-asterisk ng-model="login.user.number">
                 <div ng-messages="signinForm.number.$error">
                     <div ng-message="required">Enter registered mobile number</div>
                 </div>
@@ -28,11 +28,14 @@
         <div layout="row" layout-align="center center" class="signin">
             <md-button type="submit" class="md-primary signin" style="background-color:#1E88E5;color:white" flex ng-click="login.login()">Sign In</md-button>
         </div>
-
-        <div class="clearfix"> </div>
         <div layout="row" layout-align="center">
-          <a  flex style="text-align:center" ui-sref="candidate.register">Don’t have an account?</a>
+            <a flex style="text-align:center" ui-sref="candidate.register">Don’t have an account?</a>
         </div>
     </form>
 </div>
-<!-- </div> -->
+<div layout-align="center center" >
+    
+        <div layout="row" layout-align="center center" hide-gt-sm layout-wrap>
+                <md-button class="languagebar" ng-repeat="(key,val) in language" title="{{key}}">{{val[0]}}</md-button>
+        </div>
+</div>
