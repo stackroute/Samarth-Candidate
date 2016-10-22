@@ -8,7 +8,7 @@ angular.module('sm-candidateprofile')
              */
             getjson: function(key, lang) {  
 
-                console.log("key -----------> " + key + "    lang ----->" + lang);
+                //console.log("key -----------> " + key + "    lang ----->" + lang);
                 var data = {};
                 return $http({
                     method: 'GET',
