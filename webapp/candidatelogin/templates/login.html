@@ -1,6 +1,6 @@
-<div layout-align="center center">
-<div layout="column" layout-align="center center" >
-    <form name="signinForm" id="form1">
+
+<div layout="row" layout-align="center center" flex >
+    <form name="signinForm" id="form1" flex-gt-md="50">
         <div layout="row" layout-align="center center">
             <h3 class="md-title">Sign In</h3>
         </div>
@@ -34,8 +34,9 @@
     </form>
 </div>
 <div>
-    <md-card
-        <div layout="row" layout-align="center center" hide-gt-sm layout-wrap>
+<div layout-align="center center">
+    <md-card>
+        <div layout="row"  hide-gt-sm layout-wrap>
             <div ng-repeat="(key,val) in language">
                 <md-button title="{{key}}">{{val[0]}}</md-button>
             </div>
