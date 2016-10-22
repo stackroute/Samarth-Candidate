@@ -1,16 +1,3 @@
-.main {
-    width: 50%;
-    margin: 4em auto 4em;
-    padding: 4em 4em 5em;
-    background: #FFFFFF;
-}
-
-.md-primary {
-    float: center;
-    height: 6%;
-    font-size: 18px;
-}
-
 div {
     display: block;
 }
@@ -26,19 +13,25 @@ a {
     font-size: 15px;
 }
 
-.main h3 {
+#form1 h3 {
     color: #53599A;
     text-align: center;
-    font-size: 1.8em;
+    font-size: 1.6em;
     margin: 0 0 1em;
     font-weight: bold;
 }
 
 #form1 {
-    padding: 15px 10px;
+    width: 50%;
+    margin: 4em auto 4em;
+    padding: 2em 2em 3em;
+   /* padding: 15px 10px;*/
     background-color: white;
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-family: 'Raleway', sans-serif;
     border-radius: 5px;
+}
+#form1 .signin{
+    font-size: 18px;
 }
 
