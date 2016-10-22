@@ -4,8 +4,8 @@ angular.module("sm-candidateprofile")
     .config(function($stateProvider, $urlRouterProvider, $authProvider, $httpProvider) {
 
         /* Satellizer properties override needed for customization*/
-        $authProvider.loginUrl = 'http://localhost:8080/signin'; /*required login api endpoint*/
-        $authProvider.signupUrl = 'http://localhost:8080/signup'; /*required register api endpoint*/
+        $authProvider.loginUrl = '/signin'; /*required login api endpoint*/
+        $authProvider.signupUrl = '/signup'; /*required register api endpoint*/
         $authProvider.tokenPrefix = 'satellizer'; /*local storage name prefix "satellizer_YOUR-TOKEN-NAME"*/
         $authProvider.tokenHeader = 'x-user-access-token'; /*token header that needs to be injected in every request via interceptor*/
         $authProvider.tokenType = ''; /* default -> "Bearer" reset to blank required*/

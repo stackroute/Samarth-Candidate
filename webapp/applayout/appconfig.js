@@ -12,7 +12,7 @@ angular.module("sm-candidateprofile")
                     },
                     "navbar": {
                         templateUrl: '/applayout/templates/navbar.html',
-                        controller:'navCtrl'
+                        controller: 'navCtrl'
 
                     },
                     "footer": {
@@ -26,4 +26,6 @@ angular.module("sm-candidateprofile")
         $urlRouterProvider.otherwise('/home/login');
     });
 
-/* NOTE :- home state child  routes are in candidatehome/candidatehomemodules.js*/
+/* NOTE :- home state child  routes are in candidatehome/candidatehomemodules.js
+          config for overridding satellizer properties is defined in auth/authmodule.js 
+*/
