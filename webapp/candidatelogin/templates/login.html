@@ -1,4 +1,4 @@
-<div layout-align="center center" md-whiteframe="md-whiteframe-1dp" class="md-padding main" >
+<div layout-align="center center" md-whiteframe="md-whiteframe-1dp" class="md-padding main">
     <form name="signinForm" id="form1">
         <div layout="row" layout-align="center center">
             <h3 class="md-title">Sign In</h3>
@@ -7,7 +7,7 @@
             <md-input-container class="md-icon-float" flex>
                 <label>Mobile number</label>
                 <md-icon class="material-icons" style="font-size:30px">phone</md-icon>
-                <input type="tel"  name="number"  required md-no-asterisk  ng-model="login.user.number">
+                <input type="tel" name="number" required md-no-asterisk ng-model="login.user.number">
                 <div ng-messages="signinForm.number.$error">
                     <div ng-message="required">Enter registered mobile number</div>
                 </div>
@@ -27,11 +27,19 @@
         <div layout="row" layout-align="center center" class="signin">
             <md-button type="submit" class="md-primary" style="background-color:#1E88E5;color:white" flex ng-click="login.login()">Sign In</md-button>
         </div>
-
-     
         <div layout="row" layout-align="center">
-          <a  flex style="text-align:center" ui-sref="candidate.register">Don’t have an account?</a>
+            <a flex style="text-align:center" ui-sref="candidate.register">Don’t have an account?</a>
         </div>
     </form>
+</div>
+<div>
+    <md-card
+        <div layout="row" layout-align="center center" hide-gt-sm layout-wrap>
+            <div ng-repeat="(key,val) in language">
+                <md-button title="{{key}}">{{val[0]}}</md-button>
+            </div>
+        </div>
+
+    </md-card>
 </div>
 
