@@ -28,7 +28,7 @@ angular.module('sm-candidateprofile')
                         "Hindi": "हिंदी",
                         "Telugu": "తెలుగు",
                         "Tamil": "தமிழ்",
-                        "Punjabi": "ਪੰਜਾਬੀ ਦੇ",
+                        "Punjabi": "ਪੰਜਾਬੀ",
                         "Marathi": "मराठी",
                         "Bengali": "বাঙালি",
                         "Urdu": "اردو",
