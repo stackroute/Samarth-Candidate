@@ -25,7 +25,7 @@ angular.module('sm-candidateprofile').controller('RegisterCtrl', ['$state', '$au
            $mdToast.show(
                 $mdToast.simple()
                 .textContent('Successfully completed registration..!')
-                .position("bottom")
+                .position("right")
                 .hideDelay(4000)
             );
 
