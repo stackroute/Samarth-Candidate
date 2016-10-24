@@ -1,5 +1,5 @@
 {
-  "name": "samarth-skillprofile",
+  "name": "samarth-candidateprofile",
   "description": "Client for Samarth Platform, provides clientside interface for Job Aspirants",
   "main": "app.js",
   "authors": [

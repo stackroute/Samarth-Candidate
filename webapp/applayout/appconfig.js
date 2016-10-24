@@ -1,7 +1,7 @@
 /* sm-candidateprofile Module is in root folder in smcandidateprofile.js */
 angular.module("sm-candidateprofile")
     .config(function($stateProvider, $urlRouterProvider, $authProvider) {
-        console.log('inside appconfig');
+        //console.log('inside appconfig');
         // Url routing starts here
         $stateProvider
             .state('candidate', {

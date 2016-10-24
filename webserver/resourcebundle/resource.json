@@ -1,0 +1,510 @@
+{
+    "navlanguage":[{
+     "English":"English",
+     "Hindi":"हिंदी",
+     "Telugu":"తెలుగు",
+     "Tamil":"தமிழ்",
+     "Punjabi":"ਪੰਜਾਬੀ ਦੇ",
+     "Marathi":"मराठी",
+     "Bengali":"বাঙালি",
+     "Urdu":"اردو",
+     "Kannada":"ಕನ್ನಡ",
+     "Gujarati":"ગુજરાતી",
+     "Marathi":"मराठी",
+     "Urdu":"اردو",
+     "Sindhi":"سنڌي",
+     "Malayalam":"മലയാളം"
+   }],
+
+    "labelnavEnglish":[{
+
+        "Skills":"Skills",
+        "Projects": "Projects",
+        "workexperience": "Work Experience",
+        "Education": "Education",
+        "Personalinfo": "Personal info"
+
+
+    }],
+
+    "labelnavHindi":[{
+
+
+        "Skills":"कौशल",
+        "Projects": "परियोजनाएं",
+        "workexperience": "काम का अनुभव",
+        "Education": "शिक्षा",
+        "Personalinfo": "व्यक्तिगत जानकारी"
+
+    }],
+    "labelnavPunjabi":[{
+
+
+        "Skills":"ਹੁਨਰ",
+        "Projects": "ਪ੍ਰੋਜੈਕਟ",
+        "workexperience": "ਕੰਮ ਦਾ ਅਨੁਭਵ",
+        "Education": "ਸਿੱਖਿਆ",
+        "Personalinfo": "ਨਿੱਜੀ ਜਾਣਕਾਰੀ"
+
+    }],
+    "labelnavBengali":[{
+
+
+        "Skills":"দক্ষতা",
+        "Projects": "প্রকল্প",
+        "workexperience": "কর্মদক্ষতা",
+        "Education": "শিক্ষা",
+        "Personalinfo": "ব্যক্তিগত তথ্য"
+
+    }],
+"labelnavTelugu":[{
+
+
+        "Skills":"నైపుణ్యాలు",
+        "Projects": "ప్రాజెక్ట్స్",
+        "workexperience": "పని అనుభవం",
+        "Education": "చదువు",
+        "Personalinfo": "వ్యక్తిగత సమాచారం"
+
+    }],
+
+
+    "sidenavEnglish": [{
+
+        "state": "skillprofile.skillhome.jobsearch",
+        "title": "Job Search",
+        "icon": "search",
+        "seq": 1
+    }, {
+
+        "state": "skillprofile.skillhome.home",
+        "title": "Portfolio",
+        "icon": "account_circle",
+        "seq": 2
+    }, {
+        "state": "skillprofile.skillhome.workexperience",
+        "title": "Work Experience",
+        "icon": "work",
+        "seq": 6
+
+    }, {
+        "state": "skillprofile.skillhome.projects",
+        "title": "Projects",
+        "icon": "domain",
+        "seq": 5
+
+    }, {
+        "state": "skillprofile.skillhome.skills",
+        "skill": "Skills",
+        "icon": "settings",
+        "seq": 3
+    }, {
+        "state": "skillprofile.skillhome.education",
+        "title": "Education",
+        "icon": "school",
+        "seq": 4
+
+    }, {
+        "state": "skillprofile.skillhome.personalinfo",
+        "title": "Personal info",
+        "icon": "person",
+        "seq": 7
+
+    }, {
+        "state": "skillprofile.skillhome.showcase",
+        "title": "Showcase",
+        "icon": "dashboard",
+        "seq": 8
+
+    }],
+
+    "sidenavHindi": [{
+
+        "state": "skillprofile.skillhome.jobsearch",
+        "title": "नौकरी खोजे",
+        "icon": "search",
+        "seq": 1
+    }, {
+
+        "state": "skillprofile.skillhome.home",
+        "title": "पोर्टफोलियो",
+        "icon": "account_circle",
+        "seq": 2
+    }, {
+        "state": "skillprofile.skillhome.workexperience",
+        "title": "काम का अनुभव",
+        "icon": "work",
+        "seq": 6
+
+    }, {
+        "state": "skillprofile.skillhome.projects",
+        "title": "परियोजनाएं",
+        "icon": "domain",
+        "seq": 5
+
+    }, {
+        "state": "skillprofile.skillhome.skills",
+        "title": "कौशल",
+        "icon": "settings",
+        "seq": 3
+    }, {
+        "state": "skillprofile.skillhome.education",
+        "education": "शिक्षा",
+        "icon": "school",
+        "seq": 4
+
+    }, {
+        "state": "skillprofile.skillhome.personalinfo",
+        "title": "व्यक्तिगत जानकारी",
+        "icon": "person",
+        "seq": 7
+
+    }, {
+        "state": "skillprofile.skillhome.notifications",
+        "title": "शोकेस",
+        "icon": "dashboard",
+        "seq": 8
+
+    }],
+    "sidenavTelugu": [{
+
+        "state": "skillprofile.skillhome.jobsearch",
+        "title": "ఉద్యోగ శోధన",
+        "icon": "search",
+        "seq": 1
+    }, {
+
+        "state": "skillprofile.skillhome.home",
+        "title": "పోర్ట్ఫోలియో",
+        "icon": "account_circle",
+        "seq": 2
+    }, {
+        "state": "skillprofile.skillhome.workexperience",
+        "title": "పని అనుభవం",
+        "icon": "work",
+        "seq": 6
+
+    }, {
+        "state": "skillprofile.skillhome.projects",
+        "title": "ప్రాజెక్ట్స్",
+        "icon": "domain",
+        "seq": 5
+
+    }, {
+        "state": "skillprofile.skillhome.skills",
+        "title": "నైపుణ్యాలు",
+        "icon": "settings",
+        "seq": 3
+    }, {
+        "state": "skillprofile.skillhome.education",
+        "title": "చదువు",
+        "icon": "school",
+        "seq": 4
+
+    }, {
+        "state": "skillprofile.skillhome.personalinfo",
+        "title": "వ్యక్తిగత సమాచారం",
+        "icon": "person",
+        "seq": 7
+
+    }, {
+        "state": "skillprofile.skillhome.showcase",
+        "title": "షోకేస్",
+        "icon": "dashboard",
+        "seq": 8
+
+    }],
+    "sidenavPunjabi": [{
+
+        "state": "skillprofile.skillhome.jobsearch",
+        "title": "ਨੌਕਰੀ ਖੋਜ",
+        "icon": "search",
+        "seq": 1
+    }, {
+
+        "state": "skillprofile.skillhome.home",
+        "title": "ਪੋਰਟਫੋਲੀਓ",
+        "icon": "account_circle",
+        "seq": 2
+    }, {
+        "state": "skillprofile.skillhome.workexperience",
+        "title": "ਕੰਮ ਦਾ ਅਨੁਭਵ",
+        "icon": "work",
+        "seq": 6
+
+    }, {
+        "state": "skillprofile.skillhome.projects",
+        "title": "ਪ੍ਰੋਜੈਕਟ",
+        "icon": "domain",
+        "seq": 5
+
+    }, {
+        "state": "skillprofile.skillhome.skills",
+        "title": "ਹੁਨਰ",
+        "icon": "settings",
+        "seq": 3
+    }, {
+        "state": "skillprofile.skillhome.education",
+        "title": "ਸਿੱਖਿਆ",
+        "icon": "school",
+        "seq": 4
+
+    }, {
+        "state": "skillprofile.skillhome.personalinfo",
+        "title": "ਨਿੱਜੀ ਜਾਣਕਾਰੀ",
+        "icon": "person",
+        "seq": 7
+
+    }, {
+        "state": "skillprofile.skillhome.showcase",
+        "title": "ਸ਼ਅਉਕੇਇਸ",
+        "icon": "dashboard",
+        "seq": 8
+
+    }],
+     "sidenavBengali": [{
+
+        "state": "skillprofile.skillhome.jobsearch",
+        "title": "চাকরি খোঁজা",
+        "icon": "search",
+        "seq": 1
+    }, {
+
+        "state": "skillprofile.skillhome.home",
+        "title": "পোর্টফোলিও",
+        "icon": "account_circle",
+        "seq": 2
+    }, {
+        "state": "skillprofile.skillhome.workexperience",
+        "title": "কর্মদক্ষতা",
+        "icon": "work",
+        "seq": 6
+
+    }, {
+        "state": "skillprofile.skillhome.projects",
+        "title": "প্রকল্প",
+        "icon": "domain",
+        "seq": 5
+
+    }, {
+        "state": "skillprofile.skillhome.skills",
+        "title": "দক্ষতা",
+        "icon": "settings",
+        "seq": 3
+    }, {
+        "state": "skillprofile.skillhome.education",
+        "title": "শিক্ষা",
+        "icon": "school",
+        "seq": 4
+
+    }, {
+        "state": "skillprofile.skillhome.personalinfo",
+        "title": "ব্যক্তিগত তথ্য",
+        "icon": "person",
+        "seq": 7
+
+    }, {
+        "state": "skillprofile.skillhome.showcase",
+        "title": "প্রদর্শনী",
+        "icon": "dashboard",
+        "seq": 8
+
+    }],
+
+    "navEnglish": {
+        "header": "Samarth"
+    },
+    "navHindi": {
+        "header": "समर्थ "
+    },
+     "navTelugu": {
+        "header": "సమర్థ్ "
+    },
+    "navPunjabi": {
+        "header": "ਸਮਰਥ"
+    },
+    "navBengali": {
+        "header": "ਸਮਰਥ"
+    },
+    "userEnglish": [{
+
+        "name": "Chandra Kumar Pratap",
+        "age": "22",
+        "profilepicture": "dk.PNG",
+        "professionpicture": "profession.png",
+        "currentdesignation": "Senior Project Engineer",
+        "profession": "Angular Developer",
+        "DOB": "Feb 24 1994",
+        "contact": "9023650041",
+        "location": "Bangalore",
+        "email": "diamond1994@gmail.com",
+        "gender": "Male",
+        "maritalstatus": "Unmarried"
+    }],
+    "userHindi": [{
+
+        "name": "चंदन कुमार प्रधान",
+        "age": "२२",
+        "profilepicture": "dk.PNG",
+        "professionpicture": "profession.png",
+        "currentdesignation": "वरिष्ठ परियोजना अभियंता",
+        "profession": "आंग्युलर डेवेलपर",
+        "DOB": "फेब २४ १९९४",
+        "contact": "९०२३६५००४१",
+        "location": "बेंगालुरू",
+        "email": "diamond1994@gmail.com",
+        "gender": "नर",
+        "maritalstatus": "अविवाहित"
+    }],
+    "sectionEnglish": {
+        "skillheader": "Skills",
+        "primary": "Primary",
+        "secondary": "Others",
+        "addskill": "Add ",
+        "addeducation": "Add ",
+        "addproject": "Add ",
+        "addworkexp": "Add",
+        "projectheader": "Project",
+        "educationheader": "Qualification",
+        "workexpheader": "Work History",
+        "personalinfoheader": "Personal Information",
+        "edit": "edit",
+        "more": "more",
+        "less": "less",
+        "top": "Top",
+        "signin": "Sign in",
+        "signup": "Sign up",
+        "mobile": "Mobile no",
+        "password": "Password",
+        "confirm": "Confirm Password",
+        "name": "Name",
+        "location": "Location",
+        "email": "Email id",
+        "searchjob": "Search Job",
+        "create": "create new account",
+        "forgetP": "Forgot Password ?",
+        "havesign": "Have a account? Sign in"
+    },
+    "sectionHindi": {
+        "skillheader": "कौशल",
+        "primary": "प्राथमिक कौशल",
+        "secondary": "माध्यमिक कौशल",
+        "addskill": "नये कौशल जोड़े",
+        "addeducation": "नई शिक्षा जोड़े",
+        "addproject": "नई परियोजना को जोड़े",
+        "addworkexp": "नया काम करने का अनुभव जोड़े",
+        "projectheader": "परियोजना",
+        "educationheader": "शिक्षा",
+        "workexpheader": "काम का अनुभव",
+        "personalinfoheader": "व्यक्तिगत जानकारी",
+        "edit": "संपादित",
+        "more": "अन्य",
+        "less": "कम",
+        "top": "उपर जाए",
+        "signin": "साइन इन करें",
+        "signup": "साइन अप करें",
+        "mobile": "मोबाइल नंबर",
+        "password": "पासवर्ड",
+        "confirm": "पासवर्ड की पुष्टि कीजिये",
+        "name": "नाम",
+        "location": "स्थान",
+        "email": "ईमेल आईडी",
+        "searchjob": "नौकरी खोजे",
+        "create": "नया खाता बनाएँ",
+        "forgetP": "पासवर्ड भूल गए ?",
+        "havesign": "खाता है ? साइन इन करें"
+    },
+
+    "sectionTelugu": {
+        "skillheader": "నైపుణ్యాలు",
+        "primary": "ప్రాథమిక",
+        "secondary": "ఇతర నైపుణ్యాలు",
+        "addskill": "నైపుణ్యాలు జోడించడానికి",
+        "addeducation":"విద్య జోడించడానికి",
+        "addproject": "ప్రాజెక్ట్ జోడించవచ్చు",
+        "addworkexp": "పని అనుభవం జోడించండి",
+        "projectheader": "ప్రాజెక్టు",
+        "educationheader": "అర్హతలు",
+        "workexpheader": "పని అనుభవం",
+        "personalinfoheader": "వ్యక్తిగత సమాచారం",
+        "edit": "మార్చు",
+        "more": "మరింత",
+        "less": "తక్కువ",
+        "top": "టాప్",
+        "signin": "సైన్ ఇన్",
+        "signup": "చేరడం",
+        "mobile": "మొబైల్ సంఖ్య",
+        "password": "పాస్వర్డ్",
+        "confirm": "పాస్వర్డ్ నిర్ధారించడానికి",
+        "name": "పేరు",
+        "location": "నగర",
+        "email": "టపా",
+        "searchjob": "శోధన ఉద్యోగం",
+        "create": "క్రొత్త ఖాతా తెరువుము",
+        "forgetP": "పాస్వర్డ్ మరిచిపోయారా ?",
+        "havesign": "ఒక ఖాతా ఉందా? సైన్ ఇన్"
+    },
+
+     "sectionPunjabi": {
+        "skillheader": "ਹੁਨਰ",
+        "primary": "ਪ੍ਰਾਇਮਰੀ ਹੁਨਰ",
+        "secondary": "ਹੋਰ ਹੁਨਰ",
+        "addskill": "ਜੋੜੋ ਹੁਨਰ",
+        "addeducation": "ਜੋੜੋ ਸਿੱਖਿਆ",
+        "addproject": "ਜੋੜੋ ਇਸ ਪ੍ਰਾਜੈਕਟ",
+        "addworkexp": "ਜੋੜੋ ਕੰਮ ਦਾ ਅਨੁਭਵ",
+        "projectheader": "ਪ੍ਰੋਜੈਕਟ",
+        "educationheader": "ਯੋਗਤਾ",
+        "workexpheader": "ਕੰਮ ਦੇ ਇਤਿਹਾਸ",
+        "personalinfoheader": "ਵਿਅਕਤੀਗਤ ਜਾਣਕਾਰੀ",
+        "edit": "ਸੰਪਾਦਨ",
+        "more": "ਹੋਰ",
+        "less": "ਘੱਟ",
+        "top": "ਸਿਖਰ ਤੇ ਜਾਓ",
+        "signin": "ਦਾਖ਼ਲਾ ਵਿਚ",
+        "signup": "ਦਾਖ਼ਲਾ ਅਪ",
+        "mobile": "ਮੋਬਾਈਲ ਨੰਬਰ",
+        "password": "ਪਾਸਵਰਡ",
+        "confirm": "ਪੁਸ਼ਟੀ ਪਾਸਵਰਡ",
+        "name": "ਦਾ ਨਾਮ",
+        "location": "ਲੋਕੈਸ਼ਨ",
+        "email": "ਈਮੇਲ",
+        "searchjob": "ਖੋਜ ਨੌਕਰੀ",
+        "create": "ਨਵ ਖਾਤਾ ਬਣਾਉਣ",
+        "forgetP": "ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ ?",
+        "havesign": "ਨੂੰ ਇੱਕ ਖਾਤਾ ਹੈ ? ਦਾਖ਼ਲਾ ਵਿਚ "
+    },
+     "sectionBengali": {
+        "skillheader": "দক্ষতা",
+        "primary": "প্রাথমিক দক্ষতা",
+        "secondary": "অন্যান্য দক্ষতা",
+        "addskill": "একটি দক্ষতা যোগ করুন",
+        "addeducation": "একটি শিক্ষা যোগ করুন",
+        "addproject": "একটি প্রকল্প যোগ করুন",
+        "addworkexp": "একটি কাজের অভিজ্ঞতা যোগ করুন",
+        "projectheader": "প্রকল্প",
+        "educationheader": "যোগ্যতা",
+        "workexpheader": "কাজের ইতিহাস",
+        "personalinfoheader": "ব্যক্তিগত তথ্য",
+        "edit": "সম্পাদন করুন",
+        "more": "অধিক",
+        "less": "কম",
+        "top": "উপরে যাও",
+        "signin": "প্রবেশ করুন",
+        "signup": "নিবন্ধন করুন",
+        "mobile": "মোবাইল নম্বর",
+        "password": "পাসওয়ার্ড",
+        "confirm": "পাসওয়ার্ড নিশ্চিত করুন",
+        "name": "নাম",
+        "location": "অবস্থান",
+        "email": "ইমেইল আইডি",
+        "searchjob": "চাকরি খোঁজা",
+        "create": "নতুন অ্যাকাউন্ট তৈরি",
+        "forgetP": "পাসওয়ার্ড ভুলে গেছেন?",
+        "havesign": "একটি অ্যাকাউন্ট আছে? প্রবেশ করুন"
+    }
+
+
+     
+
+}

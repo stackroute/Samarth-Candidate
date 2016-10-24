@@ -12,18 +12,18 @@ angular.module('sm-candidateprofile')
                 var data = {};
                 return $http({
                     method: 'GET',
-                    url: 'http://localhost:8081/resource/' + key + lang,
+                    url: 'http://localhost:8080/resource/' + key + lang,
                     type: 'JSON'
 
                 }).then(function mySucces(response) {
                     data = response.data;
-                    console.log(data);
+                   // console.log(data);
                     return data;
 
                 }, function errorCallback(response) {
-                    console.log('Some error while getting languages --->', response);
+                    //console.log('Some error while getting languages --->', response);
                     //return (response.status);
-                    return ({
+                    return ([{
                         "English": "English",
                         "Hindi": "हिंदी",
                         "Telugu": "తెలుగు",
@@ -38,7 +38,7 @@ angular.module('sm-candidateprofile')
                         "Urdu": "اردو",
                         "Sindhi": "سنڌي",
                         "Malayalam": "മലയാളം"
-                    });
+                    }]);
                 });
             }
 
