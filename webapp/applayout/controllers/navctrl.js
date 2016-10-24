@@ -28,7 +28,7 @@ angular.module("sm-candidateprofile")
 
             datagenerate.getjson("nav", "language").then(function(result) {
 
-                //console.log("result inside datagenerate", result[0]);
+               // console.log("result inside datagenerate", result);
                 $rootScope.language = {
                     English: result[0].English,
                     Hindi: result[0].Hindi,
