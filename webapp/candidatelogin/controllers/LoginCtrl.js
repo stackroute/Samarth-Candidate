@@ -28,4 +28,6 @@ angular.module('sm-candidateprofile').controller('LoginCtrl', ['$state', '$auth'
 
         }); // $auth.login ends
     };
+
+            
 }]);

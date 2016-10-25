@@ -21,24 +21,11 @@ angular.module('sm-candidateprofile')
                     return data;
 
                 }, function errorCallback(response) {
-                    //console.log('Some error while getting languages --->', response);
-                    //return (response.status);
-                    return ([{
-                        "English": "English",
-                        "Hindi": "हिंदी",
-                        "Telugu": "తెలుగు",
-                        "Tamil": "தமிழ்",
-                        "Punjabi": "ਪੰਜਾਬੀ",
-                        "Marathi": "मराठी",
-                        "Bengali": "বাঙালি",
-                        "Urdu": "اردو",
-                        "Kannada": "ಕನ್ನಡ",
-                        "Gujarati": "ગુજરાતી",
-                        "Marathi": "मराठी",
-                        "Urdu": "اردو",
-                        "Sindhi": "سنڌي",
-                        "Malayalam": "മലയാളം"
-                    }]);
+                    
+                   if((key+lang)!="navlanguage")
+                   {
+                      return "err";
+                   }
                 });
             }
 
