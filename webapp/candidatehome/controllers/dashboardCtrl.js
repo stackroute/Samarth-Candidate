@@ -1,7 +1,7 @@
 /* DashboardCtrl controller -> responsible for dashboard and having $state, $auth and $rootScope as dependencies*/
-angular.module('sm-candidateprofile').controller('DashboardCtrl', ['$state', '$auth', '$rootScope', function($state, $auth, $rootScope) {
+angular.module('sm-candidateprofile').controller('DashboardCtrl', ['$state', '$auth', '$rootScope' , '$scope', function($state, $auth, $rootScope,$scope) {
  
-
+    $scope.uname = $auth.getPayload().uname;
     /*=============================================
     =  Checking whether the user is authenticated 
        or not.Based on user's authenticity .

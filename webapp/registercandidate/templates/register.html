@@ -57,7 +57,7 @@
             <md-input-container class="md-icon-float" flex>
                 <label>{{resourceData.confirm}}</label>
                 <md-icon class="material-icons">lock</md-icon>
-                <input ng-model="register.user.cpwd" type="password" required md-no-asterisk name="Cfpassword" valid-password-c required ng-pattern="\b{{register.user.password}}\b">
+                <input ng-model="register.user.cpwd" type="password" required md-no-asterisk name="Cfpassword" valid-password-c required ng-pattern="{{register.user.password}}">
                 <div layout-align="right" ng-messages="signupForm.Cfpassword.$error" class="error" role="alert">
                     <div ng-message-exp="required">Place is required </div>
                     <!-- <div class="msg-error" ng-show="signupForm.Cfpassword.$error.noMatch"> -->
