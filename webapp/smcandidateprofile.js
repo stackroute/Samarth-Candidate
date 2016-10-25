@@ -6,7 +6,6 @@ var myApp = angular.module("sm-candidateprofile", ['ngMaterial',
     'satellizer',
     'ngFlash',
     'samarth-webcomponents'
-
 ])
 .config(function($mdThemingProvider) {
     var customPrimary = {
