@@ -36,5 +36,8 @@ a {
 }
 
 #form1 .signin {
-    font-size: 18px;
+    font-size: 19px;
+}
+#form1 .create{
+    font-size: 17px;
 }

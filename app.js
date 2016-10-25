@@ -10,6 +10,8 @@ var bodyParser = require('body-parser');
 var authRoutes = require('./webserver/auth/authrouter');
 var authByToken = require('./webserver/auth/authbytoken');
 
+var resourcebundle = require('./webserver/resourcebundle/resourcebundlerouter.js');
+
 mongoose.connect('mongodb://localhost:27017/samarthplatformdb');
 
 //Express App created
@@ -53,6 +55,7 @@ function isUserAuthenticated(req, res, next) {
 }
 
 app.use('/', authRoutes);
+app.use("/resource", resourcebundle);
 
 app.use(function(req, res, next) {
     var err = new Error('Resource not found');

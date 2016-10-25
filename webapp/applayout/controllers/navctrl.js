@@ -28,7 +28,7 @@ angular.module("sm-candidateprofile")
 
             datagenerate.getjson("nav", "language").then(function(result) {
 
-                //console.log("result inside datagenerate", result[0]);
+                // console.log("result inside datagenerate", result);
                 $rootScope.language = {
                     English: result[0].English,
                     Hindi: result[0].Hindi,
@@ -62,6 +62,26 @@ angular.module("sm-candidateprofile")
             $rootScope.loggedinbackground = "loggedoutbackground"; // resetting the visibility of the content view backgound  in index.html
             $state.go('candidate.login'); // redirects to a mentioned state if successfull
         }; //logout ends
+
+
+        //loading the section of sign in page in different language
+
+        $scope.$parent.loadLangData = function(lang) {
+            console.log("-------in navCtrl", lang);
+            datagenerate.getjson("section", lang).then(function(result) {
+                if (result != "err") {
+                    $scope.$parent.resourceData = result;
+                } else {
+                    console.log("Language not yet supported");
+                }
+
+                // console.log("--------------------------????in navCtrl",$scope.resourceData);
+            });
+        }
+        $scope.loadLangData("English");
+
+
+
 
 
     }]);
