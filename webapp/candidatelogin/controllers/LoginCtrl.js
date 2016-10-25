@@ -1,5 +1,5 @@
 /* Login controller -> responsible for authentication and hhaving $state, $auth as dependencies*/
-angular.module('sm-candidateprofile').controller('LoginCtrl', ['$state', '$auth' , function($state, $auth) {
+angular.module('sm-candidateprofile').controller('LoginCtrl', ['$state', '$auth', 'Flash', function($state, $auth, Flash) {
 
     var vm = this;
     vm.user = {};
@@ -22,8 +22,9 @@ angular.module('sm-candidateprofile').controller('LoginCtrl', ['$state', '$auth'
             $state.go('candidate.dashboard'); // redirects to a mentioned state if successfull
 
         }).catch(function(response) {
-
-            window.alert('Error: Login failed'); // alert msg on error 
+            var message = 'Login Failed ! UserName or Password doesnot match .';
+            Flash.create('danger', message);
+            //window.alert('Error: Login failed'); // alert msg on error 
             //@Todo Logic to handle error
 
         }); // $auth.login ends

@@ -57,7 +57,7 @@ var Interceptor = (function() {
 
                 if (rejection.status === 401 || rejection.status === 403) {
                     $rootScope.$emit("member-unauthorized");
-                    console.log('signin failed from interceptor handler');
+                    //console.log('signin failed from interceptor handler');
                 }
 
                 return $q.reject(rejection);
