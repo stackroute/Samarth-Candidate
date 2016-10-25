@@ -9,7 +9,7 @@
  */
 
 angular.module("sm-candidateprofile")
-    .controller('navCtrl', ['$rootScope', '$scope', 'datagenerate', '$state', '$auth', function($rootScope, $scope, datagenerate, $state, $auth) {
+    .controller('navCtrl', ['Flash', '$rootScope', '$scope', 'datagenerate', '$state', '$auth', function(Flash, $rootScope, $scope, datagenerate, $state, $auth) {
 
         /* Global element signout exists in the root scope of the application and is used to control
         the visiblility of the signout button in the navbar */
@@ -72,6 +72,8 @@ angular.module("sm-candidateprofile")
                 if (result != "err") {
                     $scope.$parent.resourceData = result;
                 } else {
+                    var message = 'Sorry ! Language not yet supported';
+                    Flash.create('danger', message);
                     console.log("Language not yet supported");
                 }
 
