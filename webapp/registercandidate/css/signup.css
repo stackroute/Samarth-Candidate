@@ -1,12 +1,6 @@
-.signup {
-    width: 50%;
-    margin: 4em auto 4em;
-    padding: 2em 2em 3em;
-    background: #FFFFFF;
-}
-
 div {
     display: block;
+    vertical-align: middle
 }
 
 a:hover {
@@ -27,6 +21,9 @@ a {
     margin: 0 0 1em;
 }
 #form2 {
+    width: 80%;
+     margin: 4em auto 4em;
+    padding: 2em 2em 3em;
     background-color: white;
     border-radius: 5px;
     background-color: white;
