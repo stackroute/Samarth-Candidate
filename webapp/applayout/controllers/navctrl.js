@@ -74,15 +74,13 @@ angular.module("sm-candidateprofile")
                 if (result != "err") {
                     $scope.$parent.resourceData = result;
                 } else {
-<<<<<<< HEAD
-                   
 
                     $scope.loadLangData("English"); //handling the error and by default assigning the English language 
-=======
+
                     var message = 'Sorry ! Language not yet supported';
                     Flash.create('danger', message);
                     console.log("Language not yet supported");
->>>>>>> 33bbb9db7bf7a046fcc182dcd0cb74bfd8abacf4
+
                 }
 
                 
