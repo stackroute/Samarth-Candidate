@@ -1,5 +1,4 @@
-
-<div layout="row" layout-align="center center" flex >
+<div layout="row" layout-align="center center" flex>
     <form name="signinForm" id="form1" flex-gt-md="50">
         <div layout="row" layout-align="center center">
             <h3 class="md-title">Sign In</h3>
@@ -24,8 +23,7 @@
                 </div>
             </md-input-container>
         </div>
-        <!-- <div layout="row" layout-align="start center" ng-model="error" style="color:red">hello</div> -->
-         <flash-message duration="5000"></flash-message>
+        <flash-message duration="5000"></flash-message>
         <div layout="row" layout-align="center center" class="signin">
             <md-button type="submit" class="md-primary signin" style="background-color:#1E88E5;color:white" flex flex-gt-sm="40" ng-click="login.login()">Sign In</md-button>
         </div>
@@ -34,9 +32,8 @@
         </div>
     </form>
 </div>
-<div layout-align="center center" >
-    
-        <div layout="row" layout-align="center center" hide-gt-sm layout-wrap>
-                <md-button class="languagebar" ng-repeat="(key,val) in language" title="{{key}}">{{val[0]}}</md-button>
-        </div>
+<div layout-align="center center">
+    <div layout="row" layout-align="center center" hide-gt-sm layout-wrap>
+        <md-button class="languagebar" ng-repeat="(key,val) in language" title="{{key}}">{{val[0]}}</md-button>
+    </div>
 </div>
