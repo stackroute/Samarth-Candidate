@@ -13,21 +13,21 @@
     <link rel="stylesheet" type="text/css" href="candidatelogin/css/signin.css">
     <link rel="stylesheet" type="text/css" href="registercandidate/css/signup.css">
     <link type="text/css" rel="stylesheet" href="angular-flash-alert/dist/angular-flash.css" />
-
-    
+    <link rel="stylesheet" href="samarth-webcomponents/skillcard/css/skillcard.css">
+    <link rel="stylesheet" href="samarth-webcomponents/sectionprojectcard/css/sectionprojectcard.css">
 </head>
 
 <body ng-app="sm-candidateprofile" ng-cloak>
     <div layout="column" flex="grow" layout-fill>
         <!--template=applayout/template/navbar.html,controller=applayout/controllers/navctrl.js-->
         <div ui-view="navbar"></div>
-        <div flex="noshrink" flex="100" ng-class="loggedinbackground"> <!-- loggedinbackground root variable 
+        <div flex="noshrink" flex="100" ng-class="loggedinbackground">
+            <!-- loggedinbackground root variable 
             is declared in applayout / controllers/navctrl.js -->
-            
             <div layout="row">
                 <!--template=applayout/template/content.html-->
                 <div ui-view="content" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
-            </div> 
+            </div>
         </div>
         <!--template=applayout/template/footer.html-->
         <div ui-view="footer"></div>
@@ -52,6 +52,11 @@
 <script type="text/javascript" src="registercandidate/controllers/RegisterCtrl.js"></script>
 <script type="text/javascript" src="applayout/controllers/navctrl.js"></script>
 <script type="text/javascript" src="applayout/services/languagechange.js"></script>
+<!-- Inclusion of bower components -->
+<script src="samarth-webcomponents/samarth-webcomponents.js"></script>
+<script src="samarth-webcomponents/skillcard/skillcard.js"></script>
+<script src="samarth-webcomponents/skillcard/services/skillcardservice.js"></script>
+<script src="samarth-webcomponents/sectionprojectcard/sectionprojectcard.js"></script>
+<script src="samarth-webcomponents/sectionprojectcard/services/sectionprojectservice.js"></script>
 
 </html>
-

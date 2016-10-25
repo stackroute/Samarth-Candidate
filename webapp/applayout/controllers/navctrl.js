@@ -67,7 +67,6 @@ angular.module("sm-candidateprofile")
         //loading the section of sign in page in different language
 
         $scope.$parent.loadLangData = function(lang) {
-            console.log("-------in navCtrl", lang);
             datagenerate.getjson("section", lang).then(function(result) {
                 if (result != "err") {
                     $scope.$parent.resourceData = result;
