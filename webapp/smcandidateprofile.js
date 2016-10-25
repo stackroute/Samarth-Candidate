@@ -3,7 +3,8 @@ var myApp = angular.module("sm-candidateprofile", ['ngMaterial',
     'ngMessages',
     'ui.router',
     'LocalStorageModule',
-    'satellizer'
+    'satellizer',
+    'ngFlash'
 ])
 .config(function($mdThemingProvider) {
     var customPrimary = {

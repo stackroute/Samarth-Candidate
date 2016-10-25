@@ -1,5 +1,5 @@
 /* RegisterCtrl controller -> responsible for authentication and hhaving $state, $auth as dependencies*/
-angular.module('sm-candidateprofile').controller('RegisterCtrl', ['$state', '$auth', '$rootScope', '$mdToast', function($state, $auth, $rootScope, $mdToast) {
+angular.module('sm-candidateprofile').controller('RegisterCtrl', ['Flash' , '$state', '$auth', '$rootScope', '$mdToast', function(Flash,$state, $auth, $rootScope, $mdToast) {
     var vm = this;
     vm.user = {};
     /*Login() function which will be actually called in the associated view for 
@@ -33,8 +33,8 @@ angular.module('sm-candidateprofile').controller('RegisterCtrl', ['$state', '$au
 
         }).catch(function(response) {
 
-            window.alert('Error: Register failed'); // alert msg on error 
-            //@Todo Logic to handle error
+            var message = 'Some Error ! Please Try Again';
+            Flash.create('danger', message);
 
         }); // $auth.signup ends
     };
