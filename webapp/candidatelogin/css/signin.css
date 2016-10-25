@@ -12,8 +12,8 @@ a {
     color: black;
     font-size: 15px;
 }
-.languagebar
-{
+
+.languagebar {
     font-weight: bold;
 }
 
@@ -26,7 +26,7 @@ a {
 }
 
 #form1 {
-    width: 97%;
+    width: 80%;
     margin: 4em auto 1em;
     padding: 2em 2em 3em;
     background-color: white;
@@ -34,7 +34,10 @@ a {
     font-family: 'Raleway', sans-serif;
     border-radius: 5px;
 }
-#form1 .signin{
-    font-size: 18px;
-}
 
+#form1 .signin {
+    font-size: 19px;
+}
+#form1 .create{
+    font-size: 17px;
+}

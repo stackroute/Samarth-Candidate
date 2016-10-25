@@ -1,5 +1,5 @@
 <div layout="row" layout-align="center center" flex>
-    <form name="signinForm" id="form1" flex-gt-md="50">
+    <form name="signinForm" id="form1" flex flex-sm="66" flex-md="66" flex-gt-md="50">
         <div layout="row" layout-align="center center">
             <h3 class="md-title">{{resourceData.signin}}</h3>
         </div>
@@ -7,9 +7,10 @@
             <md-input-container class="md-icon-float" flex>
                 <label>{{resourceData.mobile}}</label>
                 <md-icon class="material-icons" style="font-size:30px">phone</md-icon>
-                <input type="tel" name="number" required md-no-asterisk ng-model="login.user.number">
+                <input type="tel" name="number" required minlength="10" maxlength="10" ng-pattern="/^[1-9]{1}[0-9]{9}$/" md-no-asterisk ng-model="login.user.number">
                 <div ng-messages="signinForm.number.$error">
-                    <div ng-message="required">Enter registered mobile number</div>
+                    <div ng-message="required">Mobile number is required</div>
+                    <div ng-message-exp="['minlength', 'maxlength', 'pattern']">########## - Please enter a valid phone number></div>
                 </div>
             </md-input-container>
         </div>
@@ -17,25 +18,26 @@
             <md-input-container class="md-icon-float" flex>
                 <label>{{resourceData.password}}</label>
                 <md-icon class="material-icons">lock</md-icon>
-                <input type="password" name="password" required md-no-asterisk ng-model="login.user.password">
+               <input type="password" name="password" required md-no-asterisk ng-model="login.user.password">
                 <div ng-messages="signinForm.password.$error">
                     <div ng-message="required">Password is required.</div>
                 </div>
             </md-input-container>
         </div>
         <flash-message duration="5000"></flash-message>
-        <div layout="row" layout-align="center center" class="signin">
-            <md-button type="submit" class="md-primary signin" style="background-color:#1E88E5;color:white" flex flex-gt-sm="40" ng-click="login.login()">{{resourceData.signin}}</md-button>
+        <div layout="row" layout-align="start center" ng-model="error" style="color:red"></div>
+        <div layout="row" layout-align="center center">
+            <div layout="row" layout-align="center center" flex flex-gt-sm="40">
+                <md-button type="submit" ng-disabled="signinForm.$invalid" class="md-raised md-primary signin" ng-click="login.login()">{{resourceData.signin}}</md-button>
+            </div>
         </div>
-        <div layout="row" layout-align="center">
-            <a flex style="text-align:center" ui-sref="candidate.register">{{resourceData.create}}</a>
+        <div layout="row" layout-align="center" flex>
+            <a style="text-align:center" ui-sref="candidate.register" class="create">{{resourceData.create}}</a>
         </div>
     </form>
 </div>
-<div layout-align="center center">
-
-    
-        <div layout="row" layout-align="center center" hide-gt-sm layout-wrap>
-                <md-button class="languagebar" ng-repeat="(key,val) in language" title="{{key}}" ng-click="loadLangData(key)">{{val[0]}}</md-button>
-        </div>
+<div layout-align="center center" hide-gt-sm>
+    <div layout="row" layout-align="center center" flex layout-wrap>
+        <md-button class="languagebar" ng-repeat="(key,val) in language" title="{{key}}" ng-click="loadLangData(key)">{{val[0]}}</md-button>
+    </div>
 </div>

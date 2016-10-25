@@ -1,5 +1,5 @@
-<div layout-align="center center" class="signup" >
-    <form name="signupForm" id="form2">
+<div layout="row" layout-align="center center" flex>
+    <form name="signupForm" id="form2" flex flex-sm="66" flex-md="66" flex-gt-md="50">
         <div layout="row" layout-align="center center">
             <h3 md-title>{{resourceData.signup}}</h3>
         </div>
@@ -59,18 +59,21 @@
                 <md-icon class="material-icons">lock</md-icon>
                 <input ng-model="register.user.cpwd" type="password" required md-no-asterisk name="Cfpassword" valid-password-c required>
                 <div layout-align="right" ng-messages="signupForm.Cfpassword.$error" class="error" role="alert">
-                    <div ng-message-exp="required">This is required </div>
-                    <div class="msg-error" ng-show="signupForm.Cfpassword.$error.noMatch">
-                        passwords do not match</div>
+                    <div ng-message-exp="required">Place is required </div>
+                    <!-- <div class="msg-error" ng-show="signupForm.Cfpassword.$error.noMatch"> -->
+                    <div ng-show="register.user.password !== register.user.cpwd">
+                        Passwords do not match</div>
                 </div>
             </md-input-container>
         </div>
         <flash-message duration="6000"></flash-message>
         <div layout="row" layout-align="center center">
-            <md-button type="submit" class="md-primary createAccount" style="background-color:#1E88E5;color:white" ng-click="register.register()" flex flex-gt-sm="40">
-                {{resourceData.create}}
-            </md-button>
-        </div> 
+            <div layout="row" layout-align="center center" layout-wrap flex flex-gt-sm="40">
+                <md-button type="submit" ng-disabled="signupForm.$invalid" class="md-raised md-primary createAccount" ng-click="register.register()">
+                  {{resourceData.create}}
+                </md-button>
+            </div>
+        </div>
         <div class="clearfix"> </div>
         <div layout="row" layout-align="center center">
             <a flex style="text-align:center" ui-sref="candidate.login">{{resourceData.havesign}}</a>
