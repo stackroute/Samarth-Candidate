@@ -65,20 +65,28 @@ angular.module("sm-candidateprofile")
 
 
         //loading the section of sign in page in different language
-
+        //the function loadLangData() is called from the different language button that display in the navbar 
+        //loadLangData() is declared as $parent to make it available in child controller
         $scope.$parent.loadLangData = function(lang) {
+            //datagenerate is a service that call the API to get the json data
+            //datagenerate defined in -->> applayout/services/languagechange.js
             datagenerate.getjson("section", lang).then(function(result) {
                 if (result != "err") {
                     $scope.$parent.resourceData = result;
                 } else {
+
+                    $scope.loadLangData("English"); //handling the error and by default assigning the English language 
+
                     var message = 'Sorry ! Language not yet supported';
                     Flash.create('danger', message);
                     console.log("Language not yet supported");
+
                 }
 
-                // console.log("--------------------------????in navCtrl",$scope.resourceData);
+                
             });
         }
+        //on loading navctrl, calling loadLangData() function with default English language
         $scope.loadLangData("English");
 
 

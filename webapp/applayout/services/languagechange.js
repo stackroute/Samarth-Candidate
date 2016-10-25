@@ -8,7 +8,6 @@ angular.module('sm-candidateprofile')
              */
             getjson: function(key, lang) {  
 
-                //console.log("key -----------> " + key + "    lang ----->" + lang);
                 var data = {};
                 return $http({
                     method: 'GET',
@@ -17,7 +16,6 @@ angular.module('sm-candidateprofile')
 
                 }).then(function mySucces(response) {
                     data = response.data;
-                   // console.log(data);
                     return data;
 
                 }, function errorCallback(response) {
