@@ -7,6 +7,44 @@ router.get("/navlanguage", function(req, res) {
 		
 });
 
+//navbar data showing in English
+router.get("/navEnglish", function(req, res) {
+	
+	console.log(obj.navEnglish);
+	res.status(200).json(obj.navEnglish);	
+
+});
+//navbar data showing in hindi
+
+router.get("/navHindi", function(req, res) {
+
+	console.log(obj.navHindi);
+	res.status(200).json(obj.navHindi);	
+
+});
+
+//navbar data showing in Telugu
+router.get("/navTelugu", function(req, res) {
+	
+	console.log(obj.navTelugu);
+	res.status(200).json(obj.navTelugu);	
+
+});
+//navbar data showing in Punjabi
+router.get("/navPunjabi", function(req, res) {
+	
+	console.log(obj.navEnglish);
+	res.status(200).json(obj.navPunjabi);	
+
+});
+//navbar data showing in Bengali
+router.get("/navBengali", function(req, res) {
+
+	console.log(obj.navEnglish);
+	res.status(200).json(obj.navBengali);	
+
+});
+
 //section data showing in English
 router.get("/sectionEnglish", function(req, res) {
 	
@@ -44,4 +82,6 @@ router.get("/sectionTamil", function(req, res) {
 	res.status(200).json(obj.sectionTamil);	
 
 });
+
+
 module.exports = router;

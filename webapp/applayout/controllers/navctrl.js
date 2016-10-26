@@ -68,29 +68,33 @@ angular.module("sm-candidateprofile")
         //the function loadLangData() is called from the different language button that display in the navbar 
         //loadLangData() is declared as $parent to make it available in child controller
         $scope.$parent.loadLangData = function(lang) {
-            //datagenerate is a service that call the API to get the json data
-            //datagenerate defined in -->> applayout/services/languagechange.js
-            datagenerate.getjson("section", lang).then(function(result) {
-                if (result != "err") {
-                    $scope.$parent.resourceData = result;
-                } else {
+                //datagenerate is a service that call the API to get the json data
+                //datagenerate defined in -->> applayout/services/languagechange.js
+                datagenerate.getjson("section", lang).then(function(result) {
+                    if (result != "err") {
+                        $scope.$parent.resourceData = result;
+                        
+                    } else {
 
-                    $scope.loadLangData("English"); //handling the error and by default assigning the English language 
+                        $scope.loadLangData("English"); //handling the error and by default assigning the English language 
 
-                    var message = 'Sorry ! Language not yet supported';
-                    Flash.create('danger', message);
-                    console.log("Language not yet supported");
+                        var message = 'Sorry ! Language not yet supported';
+                        Flash.create('danger', message);
+                        console.log("Language not yet supported");
 
-                }
+                    }
 
-                
+
+                });
+                  datagenerate.getjson("nav", lang).then(function(result) {
+
+                $scope.title = result.header;
+                console.log("--------"+$scope.title);
+
+
             });
-        }
-        //on loading navctrl, calling loadLangData() function with default English language
+            }
+            //on loading navctrl, calling loadLangData() function with default English language
         $scope.loadLangData("English");
-
-
-
-
 
     }]);

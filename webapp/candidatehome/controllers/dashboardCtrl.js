@@ -31,4 +31,5 @@ angular.module('sm-candidateprofile').controller('DashboardCtrl', ['$state', '$a
 
     /*=====  End of Section comment block  ======*/
 
+
 }]);
