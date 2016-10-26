@@ -28,25 +28,12 @@ angular.module("sm-candidateprofile")
 
             datagenerate.getjson("nav", "language").then(function(result) {
 
-                // console.log("result inside datagenerate", result);
-                $rootScope.language = {
-                    English: result[0].English,
-                    Hindi: result[0].Hindi,
-                    Punjabi: result[0].Punjabi,
-                    Bengali: result[0].Bengali,
-                    Tamil: result[0].Tamil,
-                    Telugu: result[0].Telugu,
-                    Kannada: result[0].Kannada,
-                    Gujarati: result[0].Gujarati,
-                    Marathi: result[0].Marathi,
-                    Urdu: result[0].Urdu,
-                    Sindhi: result[0].Sindhi,
-                    Malayalam: result[0].Malayalam
+                $rootScope.language = {};
 
 
+                for (key in result[0]) {
+                    $rootScope.language[key] = result[0][key];
                 };
-
-
             }); //end datagenerate
         };
 
@@ -73,7 +60,7 @@ angular.module("sm-candidateprofile")
                 datagenerate.getjson("section", lang).then(function(result) {
                     if (result != "err") {
                         $scope.$parent.resourceData = result;
-                        
+
                     } else {
 
                         $scope.loadLangData("English"); //handling the error and by default assigning the English language 
@@ -86,13 +73,12 @@ angular.module("sm-candidateprofile")
 
 
                 });
-                  datagenerate.getjson("nav", lang).then(function(result) {
+                datagenerate.getjson("nav", lang).then(function(result) {
 
-                $scope.title = result.header;
-                console.log("--------"+$scope.title);
+                    $scope.title = result.header;
 
 
-            });
+                });
             }
             //on loading navctrl, calling loadLangData() function with default English language
         $scope.loadLangData("English");

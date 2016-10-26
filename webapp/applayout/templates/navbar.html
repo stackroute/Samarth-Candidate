@@ -12,7 +12,9 @@
                 </div>
             </div>
             <div layout="row" layout-align="center center" hide-sm hide-xs layout-wrap>
-            <div ng-repeat="(key,val) in language"><md-button class="languagebar" title="{{key}}" ng-click="loadLangData(key)">{{val}}</md-button></div>
+            <div ng-repeat="(key,val) in language">
+            <md-button class="languagebar" title="{{key}}" ng-click="loadLangData(key)">{{val}}</md-button>
+            </div>
     
              </div>
              
