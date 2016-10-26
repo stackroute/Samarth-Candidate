@@ -73,26 +73,26 @@ angular.module("sm-candidateprofile")
                 datagenerate.getjson("section", lang).then(function(result) {
                     if (result != "err") {
                         $scope.$parent.resourceData = result;
-                        
+
                     } else {
 
                         $scope.loadLangData("English"); //handling the error and by default assigning the English language 
 
+                        /* After loading default lang English flash message is displayed that language is not supported */
+
                         var message = 'Sorry ! Language not yet supported';
                         Flash.create('danger', message);
-                        console.log("Language not yet supported");
-
                     }
 
 
                 });
-                  datagenerate.getjson("nav", lang).then(function(result) {
 
-                $scope.title = result.header;
-                console.log("--------"+$scope.title);
+                datagenerate.getjson("nav", lang).then(function(result) {
+
+                    $scope.title = result.header;
 
 
-            });
+                });
             }
             //on loading navctrl, calling loadLangData() function with default English language
         $scope.loadLangData("English");
