@@ -5,7 +5,7 @@ angular.module("sm-candidateprofile")
             var skipIfLoggedIn = ['$q', '$auth', '$location', function($q, $auth, $location) {
                 var deferred = $q.defer();
                 if ($auth.isAuthenticated()) {
-                    console.log('from inside helper');
+                    //console.log('from inside helper');
                     $location.path('/home/dashboard');
                 } else {
                     deferred.resolve();
