@@ -64,13 +64,15 @@ angular.module("sm-candidateprofile")
                     } else {
 
                         $scope.loadLangData("English"); //handling the error and by default assigning the English language 
+
+                        /* After loading default lang English flash message is displayed that language is not supported */
                         var message = 'Sorry ! Language not yet supported';
                         Flash.create('danger', message);
-                        console.log("Language not yet supported");
-
                     }
                 });
+
                 //for getting the header or title of project i.e "SAMARTH" in different languages 
+
                 datagenerate.getjson("nav", lang).then(function(result) {
 
                     $scope.title = result.header;
