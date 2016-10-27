@@ -60,6 +60,7 @@ angular.module("sm-candidateprofile")
                 datagenerate.getjson("section", lang).then(function(result) {
                     if (result != "err") {
                         $scope.$parent.resourceData = result;
+                        console.log($scope.resourceData);
 
                     } else {
 
