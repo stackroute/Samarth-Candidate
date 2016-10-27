@@ -26,7 +26,6 @@ module.exports = function(config) {
             'bower_components/angular-flash-alert/dist/angular-flash.min.js',
             'bower_components/angular-local-storage/dist/angular-local-storage.js',
             'bower_components/satellizer/dist/satellizer.js',
-            /*'webapp/smcandidateprofile.js',*/
             'webapp/*.js',
             'webapp/**/*.js',
             'test/**/*.js'
