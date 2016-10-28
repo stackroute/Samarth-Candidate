@@ -21,6 +21,37 @@ var platformProxy = proxy.createProxyServer();
 //Express App created
 var app = express();
 
+
+
+/*============================================
+=            proxy implementation            =
+============================================*/
+
+//The below app route config should be placed after all the local resources have ended 
+app.use("/proxy",function(req, res) {
+    var options = {
+        target: {
+            host: 'localhost',
+            port: 8081
+        }
+    };
+    console.log('proxying')
+    platformProxy.web(req, res, options);
+});
+
+platformProxy.on('error', function(err, req, res) {
+    console.log("Error in proxy pass: ", err);
+});
+
+/*platformProxy.on('proxyReq', function(proxyReq, req, res, options) {
+    proxyReq.setHeader('customer-header', 'custom-header-value');
+});*/
+
+/*=====  End of proxy implementation  ======*/
+
+
+
+
 app.onAppStart = function(addr) {
     console.log("Samarth-Candidateprofile web app is now Running on port:", addr.port);
 }
@@ -61,30 +92,7 @@ function isUserAuthenticated(req, res, next) {
 app.use('/', authRoutes);
 app.use("/resource", resourcebundle);
 
-/*============================================
-=            proxy implementation            =
-============================================*/
 
-//The below app route config should be placed after all the local resources have ended 
-app.use(function(req, res) {
-    var options = {
-        target: {
-            host: 'localhost',
-            port: 8081
-        }
-    };
-    platformProxy.web(req, res, options);
-});
-
-platformProxy.on('error', function(err, req, res) {
-    console.log("Error in proxy pass: ", err);
-});
-
-platformProxy.on('proxyReq', function(proxyReq, req, res, options) {
-    proxyReq.setHeader('customer-header', 'custom-header-value');
-});
-
-/*=====  End of proxy implementation  ======*/
 
 
 app.use(function(req, res, next) {
