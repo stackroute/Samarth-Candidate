@@ -2,8 +2,9 @@ version: '2'
 services:
   webapp:
     image: samarth/samarth-webapp:v0.1.0
-    build:
+    build: 
       context: ./
+        # context: https://github.com/stackroute/Samarth-Candidate.git#intgbranch_wave10
       dockerfile: Dockerfile
     network_mode: host
     restart: always
@@ -11,14 +12,23 @@ services:
       - 8080
     ports:
       - "80:8080"
-  samarth:
+  platform:
     image: samarth/samarth-platform:v0.1.0
-    build:
-      context: ./
-      dockerfile: 
+    build: 
+      context: ../Samarth-Platform
+       # context: https://github.com/stackroute/Samarth-Platform.git#intgbranch_wave10
+      dockerfile: Dockerfile
     network_mode: host
     restart: always
     expose:
-      -8081
+      - 8081
     ports:
       - "80:8081"
+  # webcomponents:
+  #   image: samarth/samarth-webcomponents:v0.1.0
+  #   build:
+  #     context: ../samarth-webcomponents
+  #     dockerfile: Dockerfile
+  #   network_mode: host
+  #   restart: always
+
