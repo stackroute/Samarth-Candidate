@@ -16,58 +16,6 @@
      "Malayalam":"മലയാളം"
    }],
 
-    "labelnavEnglish":[{
-
-        "Skills":"Skills",
-        "Projects": "Projects",
-        "workexperience": "Work Experience",
-        "Education": "Education",
-        "Personalinfo": "Personal info"
-
-
-    }],
-
-    "labelnavHindi":[{
-
-
-        "Skills":"कौशल",
-        "Projects": "परियोजनाएं",
-        "workexperience": "काम का अनुभव",
-        "Education": "शिक्षा",
-        "Personalinfo": "व्यक्तिगत जानकारी"
-
-    }],
-    "labelnavPunjabi":[{
-
-
-        "Skills":"ਹੁਨਰ",
-        "Projects": "ਪ੍ਰੋਜੈਕਟ",
-        "workexperience": "ਕੰਮ ਦਾ ਅਨੁਭਵ",
-        "Education": "ਸਿੱਖਿਆ",
-        "Personalinfo": "ਨਿੱਜੀ ਜਾਣਕਾਰੀ"
-
-    }],
-    "labelnavBengali":[{
-
-
-        "Skills":"দক্ষতা",
-        "Projects": "প্রকল্প",
-        "workexperience": "কর্মদক্ষতা",
-        "Education": "শিক্ষা",
-        "Personalinfo": "ব্যক্তিগত তথ্য"
-
-    }],
-"labelnavTelugu":[{
-
-
-        "Skills":"నైపుణ్యాలు",
-        "Projects": "ప్రాజెక్ట్స్",
-        "workexperience": "పని అనుభవం",
-        "Education": "చదువు",
-        "Personalinfo": "వ్యక్తిగత సమాచారం"
-
-    }],
-
     "navEnglish": {
         "header": "Samarth"
     },
@@ -143,7 +91,12 @@
         "searchjob": "Search Job",
         "create": "Create new account",
         "forgetP": "Forgot Password ?",
-        "havesign": "Have a account? Sign in"
+        "havesign": "Have a account? Sign in",
+        "Skills":"Skills",
+        "Projects": "Projects",
+        "workexperience": "Work Experience",
+        "Education": "Education",
+        "Personalinfo": "Personal info"
     },
     "sectionHindi": {
         "skillheader": "कौशल",
@@ -172,7 +125,12 @@
         "searchjob": "नौकरी खोजे",
         "create": "नया खाता बनाएँ",
         "forgetP": "पासवर्ड भूल गए ?",
-        "havesign": "खाता है ? साइन इन करें"
+        "havesign": "खाता है ? साइन इन करें",
+        "Skills":"कौशल",
+        "Projects": "परियोजनाएं",
+        "workexperience": "काम का अनुभव",
+        "Education": "शिक्षा",
+        "Personalinfo": "व्यक्तिगत जानकारी"
     },
 
     "sectionTelugu": {
@@ -202,7 +160,12 @@
         "searchjob": "శోధన ఉద్యోగం",
         "create": "క్రొత్త ఖాతా తెరువుము",
         "forgetP": "పాస్వర్డ్ మరిచిపోయారా ?",
-        "havesign": "ఒక ఖాతా ఉందా? సైన్ ఇన్"
+        "havesign": "ఒక ఖాతా ఉందా? సైన్ ఇన్",
+        "Skills":"నైపుణ్యాలు",
+        "Projects": "ప్రాజెక్ట్స్",
+        "workexperience": "పని అనుభవం",
+        "Education": "చదువు",
+        "Personalinfo": "వ్యక్తిగత సమాచారం"
     },
 
      "sectionPunjabi": {
@@ -232,7 +195,12 @@
         "searchjob": "ਖੋਜ ਨੌਕਰੀ",
         "create": "ਨਵ ਖਾਤਾ ਬਣਾਉਣ",
         "forgetP": "ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ ?",
-        "havesign": "ਨੂੰ ਇੱਕ ਖਾਤਾ ਹੈ ? ਦਾਖ਼ਲਾ ਵਿਚ "
+        "havesign": "ਨੂੰ ਇੱਕ ਖਾਤਾ ਹੈ ? ਦਾਖ਼ਲਾ ਵਿਚ ",
+        "Skills":"ਹੁਨਰ",
+        "Projects": "ਪ੍ਰੋਜੈਕਟ",
+        "workexperience": "ਕੰਮ ਦਾ ਅਨੁਭਵ",
+        "Education": "ਸਿੱਖਿਆ",
+        "Personalinfo": "ਨਿੱਜੀ ਜਾਣਕਾਰੀ"
     },
      "sectionBengali": {
         "skillheader": "দক্ষতা",
@@ -261,7 +229,12 @@
         "searchjob": "চাকরি খোঁজা",
         "create": "নতুন অ্যাকাউন্ট তৈরি",
         "forgetP": "পাসওয়ার্ড ভুলে গেছেন?",
-        "havesign": "একটি অ্যাকাউন্ট আছে? প্রবেশ করুন"
+        "havesign": "একটি অ্যাকাউন্ট আছে? প্রবেশ করুন",
+        "Skills":"দক্ষতা",
+        "Projects": "প্রকল্প",
+        "workexperience": "কর্মদক্ষতা",
+        "Education": "শিক্ষা",
+        "Personalinfo": "ব্যক্তিগত তথ্য"
     },
     "sectionTamil": {
         "skillheader": "திறன்கள்",
