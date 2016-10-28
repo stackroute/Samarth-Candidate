@@ -1,6 +1,3 @@
-
-
-
 FROM mhart/alpine-node
  
 RUN apk add --update git
@@ -10,13 +7,19 @@ RUN mkdir -p /usr/src/app && echo "Samarth Webapp"
 
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app/
+COPY . .
+
+#COPY package.json /usr/src/app/
 RUN npm install
 
-COPY bower.json /usr/src/app/
+#COPY bower.json /usr/src/app/
 RUN npm install bower -g && bower install --allow-root
 
-COPY . /usr/src/app/
+#COPY . .
+
+#ADD https://github.com/stackroute/Samarth-WebComponents.git#intgbranch_wave10 /usr/src/app/
+
+#ADD https://github.com/stackroute/Samarth-WebComponents/tree/intgbranch_wave10 /usr/src/app/
 
 EXPOSE 8080
 

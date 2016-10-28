@@ -9,7 +9,7 @@
  */
 
 angular.module("sm-candidateprofile")
-    .controller('navCtrl', ['Flash', '$rootScope', '$scope', 'datagenerate', '$state', '$auth', function(Flash, $rootScope, $scope, datagenerate, $state, $auth) {
+    .controller('navCtrl', ['Flash', '$rootScope', '$scope', 'datagenerate', '$state', '$auth', '$timeout', '$mdSidenav',  function(Flash, $rootScope, $scope, datagenerate, $state, $auth, $timeout, $mdSidenav) {
 
         /* Global element signout exists in the root scope of the application and is used to control
         the visiblility of the signout button in the navbar */
@@ -81,5 +81,18 @@ angular.module("sm-candidateprofile")
             }
             //on loading navctrl, calling loadLangData() function with default English language
         $scope.loadLangData("English");
+
+
+        $scope.toggleLeft = buildToggler('left');
+        $scope.toggleRight = buildToggler('right');
+
+        function buildToggler(componentId) {
+          return function() {
+            $mdSidenav(componentId).toggle();
+          }
+        }
+  
+
+
 
     }]);
