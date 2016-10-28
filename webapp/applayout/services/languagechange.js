@@ -4,7 +4,7 @@ angular.module('sm-candidateprofile')
         return {
             //getjson is a function which fetch the data from the api
             /**
-             this is the link of API "http://localhost:8081/resource/"
+             this is the link of API "http://localhost:8080/resource/"
              */
             getjson: function(key, lang) {  
 

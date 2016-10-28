@@ -1,6 +1,6 @@
 var request = require('request');
 
-var platformURL = "localhost:8081"; //@TODO take this from config
+var platformURL = "localhost:8080"; //@TODO take this from config
 
 var registerCandidate = function(candidateObj) {
     return new Promise(function(resolve, reject) {
