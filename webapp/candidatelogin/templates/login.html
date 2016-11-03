@@ -1,4 +1,4 @@
-<div layout="row" layout-align="center center" flex>
+<div layout="row" layout-align="center center">
     <form name="signinForm" id="form1" flex flex-sm="66" flex-md="66" flex-gt-md="50">
         <div layout="row" layout-align="center center">
             <h3 class="md-title">{{resourceData.signin}}</h3>
@@ -36,7 +36,7 @@
         </div>
     </form>
 </div>
-<div layout-align="center center" hide-gt-sm>
+<div layout-align="center center" hide-gt-sm >
     <div layout="row" layout-align="center center" flex layout-wrap>
         <md-button class="languagebar" ng-repeat="(key,val) in language" title="{{key}}" ng-click="loadLangData(key)">{{val[0]}}</md-button>
     </div>

@@ -72,10 +72,14 @@
                 
 
             </div>
-            <md-divider></md-divider>
-            <div layout="row" layout-align="center center" hide-sm hide-xs layout-wrap>
+
+            
+            <div layout="row" layout-align="center center" hide-sm hide-xs layout-wrap flex style="background-color:rgb(93, 45, 45)">
+
                 <div ng-repeat="(key,val) in language">
+
                     <md-button class="languagebar" title="{{key}}" ng-click="loadLangData(key)">{{val}}</md-button>
+                    
                 </div>
             </div>
         </md-toolbar>
