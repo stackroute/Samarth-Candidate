@@ -1,17 +1,17 @@
 <div>
-<section layout="row" >
 
     <md-sidenav class="md-sidenav-left" md-component-id="left"
-                md-disable-backdrop md-whiteframe="4">
+                 md-whiteframe="4">
 
       <md-toolbar class="md-theme-indigo">
-        <h1 class="md-toolbar-tools">Samarth</h1>
+        <h1 class="md-toolbar-tools">{{title}}</h1>
       </md-toolbar>
 
       <md-content layout-margin>
         <p>
           This sidenav is not showing .
         </p>
+
         <md-button ng-click="toggleLeft()"  md-no-ink class="md-primary">
           Close 
         </md-button>
@@ -19,56 +19,25 @@
 
     </md-sidenav>
 
-        <!-- <div>
-          <md-button ng-click="toggleLeft()" class="md-icon-button md-raised">
-            <md-icon>reorder</md-icon>
-          </md-button>
-        </div> -->
-  </section>
-</div>
-
-<div>
     <md-content>
         <md-toolbar flex>
-            <div class="md-toolbar-tools" layout="row" layout-align="start center">
-
-        
-                    <section layout="row" >
-
-                       <!--  <md-sidenav class="md-sidenav-left" md-component-id="left"
-                                    md-disable-backdrop md-whiteframe="4">
-
-                          <md-toolbar class="md-theme-indigo">
-                            <h1 class="md-toolbar-tools">Samarth</h1>
-                          </md-toolbar>
-
-                          <md-content layout-margin>
-                            <p>
-                              This sidenav is not showing .
-                            </p>
-                            <md-button ng-click="toggleLeft()"  md-no-ink class="md-primary">
-                              Close 
-                            </md-button>
-                          </md-content>
-
-                        </md-sidenav> -->
-
-                            <div>
-                              <md-button ng-click="toggleLeft()" class="md-icon-button md-raised">
-                                <md-icon>reorder</md-icon>
-                              </md-button>
-                            </div>
-                      </section>
+            <div class="md-toolbar-tools" layout="row" layout-align="start center">     
+                <section layout="row" >
+                    <div>
+                      <md-button ng-click="toggleLeft()" ng-show="sideNavLogo" class="md-icon-button md-raised">
+                        <md-icon>reorder</md-icon>
+                      </md-button>
+                    </div>
+                </section>
                
-     
-                    <div layout="row" layout-align="start center" flex>
-                        <h2>
-                            <span class="samarth">{{title}}</span>
-                        </h2>
-                    </div>
-                    <div layout="row" layout-align="end center" flex>
-                        <md-button ng-click="logout()" ng-show="signout">Signout</md-button>
-                    </div>
+                <div layout="row" layout-align="start center" flex>
+                    <h2>
+                        <span class="samarth">{{title}}</span>
+                    </h2>
+                </div>
+                <div layout="row" layout-align="end center" flex>
+                    <md-button ng-click="logout()" ng-show="signout">Signout</md-button>
+                </div>
                 
 
             </div>
@@ -83,10 +52,6 @@
                 </div>
             </div>
         </md-toolbar>
+
     </md-content>
-
-
-
-
-
 </div>

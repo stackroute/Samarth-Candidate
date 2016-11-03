@@ -14,6 +14,7 @@ angular.module("sm-candidateprofile")
         /* Global element signout exists in the root scope of the application and is used to control
         the visiblility of the signout button in the navbar */
         $rootScope.signout = false;
+        $scope.sideNavLogo = true;
 
         /* loggedinbackground is defined in rootscope and sets the classname for the content ui-view declared
         in index.html dynamically .
@@ -45,6 +46,7 @@ angular.module("sm-candidateprofile")
             /*$auth.logout() is a predefined function provided by satellizer for destroying session or 
             deleting JWT of the user. */
             $auth.logout();
+            $scope.sideNavLogo = false;
             $rootScope.signout = false; // resetting the visibility of the flag to hide signout button on logout
             $rootScope.loggedinbackground = "loggedoutbackground"; // resetting the visibility of the content view backgound  in index.html
             $state.go('candidate.login'); // redirects to a mentioned state if successfull
@@ -91,8 +93,4 @@ angular.module("sm-candidateprofile")
             $mdSidenav(componentId).toggle();
           }
         }
-  
-
-
-
     }]);
