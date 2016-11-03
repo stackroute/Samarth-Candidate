@@ -44,7 +44,11 @@ router.get("/navTamil", function(req, res) {
 	res.status(200).json(obj.navTamil);	
 
 });
+router.get("/navMarathi", function(req, res) {
 
+	res.status(200).json(obj.navMarathi);	
+
+});
 //section data showing in English
 router.get("/sectionEnglish", function(req, res) {
 	
@@ -82,6 +86,10 @@ router.get("/sectionTamil", function(req, res) {
 	res.status(200).json(obj.sectionTamil);	
 
 });
+router.get("/sectionMarathi", function(req, res) {
+	
+	res.status(200).json(obj.sectionMarathi);	
 
+});
 
 module.exports = router;
