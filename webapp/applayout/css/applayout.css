@@ -7,6 +7,17 @@
      width: 100%;
  }
  
+ .label
+ {
+     font-size: 1.5em;
+     display: block;
+   
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+ }
+ 
  .languagebar {
      font-weight: bold;
  }

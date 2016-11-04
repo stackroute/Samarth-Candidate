@@ -1,51 +1,14 @@
-<div class="container" >
+<div class="container">
     <div class="coverbackground">
         <my-skillcard candidateid="uname" showheader="false">
             <cardactions></cardactions>
             <badges></badges>
         </my-skillcard>
     </div>
-
     <div layout="column">
         <div layout="row">
             <div flex="15" flex-offset="10" hide-xs hide-sm>
-                <h2>{{resourceData.Skills}}</h2>
-            </div>
-            <div flex="60" flex-xs="100" flex-sm="100">
-                <mysection-skill-card candidateid="uname" showheader="true" languagedata="resourceData">
-                    <verify></verify>
-                </mysection-skill-card>
-            </div>
-        </div>
-    </div>
-    <div layout="column">
-        <div layout="row">
-            <div flex="15" flex-offset="10" hide-xs hide-sm>
-                <h2>{{resourceData.Education}}</h2>
-            </div>
-            <div flex="60" flex-xs="100" flex-sm="100">
-                <my-educationcard candidateid="uname" showheader="true" languagedata="resourceData">
-                    <verify></verify>
-                </my-educationcard>
-            </div>
-        </div>
-    </div>
-    <div layout="column">
-        <div layout="row">
-            <div flex="15" flex-offset="10" hide-xs hide-sm>
-                <h2>{{resourceData.Projects}}</h2>
-            </div>
-            <div flex="60" flex-xs="100" flex-sm="100">
-                <my-projectsectioncard candidateid="uname" showheader="true" test="resourceData" languagedata="resourceData">
-                    <verify></verify>
-                </my-projectsectioncard>
-            </div>
-        </div>
-    </div>
-    <div layout="column">
-        <div layout="row">
-            <div flex="15" flex-offset="10" hide-xs hide-sm>
-                <h2>{{resourceData.Personalinfo}}</h2>
+                <span class="label">{{resourceData.Personalinfo}}</span >
             </div>
             <div flex="60" flex-xs="100" flex-sm="100">
                 <my-personalinfocard candidateid="uname" showheader="true" languagedata="resourceData">
@@ -54,10 +17,24 @@
             </div>
         </div>
     </div>
+
     <div layout="column">
         <div layout="row">
             <div flex="15" flex-offset="10" hide-xs hide-sm>
-                <h2>{{resourceData.workexperience}}</h2>
+                <span class="label">{{resourceData.Education}}</span >
+            </div>
+            <div flex="60" flex-xs="100" flex-sm="100">
+                <my-educationcard candidateid="uname" showheader="true" languagedata="resourceData">
+                    <verify></verify>
+                </my-educationcard>
+            </div>
+        </div>
+    </div>
+
+     <div layout="column">
+        <div layout="row">
+            <div flex="15" flex-offset="10" hide-xs hide-sm>
+                <span class="label">{{resourceData.workexperience}}</span >
             </div>
             <div flex="60" flex-xs="100" flex-sm="100">
                 <my-workexperiencecard candidateid="uname" showheader="true" languagedata="resourceData">
@@ -67,3 +44,29 @@
         </div>
     </div>
 </div>
+
+<div layout="column">
+        <div layout="row">
+            <div flex="15" flex-offset="10" hide-xs hide-sm>
+                <span class="label">{{resourceData.Projects}}</span >
+            </div>
+            <div flex="60" flex-xs="100" flex-sm="100">
+                <my-projectsectioncard candidateid="uname" showheader="true" test="resourceData" languagedata="resourceData">
+                    <verify></verify>
+                </my-projectsectioncard>
+            </div>
+        </div>
+    </div>
+
+    <div layout="column">
+        <div layout="row">
+            <div flex="15" flex-offset="10" hide-xs hide-sm>
+                <span class="label">{{resourceData.Skills}}</span>
+            </div>
+            <div flex="60" flex-xs="100" flex-sm="100">
+                <mysection-skill-card candidateid="uname" showheader="true" languagedata="resourceData">
+                    <verify></verify>
+                </mysection-skill-card>
+            </div>
+        </div>
+    </div>
