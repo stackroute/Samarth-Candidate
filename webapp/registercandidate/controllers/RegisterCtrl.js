@@ -1,5 +1,5 @@
 /* RegisterCtrl controller -> responsible for authentication and hhaving $state, $auth as dependencies*/
-angular.module('sm-candidateprofile').controller('RegisterCtrl', ['Flash' , '$state', '$auth', '$rootScope', '$mdToast', function(Flash,$state, $auth, $rootScope, $mdToast) {
+angular.module('sm-candidateprofile').controller('RegisterCtrl', ['Flash', '$state', '$auth', '$rootScope', '$mdToast', function(Flash, $state, $auth, $rootScope, $mdToast) {
     var vm = this;
     vm.user = {};
     /*Login() function which will be actually called in the associated view for 
@@ -22,12 +22,9 @@ angular.module('sm-candidateprofile').controller('RegisterCtrl', ['Flash' , '$st
 
         }).then(function(response) {
 
-           $mdToast.show(
-                $mdToast.simple()
-                .textContent('Successfully completed registration..!')
-                .position("right")
-                .hideDelay(4000)
-            );
+
+            var message = 'Successfully completed registration..!';
+            Flash.create('danger', message);
 
             $state.go('candidate.dashboard'); // redirects to a mentioned state if successfull
 

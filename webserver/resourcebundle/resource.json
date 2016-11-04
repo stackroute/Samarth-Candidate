@@ -1,20 +1,20 @@
 {
-    "navlanguage":[{
-     "English":"English",
-     "Hindi":"हिंदी",
-     "Telugu":"తెలుగు",
-     "Tamil":"தமிழ்",
-     "Punjabi":"ਪੰਜਾਬੀ",
-     "Marathi":"मराठी",
-     "Bengali":"বাঙালি",
-     "Urdu":"اردو",
-     "Kannada":"ಕನ್ನಡ",
-     "Gujarati":"ગુજરાતી",
-     "Marathi":"मराठी",
-     "Urdu":"اردو",
-     "Sindhi":"سنڌي",
-     "Malayalam":"മലയാളം"
-   }],
+    "navlanguage": [{
+        "English": "English",
+        "Hindi": "हिंदी",
+        "Telugu": "తెలుగు",
+        "Tamil": "தமிழ்",
+        "Punjabi": "ਪੰਜਾਬੀ",
+        "Marathi": "मराठी",
+        "Bengali": "বাঙালি",
+        "Urdu": "اردو",
+        "Kannada": "ಕನ್ನಡ",
+        "Gujarati": "ગુજરાતી",
+        "Marathi": "मराठी",
+        "Urdu": "اردو",
+        "Sindhi": "سنڌي",
+        "Malayalam": "മലയാളം"
+    }],
 
     "navEnglish": {
         "header": "Samarth"
@@ -22,7 +22,7 @@
     "navHindi": {
         "header": "समर्थ "
     },
-     "navTelugu": {
+    "navTelugu": {
         "header": "సమర్థ్ "
     },
     "navPunjabi": {
@@ -34,36 +34,10 @@
     "navTamil": {
         "header": "திறன்"
     },
-    "userEnglish": [{
+    "navMarathi": {
+        "header": "समर्थ"
+    },
 
-        "name": "Chandra Kumar Pratap",
-        "age": "22",
-        "profilepicture": "dk.PNG",
-        "professionpicture": "profession.png",
-        "currentdesignation": "Senior Project Engineer",
-        "profession": "Angular Developer",
-        "DOB": "Feb 24 1994",
-        "contact": "9023650041",
-        "location": "Bangalore",
-        "email": "diamond1994@gmail.com",
-        "gender": "Male",
-        "maritalstatus": "Unmarried"
-    }],
-    "userHindi": [{
-
-        "name": "चंदन कुमार प्रधान",
-        "age": "२२",
-        "profilepicture": "dk.PNG",
-        "professionpicture": "profession.png",
-        "currentdesignation": "वरिष्ठ परियोजना अभियंता",
-        "profession": "आंग्युलर डेवेलपर",
-        "DOB": "फेब २४ १९९४",
-        "contact": "९०२३६५००४१",
-        "location": "बेंगालुरू",
-        "email": "diamond1994@gmail.com",
-        "gender": "नर",
-        "maritalstatus": "अविवाहित"
-    }],
     "sectionEnglish": {
         "skillheader": "Skills",
         "primary": "Primary",
@@ -92,10 +66,10 @@
         "create": "Create new account",
         "forgetP": "Forgot Password ?",
         "havesign": "Have a account? Sign in",
-        "Skills":"Skills",
+        "Skills": "Skills",
         "Projects": "Projects",
         "workexperience": "Work Experience",
-        "Education": "Education",
+        "Education": "Qualification",
         "Personalinfo": "Personal info"
     },
     "sectionHindi": {
@@ -126,7 +100,7 @@
         "create": "नया खाता बनाएँ",
         "forgetP": "पासवर्ड भूल गए ?",
         "havesign": "खाता है ? साइन इन करें",
-        "Skills":"कौशल",
+        "Skills": "कौशल",
         "Projects": "परियोजनाएं",
         "workexperience": "काम का अनुभव",
         "Education": "शिक्षा",
@@ -138,7 +112,7 @@
         "primary": "ప్రాథమిక",
         "secondary": "ఇతర నైపుణ్యాలు",
         "addskill": "నైపుణ్యాలు జోడించడానికి",
-        "addeducation":"విద్య జోడించడానికి",
+        "addeducation": "విద్య జోడించడానికి",
         "addproject": "ప్రాజెక్ట్ జోడించవచ్చు",
         "addworkexp": "పని అనుభవం జోడించండి",
         "projectheader": "ప్రాజెక్టు",
@@ -161,14 +135,14 @@
         "create": "క్రొత్త ఖాతా తెరువుము",
         "forgetP": "పాస్వర్డ్ మరిచిపోయారా ?",
         "havesign": "ఒక ఖాతా ఉందా? సైన్ ఇన్",
-        "Skills":"నైపుణ్యాలు",
+        "Skills": "నైపుణ్యాలు",
         "Projects": "ప్రాజెక్ట్స్",
         "workexperience": "పని అనుభవం",
         "Education": "చదువు",
         "Personalinfo": "వ్యక్తిగత సమాచారం"
     },
 
-     "sectionPunjabi": {
+    "sectionPunjabi": {
         "skillheader": "ਹੁਨਰ",
         "primary": "ਪ੍ਰਾਇਮਰੀ ਹੁਨਰ",
         "secondary": "ਹੋਰ ਹੁਨਰ",
@@ -196,13 +170,13 @@
         "create": "ਨਵ ਖਾਤਾ ਬਣਾਉਣ",
         "forgetP": "ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ ?",
         "havesign": "ਨੂੰ ਇੱਕ ਖਾਤਾ ਹੈ ? ਦਾਖ਼ਲਾ ਵਿਚ ",
-        "Skills":"ਹੁਨਰ",
+        "Skills": "ਹੁਨਰ",
         "Projects": "ਪ੍ਰੋਜੈਕਟ",
         "workexperience": "ਕੰਮ ਦਾ ਅਨੁਭਵ",
         "Education": "ਸਿੱਖਿਆ",
         "Personalinfo": "ਨਿੱਜੀ ਜਾਣਕਾਰੀ"
     },
-     "sectionBengali": {
+    "sectionBengali": {
         "skillheader": "দক্ষতা",
         "primary": "প্রাথমিক দক্ষতা",
         "secondary": "অন্যান্য দক্ষতা",
@@ -230,7 +204,7 @@
         "create": "নতুন অ্যাকাউন্ট তৈরি",
         "forgetP": "পাসওয়ার্ড ভুলে গেছেন?",
         "havesign": "একটি অ্যাকাউন্ট আছে? প্রবেশ করুন",
-        "Skills":"দক্ষতা",
+        "Skills": "দক্ষতা",
         "Projects": "প্রকল্প",
         "workexperience": "কর্মদক্ষতা",
         "Education": "শিক্ষা",
@@ -243,7 +217,7 @@
         "addskill": "புதிய திறன் சேர்க்க ",
         "addeducation": "புதிய கல்வி சேர்க்க ",
         "addproject": "புதிய திட்டம் சேர்க்க ",
-        "addworkexp": "புதிய workexperience சேர்க்க",
+        "addworkexp": "புதிய சேர்க்க",
         "projectheader": "திட்டம்",
         "educationheader": "தகுதி",
         "workexpheader": "வேலை வரலாறு",
@@ -263,10 +237,49 @@
         "searchjob": "தேடல் வேலை",
         "create": "புதிய கணக்கை உருவாக்க",
         "forgetP": "கடவுச்சொல்லை மறந்துவிட்டேன்?",
-        "havesign": "ஒரு கணக்கு வேண்டும்?உள்நுழைய"
+        "havesign": "ஒரு கணக்கு வேண்டும்?உள்நுழைய",
+        "Skills": "திறன்கள்",
+        "Projects": "திட்டங்கள்",
+        "workexperience": "பணி அனுபவம்",
+        "Education": "கல்வி",
+        "Personalinfo": "தனிப்பட்ட தகவல்"
+    },
+    "sectionMarathi": {
+        "skillheader": "कौशल्य",
+        "primary": "प्राथमिक कौशल्य",
+        "secondary": "इतर कौशल्य",
+        "addskill": "नवीन कौशल्य जोडण्यासाठी ",
+        "addeducation": "नवीन शिक्षण जोडा",
+        "addproject": " नवीन प्रकल्प जोडण्यासाठी",
+        "addworkexp": "नवीन काम अनुभव जोडण्यासाठी",
+        "projectheader": "प्रकल्प",
+        "educationheader": "योग्यता",
+        "workexpheader": "कामाचा इतिहास",
+        "personalinfoheader": "वैयक्तिक माहिती",
+        "edit": "संपादन",
+        "more": "अधिक",
+        "less": "कमी",
+        "top": "अव्वल",
+        "signin": "साइन इन करा",
+        "signup": "साइन अप",
+        "mobile": "मोबाइल फोन",
+        "password": "पासवर्ड",
+        "confirm": "संकेतशब्द कन्फर्म करा",
+        "name": "नाव",
+        "location": "स्थान",
+        "email": "ई-मेल आयडी",
+        "searchjob": "नोकरीचा शोध",
+        "create": "नवीन खाते तयार करणे",
+        "forgetP": "पासवर्ड विसरला ?",
+        "havesign": "एक खाते आहे? साइन इन करा",
+        "Skills": "कौशल्य",
+        "Projects": "प्रकल्प",
+        "workexperience": "कामाचा अनुभव",
+        "Education": "शिक्षण",
+        "Personalinfo": "वैयक्तिक माहिती"
     }
 
 
-     
+
 
 }
