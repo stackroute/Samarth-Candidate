@@ -1,0 +1,57 @@
+<div>
+
+    <md-sidenav class="md-sidenav-left" md-component-id="left"
+                 md-whiteframe="4">
+
+      <md-toolbar class="md-theme-indigo">
+        <h1 className="md-toolbar-tools">{{title}}</h1>
+      </md-toolbar>
+
+      <md-content layout-margin>
+        <p>
+          This sidenav is not showing .
+        </p>
+
+        <md-button ng-click="toggleLeft()" md-no-ink class="md-primary">
+          Close
+        </md-button>
+      </md-content>
+
+    </md-sidenav>
+
+    <md-content>
+        <md-toolbar flex>
+            <div className="md-toolbar-tools" layout="row" layout-align="start center">
+                <section layout="row" >
+                    <div>
+                      <md-button ng-click="toggleLeft()" ng-show="sideNavLogo" class="md-icon-button md-raised">
+                        <md-icon>reorder</md-icon>
+                      </md-button>
+                    </div>
+                </section>
+
+                <div layout="row" layout-align="start center" flex>
+                    <h2>
+                        <span className="samarth">{{title}}</span>
+                    </h2>
+                </div>
+                <div layout="row" layout-align="end center" flex>
+                    <md-button ng-click="logout()" ng-show="signout">Signout</md-button>
+                </div>
+
+
+            </div>
+
+
+            <div layout="row" layout-align="center center" hide-sm hide-xs layout-wrap flex style="background-color:rgb(72, 108, 124);">
+
+                <div ng-repeat="(key,val) in language">
+
+                    <md-button class="languagebar" title="{{key}}" ng-click="loadLangData(key)">{{val}}</md-button>
+
+                </div>
+            </div>
+        </md-toolbar>
+
+    </md-content>
+</div>;
