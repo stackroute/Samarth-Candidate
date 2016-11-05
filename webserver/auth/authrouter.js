@@ -1,4 +1,3 @@
-"use strict";
 let router = require('express').Router();
 let authByToken = require('./authbytoken');
 
@@ -24,7 +23,7 @@ router.post('/signup', function(req, res) {
                 }
 
                 if (!jwtToken) {
-                    console.error('Empty token generated...!');
+                  // console.error('Empty token generated...!');
                     return res.status(403).json({
                         error: 'Internal error in processing request, please retry later..!'
                     });
@@ -37,7 +36,7 @@ router.post('/signup', function(req, res) {
                 return res.status(403).json(err);
             });
     } catch (err) {
-        console.error('Error in singnup ', err);
+        // console.error('Error in singnup ', err);
         return res.status(500).json({
             error: 'Internal error in processing request, please retry later..!'
         });
@@ -62,7 +61,7 @@ router.post('/signin', function(req, res) {
                 }
 
                 if (!jwtToken) {
-                    console.error('Empty token generated...!');
+                    // console.error('Empty token generated...!');
                     res.status(403).json({
                         error: 'Internal error in processing request, please retry later..!'
                     });
@@ -75,7 +74,7 @@ router.post('/signin', function(req, res) {
                 return res.status(403).json(err);
             });
     } catch (err) {
-        console.error('Error in signin ', err);
+        // console.error('Error in signin ', err);
         return res.status(500).json({
             error: 'Internal error in processing request, please retry later..!'
         });
@@ -93,7 +92,7 @@ router.get('/signout', function(req, res) {
             return res.status(200).json(data);
         });
     } catch (err) {
-        console.error('Error in singout ', err);
+        // console.error('Error in singout ', err);
         return res.status(500).json({
             error: 'Internal error in processing request, please retry later..!'
         });

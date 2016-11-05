@@ -1,7 +1,14 @@
 /* sm-candidateprofile Module is in root folder in smcandidateprofile.js */
 angular.module('sm-candidateprofile')
-    .config(['$stateProvider', '$urlRouterProvider', '$authProvider', function($stateProvider, $urlRouterProvider, $authProvider) {
-            /* skipIfLoggedIn() function redirects user to a particular page based on its authentication status i.e if user is logged in he will be automatically redirected to a defined state in this case it is "/dashboard" and hence skipping the view where it is called */
+    .config(['$stateProvider',
+              '$urlRouterProvider',
+              '$authProvider',
+                function($stateProvider, $urlRouterProvider, $authProvider) {
+            /* skipIfLoggedIn() function redirects user to a particular page
+             based on its authentication status i.e.if user is logged in he will be
+             automatically redirected to a defined state
+             in this case it is "/dashboard" and
+             hence skipping the view where it is called */
             let skipIfLoggedIn = ['$q', '$auth', '$location', function($q, $auth, $location) {
                 let deferred = $q.defer();
                 if ($auth.isAuthenticated()) {
@@ -14,8 +21,10 @@ angular.module('sm-candidateprofile')
             }];
             // skipIfLoggedIn ends
 
-
-            /* loginRequired() function redirects user to login page based on its authentication status i.e if user is not logged in he will be automatically redirected to login state wherever he may be , in this case it is the view where this function is called . */
+            /* loginRequired() function redirects user to login page
+             based on its authentication status i.e if user is not logged in
+             he will be automatically redirected to login state wherever he may be,
+             in this case it is the view where this function is called . */
             let loginRequired = ['$q', '$location', '$auth', function($q, $location, $auth) {
                 let deferred = $q.defer();
                 if ($auth.isAuthenticated()) {
@@ -39,7 +48,9 @@ angular.module('sm-candidateprofile')
                             controller: 'LoginCtrl',
                             controllerAs: 'login',
                             resolve: {
-                                skipIfLoggedIn: skipIfLoggedIn /* passing skipIfLoggedIn function here enables skipping login view if the user is already authenticated*/
+                                skipIfLoggedIn: skipIfLoggedIn
+                                /* passing skipIfLoggedIn function here enables skipping login view
+                                 if the user is already authenticated*/
                             }
                         }
 
@@ -53,7 +64,9 @@ angular.module('sm-candidateprofile')
                         templateUrl: 'registercandidate/templates/register.html',
                         controller: 'RegisterCtrl as register',
                         resolve: {
-                            skipIfLoggedIn: skipIfLoggedIn /* passing skipIfLoggedIn function here enables skipping login view if the user is already authenticated*/
+                            skipIfLoggedIn: skipIfLoggedIn
+                            /* passing skipIfLoggedIn function here enables skipping login view
+                             if the user is already authenticated*/
                         }
                     }
                 }
@@ -67,7 +80,10 @@ angular.module('sm-candidateprofile')
                         controller: 'DashboardCtrl',
                         controllerAs: 'dashboard',
                         resolve: {
-                            loginRequired: loginRequired /* passing loginRequired function here enables redirecting user to the login view if the user is not authenticated . This will prevent user form accessing this state*/
+                            loginRequired: loginRequired
+                            /* passing loginRequired function here enables redirecting user
+                             to the login view if the user is not authenticated .
+                             This will prevent user form accessing this state*/
                         }
                     }
                 }
