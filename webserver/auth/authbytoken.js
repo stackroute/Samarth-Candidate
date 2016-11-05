@@ -1,3 +1,4 @@
+"use strict";
 let jwt = require('jsonwebtoken');
 let UserModel = require('./users');
 let authCandidate = require('./authcandidate');

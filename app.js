@@ -1,3 +1,4 @@
+"use strict";
 let http = require('http');
 let express = require('express');
 let proxy = require('http-proxy');

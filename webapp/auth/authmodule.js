@@ -1,18 +1,4 @@
-/* sm-candidateprofile Module is in root folder in smcandidateprofile.js */
-angular.module('sm-candidateprofile')
-    .service('SatellizerInterceptor', Interceptor) // injecting the satellizer interceptor into module
-    .config(function($stateProvider, $urlRouterProvider, $authProvider, $httpProvider) {
-        /* Satellizer properties override needed for customization*/
-        $authProvider.loginUrl = '/signin'; /* required login api endpoint*/
-        $authProvider.signupUrl = '/signup'; /* required register api endpoint*/
-        $authProvider.tokenPrefix = 'satellizer'; /* local storage name prefix "satellizer_YOUR-TOKEN-NAME"*/
-        $authProvider.tokenHeader = 'x-user-access-token'; /* token header that needs to be injected in every request via interceptor*/
-        $authProvider.tokenType = ''; /* default -> "Bearer" reset to blank required*/
-        $authProvider.httpInterceptor = false; /* Turn off default interceptor provided by satellizer*/
-
-
-        return new HttpProviderConfig($httpProvider);
-     });
+"use strict";
 
 
 /* Overridden Interceptor of Satellizer for intercepting and authentication every request
@@ -80,3 +66,24 @@ let HttpProviderConfig = (function() {
     return HttpProviderConfig;
 }());
 // HttpProviderConfig ends
+
+
+
+
+
+/* sm-candidateprofile Module is in root folder in smcandidateprofile.js */
+angular.module('sm-candidateprofile')
+    .service('SatellizerInterceptor', Interceptor) // injecting the satellizer interceptor into module
+    .config(function($stateProvider, $urlRouterProvider, $authProvider, $httpProvider) {
+        /* Satellizer properties override needed for customization*/
+        $authProvider.loginUrl = '/signin'; /* required login api endpoint*/
+        $authProvider.signupUrl = '/signup'; /* required register api endpoint*/
+        $authProvider.tokenPrefix = 'satellizer'; /* local storage name prefix "satellizer_YOUR-TOKEN-NAME"*/
+        $authProvider.tokenHeader = 'x-user-access-token'; /* token header that needs to be injected in every request via interceptor*/
+        $authProvider.tokenType = ''; /* default -> "Bearer" reset to blank required*/
+        $authProvider.httpInterceptor = false; /* Turn off default interceptor provided by satellizer*/
+
+
+        return new HttpProviderConfig($httpProvider);
+     });
+
