@@ -13,7 +13,7 @@ angular.module('sm-candidateprofile')
                 return deferred.promise;
             }];
             // skipIfLoggedIn ends
-
+ 
 
             /* loginRequired() function redirects user to login page based on its authentication status i.e if user is not logged in he will be automatically redirected to login state wherever he may be , in this case it is the view where this function is called . */
             let loginRequired = ['$q', '$location', '$auth', function($q, $location, $auth) {
