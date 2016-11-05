@@ -1,52 +1,52 @@
-var jwt = require('jsonwebtoken');
-var UserModel = require("./users");
-var authCandidate = require("./authcandidate");
+let jwt = require('jsonwebtoken');
+let UserModel = require('./users');
+let authCandidate = require('./authcandidate');
 
-var signup = function(newUser, callback, unauthCB) {
-    var newUserObj = new UserModel({
-        "uname": newUser.mobile,
-        "pwd": newUser.pwd,
-        "status": "active",
-        "createdon": new Date(),
-        "lastseenon": new Date()
+let signup = function(newUser, callback, unauthCB) {
+    let newUserObj = new UserModel({
+        uname: newUser.mobile,
+        pwd: newUser.pwd,
+        status: 'active',
+        createdon: new Date(),
+        lastseenon: new Date()
     });
 
     newUserObj.save(function(err, user) {
         if (err) {
-            console.error("Error in signup user ", err);
+            console.error('Error in signup user ', err);
             callback(err, null);
             return;
         }
 
         if (!user) {
-            console.error("Empty user signed up..!");
-            callback("Unable to signup the user", null);
+            console.error('Empty user signed up..!');
+            callback('Unable to signup the user', null);
         }
 
         authCandidate.registerCandidate(newUser).then(
             function(candidate) {
-                var sessionUser = {
-                    "uname": user.uname,
-                    "cid": candidate.candidateid,
-                    "lang": candidate.mothertongue,
-                    "name": candidate.name,
-                    "email": candidate.email,
-                    "gender": candidate.gender,
-                    "sm-token": "TBD"
+                let sessionUser = {
+                    uname: user.uname,
+                    cid: candidate.candidateid,
+                    lang: candidate.mothertongue,
+                    name: candidate.name,
+                    email: candidate.email,
+                    gender: candidate.gender,
+                    'sm-token': 'TBD'
                 };
 
-                console.log("Registered successfully ", sessionUser);
+                console.log('Registered successfully ', sessionUser);
 
-                generateJWTToken(sessionUser, callback); //generate JWTToken
+                generateJWTToken(sessionUser, callback); // generate JWTToken
             },
             function(err) {
                 callback(err);
             }
-        ); //end of register candidate
+        ); // end of register candidate
     });
 };
 
-var signin = function(uname, pwd, callback, unauthCB) {
+let signin = function(uname, pwd, callback, unauthCB) {
     UserModel.findOne({
             uname: uname
         }, {
@@ -55,75 +55,75 @@ var signin = function(uname, pwd, callback, unauthCB) {
         },
         function(err, user) {
             if (err) {
-                console.error("Database error in finding user, error: ", err);
+                console.error('Database error in finding user, error: ', err);
                 callback({
-                    error: "Failed to process request, please try later..!"
-                }, null)
+                    error: 'Failed to process request, please try later..!'
+                }, null);
                 return;
             }
 
             if (!user) {
                 console.error('User ', uname, ' not found..!');
                 unauthCB({
-                    error: "Invalid credentials...!"
+                    error: 'Invalid credentials...!'
                 }, null);
                 return;
             }
 
             if (!user.validPassword(pwd)) {
                 unauthCB({
-                    error: "Invalid credentials...!"
+                    error: 'Invalid credentials...!'
                 });
                 return;
             }
 
-            //Now that user is authenticated locally, fetch the corresponding candidate token
+            // Now that user is authenticated locally, fetch the corresponding candidate token
             authCandidate.getCandidateAuthToken(user).then(
                 function(candidate) {
-                    var sessionUser = {
-                        "uname": user.uname,
-                        "uname": user.uname,
-                        "cid": candidate.candidateid,
-                        "lang": candidate.mothertongue,
-                        "name": candidate.name,
-                        "email": candidate.email,
-                        "gender": candidate.gender,
-                        "sm-token": "TBD"
+                    let sessionUser = {
+                        uname: user.uname,
+                        uname: user.uname,
+                        cid: candidate.candidateid,
+                        lang: candidate.mothertongue,
+                        name: candidate.name,
+                        email: candidate.email,
+                        gender: candidate.gender,
+                        'sm-token': 'TBD'
                     };
 
-                    console.log("Got token successfully ", sessionUser);
+                    console.log('Got token successfully ', sessionUser);
 
-                    generateJWTToken(sessionUser, callback); //generate JWTToken
+                    generateJWTToken(sessionUser, callback); // generate JWTToken
                 },
                 function(err) {
                     callback(err);
                 }
-            ); //end of Auth Token of candidate            
-        }); //end of user find query
+            ); // end of Auth Token of candidate
+        }); // end of user find query
 };
 
-var signout = function(cb) {
-    //@TODO Expire the token
+let signout = function(cb) {
+    // @TODO Expire the token
     cb();
 };
 
-var generateJWTToken = function(user, cb) {
-    var payload = user;
-    var secretOrPrivateKey = 'SAMARTH-WEBAPP-SECRET';
-    var options = {
-        algorithm: "HS256",
+let generateJWTToken = function(user, cb) {
+    let payload = user;
+    let secretOrPrivateKey = 'SAMARTH-WEBAPP-SECRET';
+    let options = {
+        algorithm: 'HS256',
         expiresIn: 36000,
         issuer: user.mobile
     };
 
     jwt.sign(payload, secretOrPrivateKey, options, function(err, jwtToken) {
-        console.log("Sending token ", user, jwtToken);
+        console.log('Sending token ', user, jwtToken);
         cb(err, user, jwtToken);
     });
-}
+};
 
 module.exports = {
     signup: signup,
     signin: signin,
     signout: signout
-}
+};

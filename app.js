@@ -1,60 +1,57 @@
-var http = require('http');
-var express = require('express');
-var proxy = require('http-proxy');
-var path = require('path');
-var favicon = require('serve-favicon');
-var morgan = require('morgan');
-var mongoose = require('mongoose');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+let http = require('http');
+let express = require('express');
+let proxy = require('http-proxy');
+let path = require('path');
+let favicon = require('serve-favicon');
+let morgan = require('morgan');
+let mongoose = require('mongoose');
+let cookieParser = require('cookie-parser');
+let bodyParser = require('body-parser');
 
-var authRoutes = require('./webserver/auth/authrouter');
-var authByToken = require('./webserver/auth/authbytoken');
+let authRoutes = require('./webserver/auth/authrouter');
+let authByToken = require('./webserver/auth/authbytoken');
 
-var resourcebundle = require('./webserver/resourcebundle/resourcebundlerouter.js');
+let resourcebundle = require('./webserver/resourcebundle/resourcebundlerouter.js');
 
 mongoose.connect('mongodb://localhost:27017/samarthplatformdb');
 
-//Creating proxy object
-var platformProxy = proxy.createProxyServer();
+// Creating proxy object
+let platformProxy = proxy.createProxyServer();
 
-//Express App created
-var app = express();
+// Express App created
+let app = express();
 
 
-
-/*============================================
+/* ============================================
 =            proxy implementation            =
 ============================================*/
 
-//The below app route config should be placed after all the local resources have ended 
-app.use("/proxy",function(req, res) {
-    var options = {
+// The below app route config should be placed after all the local resources have ended
+app.use('/proxy', function(req, res) {
+    let options = {
         target: {
             host: 'localhost',
             port: 8081
         }
     };
-    console.log('proxying')
+    console.log('proxying');
     platformProxy.web(req, res, options);
 });
 
 platformProxy.on('error', function(err, req, res) {
-    console.log("Error in proxy pass: ", err);
+    console.log('Error in proxy pass: ', err);
 });
 
-/*platformProxy.on('proxyReq', function(proxyReq, req, res, options) {
+/* platformProxy.on('proxyReq', function(proxyReq, req, res, options) {
     proxyReq.setHeader('customer-header', 'custom-header-value');
 });*/
 
-/*=====  End of proxy implementation  ======*/
-
-
+/* =====  End of proxy implementation  ======*/
 
 
 app.onAppStart = function(addr) {
-    console.log("Samarth-Candidateprofile web app is now Running on port:", addr.port);
-}
+    console.log('Samarth-Candidateprofile web app is now Running on port:', addr.port);
+};
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
@@ -67,11 +64,11 @@ app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'webapp')));
 
 function isUserAuthenticated(req, res, next) {
-    var token = req.body.usrtoken || req.query.usrtoken || req.headers[
+    let token = req.body.usrtoken || req.query.usrtoken || req.headers[
         'x-user-access-token'];
 
     if (!token) {
-        console.log("Token not found for authentication validation....!");
+        console.log('Token not found for authentication validation....!');
         return res.status(403).json({
             error: 'Invalid user request or unauthorised request..!'
         });
@@ -90,32 +87,30 @@ function isUserAuthenticated(req, res, next) {
 }
 
 app.use('/', authRoutes);
-app.use("/resource", resourcebundle);
-
-
+app.use('/resource', resourcebundle);
 
 
 app.use(function(req, res, next) {
-    var err = new Error('Resource not found');
+    let err = new Error('Resource not found');
     err.status = 404;
     return res.status(err.status).json({
-        "error": err.message
+        error: err.message
     });
 });
 
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
-        logger.error("Internal error in watch processor: ", err);
+        logger.error('Internal error in watch processor: ', err);
         return res.status(err.status || 500).json({
-            "error": err.message
+            error: err.message
         });
     });
 }
 
 app.use(function(err, req, res, next) {
-    logger.error("Internal error in watch processor: ", err);
+    logger.error('Internal error in watch processor: ', err);
     return res.status(err.status || 500).json({
-        "error": err.message
+        error: err.message
     });
 });
 
