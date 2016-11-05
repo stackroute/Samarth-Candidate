@@ -1,21 +1,21 @@
 /* sm-candidateprofile Module is in root folder in smcandidateprofile.js */
-angular.module("sm-candidateprofile")
+angular.module('sm-candidateprofile')
     .config(function($stateProvider, $urlRouterProvider, $authProvider) {
-        //console.log('inside appconfig');
+        // console.log('inside appconfig');
         // Url routing starts here
         $stateProvider
             .state('candidate', {
                 url: '/home',
                 views: {
-                    "content@": {
+                    'content@': {
                         templateUrl: '/applayout/templates/content.html'
                     },
-                    "navbar": {
+                    navbar: {
                         templateUrl: '/applayout/templates/navbar.html',
                         controller: 'navCtrl'
 
                     },
-                    "footer": {
+                    footer: {
                         templateUrl: '/applayout/templates/footer.html'
                     }
                 }
@@ -27,5 +27,5 @@ angular.module("sm-candidateprofile")
     });
 
 /* NOTE :- home state child  routes are in candidatehome/candidatehomemodules.js
-          config for overridding satellizer properties is defined in auth/authmodule.js 
+          config for overridding satellizer properties is defined in auth/authmodule.js
 */
