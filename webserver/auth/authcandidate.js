@@ -1,10 +1,10 @@
-var request = require('request');
+let request = require('request');
 
-var platformURL = "localhost:8081"; //@TODO take this from config
+let platformURL = 'localhost:8081'; // @TODO take this from config
 
-var registerCandidate = function(candidateObj) {
+let registerCandidate = function(candidateObj) {
     return new Promise(function(resolve, reject) {
-        var options = {
+        let options = {
             method: 'POST',
             json: true,
             url: 'http://' + platformURL + '/candidate/',
@@ -13,29 +13,29 @@ var registerCandidate = function(candidateObj) {
 
         request(options, function(err, res, body) {
             if (err || res === undefined || res.statusCode === undefined) {
-                console.error("Error in registering candidate ", err);
+                console.error('Error in registering candidate ', err);
                 reject({
                     error: err
                 });
             } else if (res.statusCode >= 200 && res.statusCode <= 299) {
-                console.log("Successfully registered candidate ", body);
+                console.log('Successfully registered candidate ', body);
                 resolve(body);
             }
         });
     });
 };
 
-var getCandidateByUser = function(user) {
+let getCandidateByUser = function(user) {
     return new Promise(function(resolve, reject) {
         reject({
-            error: "Not implemented"
+            error: 'Not implemented'
         });
     });
-}
+};
 
-var getCandidateAuthToken = function(user) {
+let getCandidateAuthToken = function(user) {
     return new Promise(function(resolve, reject) {
-        var options = {
+        let options = {
             method: 'POST',
             json: true,
             url: 'http://' + platformURL + '/auth/candidate/',
@@ -47,20 +47,20 @@ var getCandidateAuthToken = function(user) {
 
         request(options, function(err, res, body) {
             if (err || res === undefined || res.statusCode === undefined) {
-                console.error("Error in authorizing candidate ", err);
+                console.error('Error in authorizing candidate ', err);
                 reject({
                     error: err
                 });
             } else if (res.statusCode >= 200 && res.statusCode <= 299) {
-                console.log("Successfully authorized candidate ", body);
+                console.log('Successfully authorized candidate ', body);
                 resolve(body);
             }
         });
     });
-}
+};
 
 module.exports = {
     registerCandidate: registerCandidate,
     getCandidateByUser: getCandidateByUser,
     getCandidateAuthToken: getCandidateAuthToken
-}
+};
