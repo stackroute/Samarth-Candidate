@@ -35,12 +35,12 @@ app.use('/proxy', function(req, res) {
             port: 8081
         }
     };
-    console.log('proxying');
+   // console.log('proxying');
     platformProxy.web(req, res, options);
 });
 
 platformProxy.on('error', function(err, req, res) {
-    console.log('Error in proxy pass: ', err);
+   // console.log('Error in proxy pass: ', err);
 });
 
 /* platformProxy.on('proxyReq', function(proxyReq, req, res, options) {
@@ -51,7 +51,7 @@ platformProxy.on('error', function(err, req, res) {
 
 
 app.onAppStart = function(addr) {
-    console.log('Samarth-Candidateprofile web app is now Running on port:', addr.port);
+   // console.log('Samarth-Candidateprofile web app is now Running on port:', addr.port);
 };
 
 app.use(morgan('dev'));
@@ -69,7 +69,7 @@ function isUserAuthenticated(req, res, next) {
         'x-user-access-token'];
 
     if (!token) {
-        console.log('Token not found for authentication validation....!');
+       // console.log('Token not found for authentication validation....!');
         return res.status(403).json({
             error: 'Invalid user request or unauthorised request..!'
         });

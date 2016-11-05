@@ -14,13 +14,13 @@ let signup = function(newUser, callback, unauthCB) {
 
     newUserObj.save(function(err, user) {
         if (err) {
-            console.error('Error in signup user ', err);
+           console.error('Error in signup user ', err);
             callback(err, null);
             return;
         }
 
         if (!user) {
-            console.error('Empty user signed up..!');
+          console.error('Empty user signed up..!');
             callback('Unable to signup the user', null);
         }
 
@@ -36,14 +36,15 @@ let signup = function(newUser, callback, unauthCB) {
                     'sm-token': 'TBD'
                 };
 
-                console.log('Registered successfully ', sessionUser);
+               // console.log('Registered successfully ', sessionUser);
 
                 generateJWTToken(sessionUser, callback); // generate JWTToken
             },
             function(err) {
                 callback(err);
             }
-        ); // end of register candidate
+        );
+        // end of register candidate
     });
 };
 
@@ -92,15 +93,17 @@ let signin = function(uname, pwd, callback, unauthCB) {
                         'sm-token': 'TBD'
                     };
 
-                    console.log('Got token successfully ', sessionUser);
-
-                    generateJWTToken(sessionUser, callback); // generate JWTToken
+                    // console.log('Got token successfully ', sessionUser);
+                    // generate JWTToken
+                    generateJWTToken(sessionUser, callback);
                 },
                 function(err) {
                     callback(err);
                 }
-            ); // end of Auth Token of candidate
-        }); // end of user find query
+            );
+            // end of Auth Token of candidate
+        });
+        // end of user find query
 };
 
 let signout = function(cb) {
@@ -118,7 +121,7 @@ let generateJWTToken = function(user, cb) {
     };
 
     jwt.sign(payload, secretOrPrivateKey, options, function(err, jwtToken) {
-        console.log('Sending token ', user, jwtToken);
+       // console.log('Sending token ', user, jwtToken);
         cb(err, user, jwtToken);
     });
 };
