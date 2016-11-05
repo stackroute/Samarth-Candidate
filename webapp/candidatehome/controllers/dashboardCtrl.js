@@ -1,5 +1,14 @@
-/* DashboardCtrl controller -> responsible for dashboard and having $state, $auth and $rootScope as dependencies*/
-angular.module('sm-candidateprofile').controller('DashboardCtrl', ['$state', '$auth', '$rootScope', '$scope', function($state, $auth, $rootScope, $scope) {
+/* DashboardCtrl controller -> responsible for dashboard and having $state,
+ $auth and $rootScope as dependencies*/
+angular.module('sm-candidateprofile')
+.controller('DashboardCtrl', [
+  '$auth', 
+  '$rootScope', 
+  '$scope', 
+  function(  
+    $auth, 
+    $rootScope, 
+    $scope) {
     $scope.uname = $auth.getPayload().uname;
     /* =============================================
     =  Checking whether the user is authenticated
@@ -21,11 +30,15 @@ angular.module('sm-candidateprofile').controller('DashboardCtrl', ['$state', '$a
     =============================================*/
 
     if ($auth.isAuthenticated()) {
-        $rootScope.signout = true; // set to true if authenticated
-        $rootScope.loggedinbackground = 'loggedinbackground';// set to loggedinbackground if authenticated i.e set the background as white
+        // set to true if authenticated
+        $rootScope.signout = true; 
+        // set to loggedinbackground if authenticated i.e set the background as white
+        $rootScope.loggedinbackground = 'loggedinbackground';
     } else {
-        $rootScope.signout = false; // set to false if not authenticated ex: in case session expiration
-        $rootScope.loggedinbackground = 'loggedoutbackground';// set to loggedoutbackground if not authenticated
+        // set to false if not authenticated ex: in case session expiration
+        $rootScope.signout = false; 
+        // set to loggedoutbackground if not authenticated
+        $rootScope.loggedinbackground = 'loggedoutbackground';
     }
 
     /* =====  End of Section comment block  ======*/

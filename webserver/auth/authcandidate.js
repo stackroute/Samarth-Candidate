@@ -1,4 +1,3 @@
-"use strict";
 let request = require('request');
 
 let platformURL = 'localhost:8081'; // @TODO take this from config

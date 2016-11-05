@@ -1,4 +1,3 @@
-"use strict";
 let router = require('express').Router();
 let authByToken = require('./authbytoken');
 
