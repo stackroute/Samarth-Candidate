@@ -1,28 +1,28 @@
-var mongoose = require('mongoose');
-var bCrypt = require('bcrypt-nodejs');
+let mongoose = require('mongoose');
+let bCrypt = require('bcrypt-nodejs');
 
-var schema = mongoose.Schema({
-    "uname": {
+let schema = mongoose.Schema({
+    uname: {
         type: String,
         required: true,
         unique: true,
         trim: true,
         min: 10
     },
-    "hash_pwd": {
+    hash_pwd: {
         type: String,
         required: true
     },
-    "status": {
+    status: {
         type: String,
         default: 'active',
         enum: ['active', 'disabled']
     },
-    "createdon": {
+    createdon: {
         type: Date,
         default: Date.now
     },
-    "lastseenon": {
+    lastseenon: {
         type: Date,
         default: Date.now
     }
@@ -46,8 +46,8 @@ schema.methods = {
 
     encryptPassword: function(plainText) {
         return bCrypt.hashSync(plainText, bCrypt.genSaltSync(10), null);
-    },
+    }
 };
 
 
-module.exports = mongoose.model("users", schema, "users");
+module.exports = mongoose.model('users', schema, 'users');
