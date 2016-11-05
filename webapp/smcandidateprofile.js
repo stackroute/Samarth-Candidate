@@ -1,14 +1,14 @@
-var myApp = angular.module('sm-candidateprofile', ['ngMaterial',
-    'ngAnimate',
+let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
+    'ngMaterial',  
     'ngMessages',
-    'ui.router',
     'LocalStorageModule',
-    'satellizer',
     'ngFlash',
-    'samarth-webcomponents'
+    'samarth-webcomponents',
+    'satellizer',
+    'ui.router'
 ])
 .config(function($mdThemingProvider) {
-    var customPrimary = {
+    let customPrimary = {
       // '50': '#bef5ff',
       50: '#00d1f8',
       // '100': '#72e9ff',
@@ -44,7 +44,7 @@ var myApp = angular.module('sm-candidateprofile', ['ngMaterial',
     $mdThemingProvider.definePalette('customPrimary',
       customPrimary);
 
-    var customBackground = {
+    let customBackground = {
       50: '#ffffff',
       100: '#ffffff',
       200: '#ffffff',

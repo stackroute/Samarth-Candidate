@@ -1,4 +1,3 @@
-"use strict";
 let router = require('express').Router();
 let authByToken = require('./authbytoken');
 
@@ -24,7 +23,7 @@ router.post('/signup', function(req, res) {
                 }
 
                 if (!jwtToken) {
-                  // // console.error('Empty token generated...!');
+                  // console.error('Empty token generated...!');
                     return res.status(403).json({
                         error: 'Internal error in processing request, please retry later..!'
                     });
