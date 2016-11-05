@@ -1,11 +1,11 @@
-let myApp = angular.module('sm-candidateprofile', ['ngMaterial',
-    'ngAnimate',
+let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
+    'ngMaterial',  
     'ngMessages',
-    'ui.router',
     'LocalStorageModule',
-    'satellizer',
     'ngFlash',
-    'samarth-webcomponents'
+    'samarth-webcomponents',
+    'satellizer',
+    'ui.router'
 ])
 .config(function($mdThemingProvider) {
     let customPrimary = {
