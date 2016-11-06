@@ -12,7 +12,7 @@ let registerCandidate = function(candidateObj) {
         };
 
         request(options, function(err, res, body) {
-            if (err || angular.isUndefined(res)|| angular.isUndefined(res.statusCode)) {
+            if (err || res === undefined || res.statusCode === undefined) {
 
                 reject({
                     error: err
@@ -46,8 +46,7 @@ let getCandidateAuthToken = function(user) {
         };
 
         request(options, function(err, res, body) {
-            if (angular.isUndefined(err)||angular.isUndefined(res)||
-                angular.isUndefined(res.statusCode)) {
+            if (err || res === undefined || res.statusCode === undefined) {
                 //console.error('Error in authorizing candidate ', err);
                 reject({
                     error: err
