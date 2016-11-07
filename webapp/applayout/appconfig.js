@@ -1,6 +1,6 @@
 /* sm-candidateprofile Module is in root folder in smcandidateprofile.js */
 angular.module('sm-candidateprofile')
-    .config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         // console.log('inside appconfig');
         // Url routing starts here
         $stateProvider
@@ -13,14 +13,12 @@ angular.module('sm-candidateprofile')
                     navbar: {
                         templateUrl: '/applayout/templates/navbar.html',
                         controller: 'navCtrl'
-
                     },
                     footer: {
                         templateUrl: '/applayout/templates/footer.html'
                     }
                 }
             });
-
 
         // redirects to login page if user request a non-existing state
         $urlRouterProvider.otherwise('/home/login');

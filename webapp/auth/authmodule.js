@@ -88,7 +88,7 @@ let SatellizerHttpProviderConfig = (function() {
 angular.module('sm-candidateprofile')
 // injecting the satellizer interceptor into module
     .factory('SatellizerInterceptor', SatellizerInterceptor)
-    .config(['$authProvider' , '$httpProvider' , function($authProvider, $httpProvider) {
+    .config(['$authProvider', '$httpProvider', function($authProvider, $httpProvider) {
             /* Satellizer properties override needed for customization*/
             /* required login api endpoint*/
             $authProvider.loginUrl = '/signin';
@@ -102,7 +102,6 @@ angular.module('sm-candidateprofile')
             $authProvider.tokenType = '';
              /* Turn off default interceptor provided by satellizer*/
             $authProvider.httpInterceptor = false;
-    
             return new SatellizerHttpProviderConfig($httpProvider);
          }]);
 
