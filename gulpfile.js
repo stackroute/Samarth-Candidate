@@ -30,7 +30,7 @@ gulp.task('eslint', function() {
 
 gulp.task('eslint-fix', function() {
    return gulp.src(getSrc())
-       .pipe(eslint({fix:true}))
+       .pipe(eslint({fix: true}))
        .pipe(gulpIf(isFixed, gulp.dest('lintfixes/')))
        .pipe(eslint.format())
        .pipe(eslint.failAfterError());

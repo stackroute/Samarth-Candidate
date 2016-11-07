@@ -27,18 +27,17 @@ app.onAppStart = function(addr) {
 
 app.use(morgan('dev'));
 
-
-// create application/json parser 
+// create application/json parser
 var jsonBodyParser = bodyParser.json();
-// create application/x-www-form-urlencoded parser 
+// create application/x-www-form-urlencoded parser
 var urlEncodedParser = bodyParser.urlencoded({
     extended: false
 });
 
-/*app.use(bodyParser.json());
+/* app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
-}));*/
+})); */
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'bower_components')));
@@ -69,7 +68,6 @@ function isUserAuthenticated(req, res, next) {
 
 app.use('/', jsonBodyParser, urlEncodedParser, authRoutes);
 app.use('/resource', jsonBodyParser, urlEncodedParser, resourcebundle);
-
 
 /* ============================================
 =            proxy implementation            =
