@@ -1,5 +1,5 @@
 let myApp= angular.module('sm-candidateprofile', ['ngAnimate',
-    'ngMaterial',  
+    'ngMaterial',
     'ngMessages',
     'LocalStorageModule',
     'ngFlash',
@@ -7,7 +7,7 @@ let myApp= angular.module('sm-candidateprofile', ['ngAnimate',
     'satellizer',
     'ui.router'
 ])
-.config(['$mdThemingProvider',function($mdThemingProvider) {
+.config(['$mdThemingProvider', function($mdThemingProvider) {
     let customPrimary = {
       // '50': '#bef5ff',
       50: '#00d1f8',

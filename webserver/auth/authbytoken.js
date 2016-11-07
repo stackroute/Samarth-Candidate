@@ -36,8 +36,8 @@ let signup = function(newUser, callback, unauthCB) {
                 };
 
                 // console.log('Registered successfully ', sessionUser);
-
-                generateJWTToken(sessionUser, callback); // generate JWTToken
+                // generate JWTToken
+                generateJWTToken(sessionUser, callback);
             },
             function(err) {
                 callback(err);
@@ -62,7 +62,6 @@ let signin = function(uname, pwd, callback, unauthCB) {
                 }, null);
                 return;
             }
-
             if (!user) {
                 console.error('User ', uname, ' not found..!');
                 unauthCB({
@@ -70,7 +69,6 @@ let signin = function(uname, pwd, callback, unauthCB) {
                 }, null);
                 return;
             }
-
             if (!user.validPassword(pwd)) {
                 unauthCB({
                     error: 'Invalid credentials...!'

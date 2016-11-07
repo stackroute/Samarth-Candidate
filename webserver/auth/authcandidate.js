@@ -1,6 +1,7 @@
 let request = require('request');
 
-let platformURL = 'localhost:8081'; // @TODO take this from config
+// @TODO take this from config
+let platformURL = 'localhost:8081';
 
 let registerCandidate = function(candidateObj) {
     return new Promise(function(resolve, reject) {
@@ -13,12 +14,10 @@ let registerCandidate = function(candidateObj) {
 
         request(options, function(err, res, body) {
             if (err || res === undefined || res.statusCode === undefined) {
-
                 reject({
                     error: err
                 });
             } else if (res.statusCode >= 200 && res.statusCode <= 299) {
-
                 resolve(body);
             }
         });
@@ -47,12 +46,12 @@ let getCandidateAuthToken = function(user) {
 
         request(options, function(err, res, body) {
             if (err || res === undefined || res.statusCode === undefined) {
-                //console.error('Error in authorizing candidate ', err);
+                // console.error('Error in authorizing candidate ', err);
                 reject({
                     error: err
                 });
             } else if (res.statusCode >= 200 && res.statusCode <= 299) {
-                //console.log('Successfully authorized candidate ', body);
+                // console.log('Successfully authorized candidate ', body);
                 resolve(body);
             }
         });

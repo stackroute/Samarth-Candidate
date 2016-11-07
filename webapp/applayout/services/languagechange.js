@@ -1,10 +1,10 @@
 /* Datagenerate is responsible for navbar and having $http as dependencies*/
 angular.module('sm-candidateprofile')
     .factory('datagenerate', [
-        '$http' , 
-        '$log' , 
+        '$http',
+        '$log',
         function(
-            $http , 
+            $http,
             $log) {
             return {
                 // getjson is a function which fetch the data from the api
@@ -15,16 +15,13 @@ angular.module('sm-candidateprofile')
                         method: 'GET',
                         url: '/resource/' + key + lang,
                         type: 'JSON'
-    
                     }).then(function mySucces(response) {
                         data = response.data;
                         return data;
                     }, function errorCallback(response) {
                         $log.error(response);
                        return 'err';
-
                     });
                 }
-    
             };
         }]);

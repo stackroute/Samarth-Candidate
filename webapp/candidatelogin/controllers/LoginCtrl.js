@@ -1,13 +1,13 @@
 /* Login controller -> responsible for authentication and hhaving $state, $auth as dependencies*/
 angular.module('sm-candidateprofile')
 .controller('LoginCtrl', [
-    '$state', 
-    '$auth', 
+    '$state',
+    '$auth',
     'Flash',
-    '$log', 
+    '$log',
     function(
-        $state, 
-        $auth, 
+        $state,
+        $auth,
         Flash,
         $log) {
     let vm = this;
@@ -17,25 +17,29 @@ angular.module('sm-candidateprofile')
     vm.login = function() {
         // console.log(vm.user);
 
-        /* $auth.login() is a predefined function provided by satellizer 
-        for initiating authentication of the user . This returns a promise 
-        and accepts an object with all the required fields which needs to be 
+        /* $auth.login() is a predefined function provided by satellizer
+        for initiating authentication of the user . This returns a promise
+        and accepts an object with all the required fields which needs to be
         sent to the api for authentication
 
-        NOTE :- To change the login api endpoint/URI , please override 
+        NOTE :- To change the login api endpoint/URI , please override
         $authProvider.loginUrl with new value in /auth/authmodule.js */
         $auth.login({
-            uname: vm.user.number, // username of the user entered in the login form
-            pwd: vm.user.password // username of the user entered in the login form
+          // username of the user entered in the login form
+            uname: vm.user.number,
+          // username of the user entered in the login form
+            pwd: vm.user.password
         }).then(function(response) {
-            $log.error('response --->',response);
-            $state.go('candidate.dashboard'); // redirects to a mentioned state if successfull
+            $log.error('response --->', response);
+            // redirects to a mentioned state if successfull
+            $state.go('candidate.dashboard');
         }).catch(function(response) {
-            $log.error('Login Failed ---->',response)
+            $log.error('Login Failed ---->', response)
             let message = 'Login Failed ! UserName or Password doesnot match .';
             Flash.create('danger', message);
             // window.alert('Error: Login failed'); // alert msg on error
             // @Todo Logic to handle error
-        }); // $auth.login ends
+        });
+        // $auth.login ends
     };
 }]);
