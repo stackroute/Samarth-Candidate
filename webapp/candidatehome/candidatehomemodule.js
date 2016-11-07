@@ -1,9 +1,7 @@
 /* sm-candidateprofile Module is in root folder in smcandidateprofile.js */
 angular.module('sm-candidateprofile')
     .config(['$stateProvider',
-              '$urlRouterProvider',
-              '$authProvider',
-                function($stateProvider, $urlRouterProvider, $authProvider) {
+                function($stateProvider) {
             /* skipIfLoggedIn() function redirects user to a particular page
              based on its authentication status i.e.if user is logged in he will be
              automatically redirected to a defined state

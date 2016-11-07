@@ -1,5 +1,5 @@
-let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
-    'ngMaterial',  
+let myApp= angular.module('sm-candidateprofile', ['ngAnimate',
+    'ngMaterial',
     'ngMessages',
     'LocalStorageModule',
     'ngFlash',
@@ -7,7 +7,7 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
     'satellizer',
     'ui.router'
 ])
-.config(function($mdThemingProvider) {
+.config(['$mdThemingProvider', function($mdThemingProvider) {
     let customPrimary = {
       // '50': '#bef5ff',
       50: '#00d1f8',
@@ -68,7 +68,7 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
     $mdThemingProvider.theme('default')
       .primaryPalette('customPrimary')
       .backgroundPalette('customBackground');
-  });
+  }]);
 
 
 /* Module's config with routes is in file applayout/appconfig.js*/

@@ -2,12 +2,12 @@
  $auth and $rootScope as dependencies*/
 angular.module('sm-candidateprofile')
 .controller('DashboardCtrl', [
-  '$auth', 
-  '$rootScope', 
-  '$scope', 
-  function(  
-    $auth, 
-    $rootScope, 
+  '$auth',
+  '$rootScope',
+  '$scope',
+  function(
+    $auth,
+    $rootScope,
     $scope) {
     $scope.uname = $auth.getPayload().uname;
     /* =============================================
@@ -26,17 +26,17 @@ angular.module('sm-candidateprofile')
                            the navbar .
 
        NOTE :- to check the sign declaration in rootscope
-               , check applayout/controllers/navctr =
+               , check applayout/controllers/navctrl=
     =============================================*/
 
     if ($auth.isAuthenticated()) {
         // set to true if authenticated
-        $rootScope.signout = true; 
+        $rootScope.signout = true;
         // set to loggedinbackground if authenticated i.e set the background as white
         $rootScope.loggedinbackground = 'loggedinbackground';
     } else {
         // set to false if not authenticated ex: in case session expiration
-        $rootScope.signout = false; 
+        $rootScope.signout = false;
         // set to loggedoutbackground if not authenticated
         $rootScope.loggedinbackground = 'loggedoutbackground';
     }
