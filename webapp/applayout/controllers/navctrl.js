@@ -3,7 +3,6 @@
       2 :-navCtrl controller is reponsible for displayed the navbar and uses
         $rootScope, $scope, datagenerate, $state, $auth as dependencies
       3 :-datagenerate dependency is a factory and can be found in
-<<<<<<< HEAD
       applayout/services/languagechange.js
  *
  */
@@ -21,9 +20,9 @@ angular.module('sm-candidateprofile')
                 $mdSidenav,
                 $rootScope,
                 $scope,
-                $state
+                $state,
                 datagenerate,
-                Flash,
+                Flash
                 ) {
         /* Global element signout exists in the root scope of the application and is used to
          control
