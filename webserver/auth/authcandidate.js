@@ -46,7 +46,7 @@ let getCandidateAuthToken = function(user) {
         };
 
         request(options, function(err, res, body) {
-            if (err || typeof res === undefined || typeof res.statusCode === undefined) {
+            if (err || res === undefined || res.statusCode === undefined) {
                 //console.error('Error in authorizing candidate ', err);
                 reject({
                     error: err

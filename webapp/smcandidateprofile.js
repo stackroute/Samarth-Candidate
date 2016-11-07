@@ -1,4 +1,4 @@
-let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
+let myApp= angular.module('sm-candidateprofile', ['ngAnimate',
     'ngMaterial',  
     'ngMessages',
     'LocalStorageModule',
