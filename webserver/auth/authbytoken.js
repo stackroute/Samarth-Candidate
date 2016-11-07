@@ -1,4 +1,3 @@
-"use strict";
 let jwt = require('jsonwebtoken');
 let UserModel = require('./users');
 let authCandidate = require('./authcandidate');
@@ -36,14 +35,15 @@ let signup = function(newUser, callback, unauthCB) {
                     'sm-token': 'TBD'
                 };
 
-                console.log('Registered successfully ', sessionUser);
+                // console.log('Registered successfully ', sessionUser);
 
                 generateJWTToken(sessionUser, callback); // generate JWTToken
             },
             function(err) {
                 callback(err);
             }
-        ); // end of register candidate
+        );
+        // end of register candidate
     });
 };
 
@@ -92,15 +92,17 @@ let signin = function(uname, pwd, callback, unauthCB) {
                         'sm-token': 'TBD'
                     };
 
-                    console.log('Got token successfully ', sessionUser);
-
-                    generateJWTToken(sessionUser, callback); // generate JWTToken
+                    // console.log('Got token successfully ', sessionUser);
+                    // generate JWTToken
+                    generateJWTToken(sessionUser, callback);
                 },
                 function(err) {
                     callback(err);
                 }
-            ); // end of Auth Token of candidate
-        }); // end of user find query
+            );
+            // end of Auth Token of candidate
+        });
+    // end of user find query
 };
 
 let signout = function(cb) {
@@ -118,7 +120,7 @@ let generateJWTToken = function(user, cb) {
     };
 
     jwt.sign(payload, secretOrPrivateKey, options, function(err, jwtToken) {
-        console.log('Sending token ', user, jwtToken);
+        // console.log('Sending token ', user, jwtToken);
         cb(err, user, jwtToken);
     });
 };

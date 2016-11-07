@@ -23,8 +23,10 @@
  }
  
  .appfooter {
-     background: #545454;
-     color: #919191;
+     /*background: #545454;*/
+     background: grey;
+     /*color: #919191;*/
+     color: white;
      padding: 5px;
  }
 

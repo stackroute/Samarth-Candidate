@@ -40,3 +40,5 @@ bower_components
 Jenkinsfile
 .htmlhintrc
 .eslintrc.js
+
+lintfixes
