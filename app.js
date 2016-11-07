@@ -6,7 +6,6 @@ let favicon = require('serve-favicon');
 let morgan = require('morgan');
 let mongoose = require('mongoose');
 let cookieParser = require('cookie-parser');
-//let bodyParser = require('body-parser');
 
 let authRoutes = require('./webserver/auth/authrouter');
 let authByToken = require('./webserver/auth/authbytoken');
@@ -24,6 +23,7 @@ let app = express();
 app.onAppStart = function(addr) {
     console.error('Samarth-Candidateprofile web app is now Running on port:', addr.port);
 };
+
 
 app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'webapp')));
@@ -53,7 +53,6 @@ function isUserAuthenticated(req, res, next) {
 
 app.use('/', authRoutes);
 app.use('/resource', resourcebundle);
-
 
 /* ============================================
 =            proxy implementation            =
