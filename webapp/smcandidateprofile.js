@@ -71,6 +71,4 @@ let myApp= angular.module('sm-candidateprofile', ['ngAnimate',
   }]);
 
 
-module.exports = myApp;
-
 /* Module's config with routes is in file applayout/appconfig.js*/
