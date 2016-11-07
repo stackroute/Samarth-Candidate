@@ -1,10 +1,9 @@
 /**
- *
- *
- NOTE 1 :-"sm-candidateprofile" module can be found in root folder smcandidateprofile.js
+ *NOTE 1 :-"sm-candidateprofile" module can be found in root folder smcandidateprofile.js
       2 :-navCtrl controller is reponsible for displayed the navbar and uses
         $rootScope, $scope, datagenerate, $state, $auth as dependencies
       3 :-datagenerate dependency is a factory and can be found in
+<<<<<<< HEAD
       applayout/services/languagechange.js
  *
  */
@@ -46,12 +45,10 @@ angular.module('sm-candidateprofile')
             datagenerate.getjson('nav', 'language').then(function(result) {
                 $rootScope.language = {};
 
-
                 for (let key in result[0]) {
-                    if (result[0].hasOwnProperty(key))
-                    {
-                    $rootScope.language[key] = result[0][key];
-                }
+                    if (result[0].hasOwnProperty(key)) {
+                         $rootScope.language[key] = result[0][key];
+                    }
                 }
             });
             // end datagenerate
@@ -103,13 +100,15 @@ angular.module('sm-candidateprofile')
                 });
             };
             // on loading navctrl, calling loadLangData() function with default English language
-        $scope.loadLangData('English');
+            $scope.loadLangData('English');
 
         function buildToggler(componentId) {
           return function() {
             $mdSidenav(componentId).toggle();
           };
         }
-        $scope.toggleLeft = buildToggler('left');
-        $scope.toggleRight = buildToggler('right');
-    }]);
+
+            $scope.toggleLeft = buildToggler('left');
+            $scope.toggleRight = buildToggler('right');
+        }
+        ]);
