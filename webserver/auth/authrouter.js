@@ -1,7 +1,14 @@
 let router = require('express').Router();
 let authByToken = require('./authbytoken');
+let bodyParser = require('body-parser');
 
-router.post('/signup', function(req, res) {
+var jsonBodyParser = bodyParser.json();
+
+var urlEncodedParser = bodyParser.urlencoded({
+    extended: false
+});
+
+router.post('/signup', jsonBodyParser, urlEncodedParser, function(req, res) {
     // Validate for mandatory data
     if (!req.body.name ||
         !req.body.mobile ||
@@ -43,7 +50,7 @@ router.post('/signup', function(req, res) {
     }
 });
 
-router.post('/signin', function(req, res) {
+router.post('/signin', jsonBodyParser, urlEncodedParser, function(req, res) {
     if (!req.body.uname || !req.body.pwd) {
         res.json({
             error: 'Please try with valid credentials..!'
@@ -81,7 +88,7 @@ router.post('/signin', function(req, res) {
     }
 });
 
-router.get('/signout', function(req, res) {
+router.get('/signout', jsonBodyParser, urlEncodedParser, function(req, res) {
     try {
         authByToken.signout(function(err, data) {
             if (err) {
