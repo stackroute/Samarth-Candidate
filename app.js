@@ -6,7 +6,6 @@ let favicon = require('serve-favicon');
 let morgan = require('morgan');
 let mongoose = require('mongoose');
 let cookieParser = require('cookie-parser');
-let bodyParser = require('body-parser');
 
 let authRoutes = require('./webserver/auth/authrouter');
 let authByToken = require('./webserver/auth/authbytoken');
@@ -25,18 +24,21 @@ app.onAppStart = function(addr) {
     console.error('Samarth-Candidateprofile web app is now Running on port:', addr.port);
 };
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
-// create application/json parser
-var jsonBodyParser = bodyParser.json();
-// create application/x-www-form-urlencoded parser
-var urlEncodedParser = bodyParser.urlencoded({
+
+// create application/json parser 
+//var jsonBodyParser = bodyParser.json();
+// create application/x-www-form-urlencoded parser 
+/*var urlEncodedParser = bodyParser.urlencoded({
+>>>>>>> 8697d8599e284143afa3569ddadf49d1cedc5130
     extended: false
-});
+});*/
 
 /* app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
+<<<<<<< HEAD
 })); */
 app.use(cookieParser());
 
@@ -66,8 +68,8 @@ function isUserAuthenticated(req, res, next) {
     );
 }
 
-app.use('/', jsonBodyParser, urlEncodedParser, authRoutes);
-app.use('/resource', jsonBodyParser, urlEncodedParser, resourcebundle);
+app.use('/', authRoutes);
+app.use('/resource', resourcebundle);
 
 /* ============================================
 =            proxy implementation            =
