@@ -21,43 +21,24 @@ let platformProxy = proxy.createProxyServer();
 // Express App created
 let app = express();
 
-
-/* ============================================
-=            proxy implementation            =
-============================================*/
-
-// The below app route config should be placed after all the local resources have ended
-app.use('/proxy', function(req, res) {
-    let options = {
-        target: {
-            host: 'localhost',
-            port: 8081
-        }
-    };
-   // console.log('proxying');
-    platformProxy.web(req, res, options);
-});
-
-platformProxy.on('error', function(err, req, res) {
-   console.error('Error in proxy pass: ', err);
-});
-
-/* platformProxy.on('proxyReq', function(proxyReq, req, res, options) {
-    proxyReq.setHeader('customer-header', 'custom-header-value');
-});*/
-
-/* =====  End of proxy implementation  ======*/
-
-
 app.onAppStart = function(addr) {
-   console.error('Samarth-Candidateprofile web app is now Running on port:', addr.port);
+    console.error('Samarth-Candidateprofile web app is now Running on port:', addr.port);
 };
 
 app.use(morgan('dev'));
-app.use(bodyParser.json());
+
+
+// create application/json parser 
+var jsonBodyParser = bodyParser.json();
+// create application/x-www-form-urlencoded parser 
+var urlEncodedParser = bodyParser.urlencoded({
+    extended: false
+});
+
+/*app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
-}));
+}));*/
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'bower_components')));
@@ -68,7 +49,7 @@ function isUserAuthenticated(req, res, next) {
         'x-user-access-token'];
 
     if (!token) {
-       // console.log('Token not found for authentication validation....!');
+        // console.log('Token not found for authentication validation....!');
         return res.status(403).json({
             error: 'Invalid user request or unauthorised request..!'
         });
@@ -86,8 +67,35 @@ function isUserAuthenticated(req, res, next) {
     );
 }
 
-app.use('/', authRoutes);
-app.use('/resource', resourcebundle);
+app.use('/', jsonBodyParser, urlEncodedParser, authRoutes);
+app.use('/resource', jsonBodyParser, urlEncodedParser, resourcebundle);
+
+
+/* ============================================
+=            proxy implementation            =
+============================================*/
+
+// The below app route config should be placed after all the local resources have ended
+app.use('/', function(req, res) {
+    let options = {
+        target: {
+            host: 'localhost',
+            port: 8081
+        }
+    };
+    // console.log('proxying');
+    platformProxy.web(req, res, options);
+});
+
+platformProxy.on('error', function(err, req, res) {
+    console.error('Error in proxy pass: ', err);
+});
+
+/* platformProxy.on('proxyReq', function(proxyReq, req, res, options) {
+    proxyReq.setHeader('customer-header', 'custom-header-value');
+});*/
+
+/* =====  End of proxy implementation  ======*/
 
 
 app.use(function(req, res, next) {
