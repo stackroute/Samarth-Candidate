@@ -10,20 +10,21 @@
 
 angular.module('sm-candidateprofile')
     .controller('navCtrl', [
-        'Flash',
-        '$rootScope',
-        '$scope',
-        'datagenerate',
-        '$state',
         '$auth',
         '$mdSidenav',
-        function(Flash,
+        '$rootScope',
+        '$scope',
+        '$state',
+        'datagenerate',
+        'Flash',
+        function($auth,
+                $mdSidenav,
                 $rootScope,
                 $scope,
+                $state
                 datagenerate,
-                $state,
-                $auth,
-                $mdSidenav) {
+                Flash,
+                ) {
         /* Global element signout exists in the root scope of the application and is used to
          control
         the visiblility of the signout button in the navbar */
