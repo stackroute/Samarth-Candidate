@@ -3,7 +3,6 @@ let authByToken = require('./authbytoken');
 let bodyParser = require('body-parser');
 
 var jsonBodyParser = bodyParser.json();
-
 var urlEncodedParser = bodyParser.urlencoded({
     extended: false
 });

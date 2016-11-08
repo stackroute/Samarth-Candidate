@@ -23,21 +23,6 @@ let app = express();
 app.onAppStart = function(addr) {
     console.error('Samarth-Candidateprofile web app is now Running on port:', addr.port);
 };
-
-// app.use(morgan('dev'));
-
-// create application/json parser
-// var jsonBodyParser = bodyParser.json();
-// create application/x-www-form-urlencoded parser
-/* var urlEncodedParser = bodyParser.urlencoded({
-    extended: false
-});*/
-
-/* app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: false
-})); */
-
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'bower_components')));
@@ -89,9 +74,6 @@ platformProxy.on('error', function(err, req, res) {
     console.error('Error in proxy pass: ', err);
 });
 
-/* platformProxy.on('proxyReq', function(proxyReq, req, res, options) {
-    proxyReq.setHeader('customer-header', 'custom-header-value');
-});*/
 
 /* =====  End of proxy implementation  ======*/
 
