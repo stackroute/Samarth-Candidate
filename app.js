@@ -26,20 +26,18 @@ app.onAppStart = function(addr) {
 
 // app.use(morgan('dev'));
 
-
-// create application/json parser 
-//var jsonBodyParser = bodyParser.json();
-// create application/x-www-form-urlencoded parser 
-/*var urlEncodedParser = bodyParser.urlencoded({
->>>>>>> 8697d8599e284143afa3569ddadf49d1cedc5130
+// create application/json parser
+// var jsonBodyParser = bodyParser.json();
+// create application/x-www-form-urlencoded parser
+/* var urlEncodedParser = bodyParser.urlencoded({
     extended: false
 });*/
 
 /* app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
-<<<<<<< HEAD
 })); */
+
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'bower_components')));
