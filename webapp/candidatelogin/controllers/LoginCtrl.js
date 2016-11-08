@@ -1,20 +1,20 @@
 /* Login controller -> responsible for authentication and hhaving $state, $auth as dependencies*/
 angular.module('sm-candidateprofile')
 .controller('LoginCtrl', [
-    '$state',
     '$auth',
-    'Flash',
     '$log',
+    '$state',
+    'Flash',
     function(
-        $state,
         $auth,
-        Flash,
-        $log) {
-    let vm = this;
-    vm.user = {};
-    /* Login() function which will be actually called in the associated view for
-    authentication of the user*/
-    vm.login = function() {
+        $log,
+        $state,
+        Flash) {
+        let vm = this;
+        vm.user = {};
+        /* Login() function which will be actually called in the associated view for
+        authentication of the user*/
+        vm.login = function() {
         // console.log(vm.user);
 
         /* $auth.login() is a predefined function provided by satellizer

@@ -2,12 +2,12 @@
  $auth as dependencies*/
 angular.module('sm-candidateprofile')
     .controller('RegisterCtrl', [
-        'Flash',
-        '$state',
         '$auth',
-        function(Flash,
+        '$state',
+        'Flash',
+        function($auth,
             $state,
-            $auth) {
+            Flash) {
             let vm = this;
             vm.user = {};
             /* Login() function which will be actually called in the associated view for
