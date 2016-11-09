@@ -23,6 +23,9 @@ let signup = function(newUser, callback, unauthCB) {
             callback('Unable to signup the user', null);
         }
 
+        //adding for testing since we dono support profession as of yet
+        //newUser.profession = 'test',
+
         authCandidate.registerCandidate(newUser).then(
             function(candidate) {
                 let sessionUser = {

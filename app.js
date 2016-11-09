@@ -66,7 +66,6 @@ app.use('/', function(req, res) {
             port: 8081
         }
     };
-    // console.log('proxying');
     platformProxy.web(req, res, options);
 });
 
