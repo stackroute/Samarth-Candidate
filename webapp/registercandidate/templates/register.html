@@ -34,6 +34,19 @@
             </md-input-container>
         </div>
         <div layout="row" layout-align="center center">
+            <md-input-container flex>
+                <label>Profession</label>
+                <md-icon class="material-icons">work</md-icon>
+                <md-select name="profession" ng-model="register.user.profession" required>
+                    <md-option value="doctor">Doctor</md-option>
+                    <md-option value="engineer">Engineer</md-option>
+                </md-select>
+                <div ng-messages="signupForm.profession.$error">
+                    <div ng-message="required">Please Select your profession</div>
+                </div>
+            </md-input-container>
+        </div>
+        <div layout="row" layout-align="center center">
             <md-input-container class=" md-icon-float" flex>
                 <label>{{resourceData.location}}</label>
                 <md-icon class="material-icons">place</md-icon>
@@ -70,7 +83,7 @@
         <div layout="row" layout-align="center center">
             <div layout="row" layout-align="center center" layout-wrap flex flex-gt-sm="40">
                 <md-button type="submit" ng-disabled="signupForm.$invalid" class="md-raised md-primary createAccount" ng-click="register.register()">
-                  {{resourceData.create}}
+                    {{resourceData.create}}
                 </md-button>
             </div>
         </div>

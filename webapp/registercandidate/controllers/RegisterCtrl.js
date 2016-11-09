@@ -28,7 +28,8 @@ angular.module('sm-candidateprofile')
                     mobile: vm.user.number,
                     email: vm.user.email,
                     location: vm.user.location,
-                    pwd: vm.user.password
+                    pwd: vm.user.password,
+                    profession: vm.user.profession
 
                 }).then(function() {
                     let message = 'Successfully completed registration..!';
