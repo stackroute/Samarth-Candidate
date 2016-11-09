@@ -38,8 +38,7 @@
                 <label>Profession</label>
                 <md-icon class="material-icons">work</md-icon>
                 <md-select name="profession" ng-model="register.user.profession" required>
-                    <md-option value="doctor">Doctor</md-option>
-                    <md-option value="engineer">Engineer</md-option>
+                    <md-option ng-repeat="(key, value) in register.professions" ng-value="value.professions">{{value.professions}}</md-option>
                 </md-select>
                 <div ng-messages="signupForm.profession.$error">
                     <div ng-message="required">Please Select your profession</div>

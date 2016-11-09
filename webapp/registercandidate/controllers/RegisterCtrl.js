@@ -5,11 +5,24 @@ angular.module('sm-candidateprofile')
         '$auth',
         '$state',
         'Flash',
+        'professionService',
         function($auth,
             $state,
-            Flash) {
+            Flash,
+            professionService) {
             let vm = this;
             vm.user = {};
+
+
+            professionService.profession()
+                .then(function success(response) {
+                    //console.log(response);
+                    vm.professions = response.data;
+                }, function error(error) {
+                    console.log("Error on inserting data");
+                });
+
+            
             /* Login() function which will be actually called in the associated view for
             registering the user*/
             vm.register = function __register() {
@@ -44,4 +57,3 @@ angular.module('sm-candidateprofile')
             };
         }
     ]);
-
