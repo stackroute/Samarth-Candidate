@@ -6,6 +6,25 @@
  .maincontent {
      width: 100%;
  }
+
+ .sideNavData{
+    color: black;
+    font-size: 25px;
+ }
+
+ .sideNavContent{
+    padding-bottom: 20px;
+    padding-left: 20px;
+ }
+
+ .navTitle{
+    padding-left: 15px;
+    font-size: 20px;
+ }
+
+ .closeBtn{
+    font-size: 20px;  
+ }
  
  .label
  {

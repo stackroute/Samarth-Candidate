@@ -23,7 +23,7 @@ let app = express();
 app.onAppStart = function(addr) {
     console.error('Samarth-Candidateprofile web app is now Running on port:', addr.port);
 };
-
+app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'webapp')));
