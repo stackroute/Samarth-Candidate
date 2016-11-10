@@ -1,70 +1,59 @@
 <div>
-    <md-sidenav class="md-sidenav-left" md-component-id="left"
-                 md-whiteframe="4">
-
-      <md-toolbar class="md-theme-indigo navTitle">
+  <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
+    <md-toolbar class="md-theme-indigo navTitle" layout="row">
+      <div class="md-toolbar-tools">
         <h1 className="md-toolbar-tools">{{title}}</h1>
-      </md-toolbar>
-
-      <md-content layout-margin>
-       
-       <div> 
-            <div class="sideNavContent">
-                <a class= "sideNavData"> {{resourceData.Personalinfo}}</a>
-            </div>
-            <div class="sideNavContent">
-                <a class= "sideNavData"> {{resourceData.Education}}</a>
-            </div>
-            <div class="sideNavContent">
-                <a class= "sideNavData"> {{resourceData.workexperience}} </a>
-            </div>
-            <div class="sideNavContent">
-                <a class= "sideNavData"> {{resourceData.Projects}} </a>
-            </div>
-            <div class="sideNavContent">
-                <a class= "sideNavData"> {{resourceData.Skills}} </a>
-            </div>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="toggleLeft()">
+          <!-- <md-tooltip>Close Side Panel</md-tooltip> -->
+          <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-content layout-margin>
+      <div>
+        <div class="sideNavContent">
+          <a class="sideNavData"> {{resourceData.Personalinfo}}</a>
         </div>
-        <!-- <md-button ng-click="toggleLeft()" md-no-ink class="md-primary closeBtn">
-          Close
-        </md-button> -->
-      </md-content>
-
-    </md-sidenav>
-
-    <md-content>
-        <md-toolbar flex>
-            <div className="md-toolbar-tools" layout="row" layout-align="start center">
-                <section layout="row" >
-                    <div>
-                      <md-button ng-click="toggleLeft()"
-                                  ng-show="sideNavLogo"
-                                  class="md-icon-button md-raised">
-                        <md-icon>reorder</md-icon>
-                      </md-button>
-                    </div>
-                </section>
-
-                <div layout="row" layout-align="start center" flex>
-                    <h2>
-                        <span className="samarth">{{title}}</span>
-                    </h2>
-                </div>
-                <div layout="row" layout-align="end center" flex>
-                    <md-button ng-click="logout()" ng-show="signout">Signout</md-button>
-                </div>
-            </div>
-
-            <div layout="row" layout-align="center center" hide-sm hide-xs layout-wrap flex
-                   md-colors="::{background: 'primary-700'}">
-
-                <div ng-repeat="(key,val) in language">
-
-                  <md-button class="languagebar" title="{{key}}"
-                              ng-click="loadLangData(key)">{{val}}</md-button>
-
-                </div>
-            </div>
-        </md-toolbar>
+        <div class="sideNavContent">
+          <a class="sideNavData"> {{resourceData.Education}}</a>
+        </div>
+        <div class="sideNavContent">
+          <a class="sideNavData"> {{resourceData.workexperience}} </a>
+        </div>
+        <div class="sideNavContent">
+          <a class="sideNavData"> {{resourceData.Projects}} </a>
+        </div>
+        <div class="sideNavContent">
+          <a class="sideNavData"> {{resourceData.Skills}} </a>
+        </div>
+      </div>
     </md-content>
+  </md-sidenav>
+  <md-content>
+    <md-toolbar flex>
+      <div className="md-toolbar-tools" layout="row" layout-align="start center">
+        <section layout="row">
+          <div>
+            <md-button ng-click="toggleLeft()" ng-show="sideNavLogo" class="md-icon-button">
+              <md-icon>reorder</md-icon>
+            </md-button>
+          </div>
+        </section>
+        <div layout="row" layout-align="start center" flex>
+          <h2>
+            <span className="samarth">{{title}}</span>
+          </h2>
+        </div>
+        <div layout="row" layout-align="end center" flex>
+          <md-button ng-click="logout()" ng-show="signout">Signout</md-button>
+        </div>
+      </div>
+      <div layout="row" layout-align="center center" hide-sm hide-xs layout-wrap flex md-colors="::{background: 'primary-700'}">
+        <div ng-repeat="(key,val) in language">
+          <md-button class="languagebar" title="{{key}}" ng-click="loadLangData(key)">{{val}}</md-button>
+        </div>
+      </div>
+    </md-toolbar>
+  </md-content>
 </div>
