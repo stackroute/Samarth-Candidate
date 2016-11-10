@@ -12,6 +12,18 @@ services:
       - 8080
     ports:
       - "80:8080"
+    depends_on:
+    - neo4j
+    - mongodb
+    - redis
+    environment:
+      MONGO_HOST: localhost
+      MONGO_PORT: 27017
+      MONGO_DB_NAME: samarthplatformdb
+      REDIS_HOST: localhost
+      REDIS_PORT: 6379 
+      NEO4J_HOST: localhost
+      NEO4J_PORT: 7474
   platform:
     image: samarth/samarth-platform:v0.1.0
     build: 
@@ -24,4 +36,26 @@ services:
       - 8081
     ports:
       - "80:8081"
-  
+  neo4j:
+    image: neo4j:3.0
+    ports:
+     - "7474:7474"
+  mongodb:
+    # container_name: mongodb
+    image: mvertes/alpine-mongo
+    network_mode: host
+    restart: always
+    volumes:
+      - /data:/data/db
+    expose:
+      - 27017
+    ports:
+      - "27017:27017"
+  redis:
+   # container_name: redis
+   image: smebberson/alpine-redis
+   restart: always
+   expose:
+     - 6379
+   ports:
+     - "6379:6379"  
