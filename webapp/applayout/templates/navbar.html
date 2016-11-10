@@ -15,7 +15,7 @@
         <div class="sideNavContent">
           <a class="sideNavData"> {{resourceData.Personalinfo}}</a>
         </div>
-        
+
         <div class="sideNavContent">
           <a class="sideNavData"> {{resourceData.Education}}</a>
         </div>
@@ -37,44 +37,6 @@
 
     </md-sidenav>
 
-    <md-content>
-        <md-toolbar flex>
-            <div className="md-toolbar-tools" layout="row" layout-align="start center">
-                <section layout="row" >
-                    <div>
-                      <md-button ng-click="toggleLeft()"
-                                  ng-show="sideNavLogo"
-                                  class="md-icon-button ">
-                        <md-icon>reorder</md-icon>
-                      </md-button>
-                    </div>
-                </section>
-
-                <div layout="row" layout-align="start center" flex>
-                    <h2>
-                        <span className="samarth">{{title}}</span>
-                    </h2>
-                </div>
-                <div layout="row" layout-align="end center" flex>
-                    <md-button ng-click="logout()" ng-show="signout">Signout</md-button>
-                </div>
-            </div>
-
-            <div layout="row" layout-align="center center" hide-sm hide-xs layout-wrap flex
-                   md-colors="::{background: 'primary-700'}">
-
-                <div ng-repeat="(key,val) in language">
-
-                  <md-button class="languagebar" title="{{key}}"
-                              ng-click="loadLangData(key)">{{val}}</md-button>
-
-                </div>
-            </div>
-        </md-toolbar>
-
-
-    </md-content>
-  </md-sidenav>
   <md-content>
     <md-toolbar flex>
       <div className="md-toolbar-tools" layout="row" layout-align="start center">
