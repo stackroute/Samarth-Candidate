@@ -2,7 +2,11 @@
      font-size: 25px;
      font-weight: bold;
  }
- 
+/* 
+.samarthTitle{
+    padding-left: 20px;
+}
+ */
  .maincontent {
      width: 100%;
  }
@@ -28,7 +32,7 @@
  }
 
  .navTitle{
-    padding-left: 15px;
+    padding-left: 0px;
     font-size: 20px;
  }
 

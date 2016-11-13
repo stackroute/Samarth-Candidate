@@ -10,6 +10,9 @@ angular.module('sm-candidateprofile')
     $rootScope,
     $scope) {
     $scope.uname = $auth.getPayload().uname;
+
+   
+    
     /* =============================================
     =  Checking whether the user is authenticated
        or not.Based on user's authenticity .
@@ -31,12 +34,17 @@ angular.module('sm-candidateprofile')
 
     if ($auth.isAuthenticated()) {
         // set to true if authenticated
+        //$rootscope.sideNavLogo=true;
+        $rootScope.sideNavLogo=true;
         $rootScope.signout = true;
+       // $Scope.$parent.sideNavLogo = true;
         // set to loggedinbackground if authenticated i.e set the background as white
         $rootScope.loggedinbackground = 'loggedinbackground';
     } else {
         // set to false if not authenticated ex: in case session expiration
         $rootScope.signout = false;
+        $rootScope.sideNavLogo=false;
+        //$Scope.$parent.sideNavLogo = false;
         // set to loggedoutbackground if not authenticated
         $rootScope.loggedinbackground = 'loggedoutbackground';
     }

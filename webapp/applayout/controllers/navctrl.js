@@ -28,7 +28,8 @@ angular.module('sm-candidateprofile')
          control
         the visiblility of the signout button in the navbar */
         $rootScope.signout = false;
-        $scope.sideNavLogo = true;
+        $rootScope.sideNavLogo = false;
+        console.log("Side nav logo"+$scope.sideNavLogo);
 
         /* loggedinbackground is defined in rootscope and sets the
         classname for the content ui-view declared
@@ -63,9 +64,10 @@ angular.module('sm-candidateprofile')
             for destroying session or
             deleting JWT of the user. */
             $auth.logout();
-            $scope.sideNavLogo = false;
+            $rootScope.sideNavLogo = false;
             // resetting the visibility of the flag to hide signout button on logout
             $rootScope.signout = false;
+            console.log("log out:"+$scope.sideNavLogo);
             // resetting the visibility of the content view backgound  in index.html
             $rootScope.loggedinbackground = 'loggedoutbackground';
             // redirects to a mentioned state if successfull
