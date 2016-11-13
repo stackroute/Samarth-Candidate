@@ -18,7 +18,7 @@
             <md-input-container class="md-icon-float" flex>
                 <label>{{resourceData.password}}</label>
                 <md-icon class="material-icons">lock</md-icon>
-               <input type="password" name="password" required md-no-asterisk ng-model="login.user.password">
+                <input type="password" name="password" required md-no-asterisk ng-model="login.user.password">
                 <div ng-messages="signinForm.password.$error">
                     <div ng-message="required">Password is required.</div>
                 </div>
@@ -36,7 +36,7 @@
         </div>
     </form>
 </div>
-<div layout-align="center center" hide-gt-sm >
+<div layout-align="center center" hide-gt-sm>
     <div layout="row" layout-align="center center" flex layout-wrap>
         <md-button class="languagebar" ng-repeat="(key,val) in language" title="{{key}}" ng-click="loadLangData(key)">{{val[0]}}</md-button>
     </div>

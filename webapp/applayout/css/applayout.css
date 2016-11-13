@@ -2,53 +2,31 @@
      font-size: 25px;
      font-weight: bold;
  }
-/* 
-.samarthTitle{
-    padding-left: 20px;
-}
- */
+ 
  .maincontent {
      width: 100%;
  }
-
-
-/*md-backdrop.md-sidenav-backdrop {
-  display: block;
-  position: absolute;
-  height: 100%;
-}*/
- .height{
-    height: 100%;
-  }
-
- .sideNavData{
-    color: black;
-    font-size: 25px;
- }
-
- .sideNavContent{
-    padding-bottom: 20px;
-    padding-left: 20px;
- }
-
- .navTitle{
-    padding-left: 0px;
-    font-size: 20px;
- }
-
- .closeBtn{
-    font-size: 20px;  
+ 
+ .height {
+     height: 100%;
  }
  
- .label
- {
+ .navTitle {
+     padding-left: 0px;
+     font-size: 20px;
+ }
+ 
+ .closeBtn {
+     font-size: 20px;
+ }
+ 
+ .label {
      font-size: 1.5em;
      display: block;
-   
-    -webkit-margin-before: 0.83em;
-    -webkit-margin-after: 0.83em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
+     -webkit-margin-before: 0.83em;
+     -webkit-margin-after: 0.83em;
+     -webkit-margin-start: 0px;
+     -webkit-margin-end: 0px;
  }
  
  .languagebar {
@@ -62,9 +40,9 @@
      color: white;
      padding: 5px;
  }
-
- .coverbackground{
-      /*background-color: skyblue;*/
+ 
+ .coverbackground {
+     /*background-color: skyblue;*/
      /* For browsers that do not support gradients */
      /*background: -webkit-radial-gradient(skyblue , white);*/
      /* For Safari 5.1 to 6.0 */
@@ -77,13 +55,11 @@
  }
  
  .loggedinbackground {
-
      /* 
      background-image: url('../../applayout/images/dashboardbackground.jpg');
      -moz-background-size: 100% 100%;
      -webkit-background-size: 100% 100%;
      background-size: 100% 100%; */
-
      /* background-color: skyblue; */
      /* For browsers that do not support gradients */
      /* background: -webkit-radial-gradient(skyblue , white); */

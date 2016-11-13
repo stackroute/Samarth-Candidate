@@ -22,7 +22,7 @@ angular.module('sm-candidateprofile')
                     console.log("Error on inserting data");
                 });
 
-            
+
             /* Login() function which will be actually called in the associated view for
             registering the user*/
             vm.register = function __register() {

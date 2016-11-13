@@ -1,4 +1,3 @@
-
 /* Overridden Interceptor of Satellizer for intercepting and authentication every request
 
 ===================DO NOT CHANGE Unless Required =========================================
@@ -18,9 +17,8 @@ let SatellizerInterceptor = (function() {
             }
 
             if (_this.SatellizerShared.isAuthenticated()) {
-                let tokenName = _this.SatellizerConfig.tokenPrefix ?
-                            [_this.SatellizerConfig.tokenPrefix, _this.SatellizerConfig.tokenName]
-                            .join('_') : _this.SatellizerConfig.tokenName;
+                let tokenName = _this.SatellizerConfig.tokenPrefix ? [_this.SatellizerConfig.tokenPrefix, _this.SatellizerConfig.tokenName]
+                    .join('_') : _this.SatellizerConfig.tokenName;
                 let token = _this.SatellizerStorage.get(tokenName);
                 if (_this.SatellizerConfig.tokenHeader && _this.SatellizerConfig.tokenType) {
                     token = _this.SatellizerConfig.tokenType + ' ' + token;
@@ -33,34 +31,34 @@ let SatellizerInterceptor = (function() {
             }
             return config;
         };
-         // request end
+        // request end
 
         /* responseError handler of the interceptor*/
         this.responseError = function(rejection) {
-                if (rejection.status === 401 || rejection.status === 403) {
-                    $rootScope.$emit('member-unauthorized');
-                    // console.log('signin failed from interceptor handler');
-                }
-                return $q.reject(rejection);
-            };
-            // response end
+            if (rejection.status === 401 || rejection.status === 403) {
+                $rootScope.$emit('member-unauthorized');
+                // console.log('signin failed from interceptor handler');
+            }
+            return $q.reject(rejection);
+        };
+        // response end
     }
     // Interceptor function ends
 
     Interceptor.Factory = function(SatellizerConfig,
-                        SatellizerShared, SatellizerStorage, $q, $rootScope)
-    {
+        SatellizerShared, SatellizerStorage, $q, $rootScope) {
         return new Interceptor(SatellizerConfig,
-                                SatellizerShared,
-                                SatellizerStorage,
-                                $q,
-                                $rootScope);
+            SatellizerShared,
+            SatellizerStorage,
+            $q,
+            $rootScope);
     };
     Interceptor.$inject = ['SatellizerConfig',
-                            'SatellizerShared',
-                            'SatellizerStorage',
-                            '$q',
-                            '$rootScope'];
+        'SatellizerShared',
+        'SatellizerStorage',
+        '$q',
+        '$rootScope'
+    ];
     return Interceptor;
 }());
 // Interceptor declaration change
@@ -68,10 +66,11 @@ let SatellizerInterceptor = (function() {
 
 // Injecting all the required dependencies into the interceptor declared above
 SatellizerInterceptor.Factory.$inject = ['SatellizerConfig',
-                             'SatellizerShared',
-                             'SatellizerStorage',
-                             '$q',
-                             '$rootScope'];
+    'SatellizerShared',
+    'SatellizerStorage',
+    '$q',
+    '$rootScope'
+];
 
 // Pushing the interceptor into $httpProvider
 let SatellizerHttpProviderConfig = (function() {
@@ -86,22 +85,21 @@ let SatellizerHttpProviderConfig = (function() {
 
 /* sm-candidateprofile Module is in root folder in smcandidateprofile.js */
 angular.module('sm-candidateprofile')
-// injecting the satellizer interceptor into module
+    // injecting the satellizer interceptor into module
     .factory('SatellizerInterceptor', SatellizerInterceptor)
     .config(['$authProvider', '$httpProvider', function($authProvider, $httpProvider) {
-            /* Satellizer properties override needed for customization*/
-            /* required login api endpoint*/
-            $authProvider.loginUrl = '/signin';
-            /* required register api endpoint*/
-            $authProvider.signupUrl = '/signup';
-            /* local storage name prefix "satellizer_YOUR-TOKEN-NAME"*/
-            $authProvider.tokenPrefix = 'satellizer';
-            /* token header that needs to be injected in every request via interceptor*/
-            $authProvider.tokenHeader = 'x-user-access-token';
-            /* default -> "Bearer" reset to blank required*/
-            $authProvider.tokenType = '';
-             /* Turn off default interceptor provided by satellizer*/
-            $authProvider.httpInterceptor = false;
-            return new SatellizerHttpProviderConfig($httpProvider);
-         }]);
-
+        /* Satellizer properties override needed for customization*/
+        /* required login api endpoint*/
+        $authProvider.loginUrl = '/signin';
+        /* required register api endpoint*/
+        $authProvider.signupUrl = '/signup';
+        /* local storage name prefix "satellizer_YOUR-TOKEN-NAME"*/
+        $authProvider.tokenPrefix = 'satellizer';
+        /* token header that needs to be injected in every request via interceptor*/
+        $authProvider.tokenHeader = 'x-user-access-token';
+        /* default -> "Bearer" reset to blank required*/
+        $authProvider.tokenType = '';
+        /* Turn off default interceptor provided by satellizer*/
+        $authProvider.httpInterceptor = false;
+        return new SatellizerHttpProviderConfig($httpProvider);
+    }]);

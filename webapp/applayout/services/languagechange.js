@@ -20,8 +20,9 @@ angular.module('sm-candidateprofile')
                         return data;
                     }, function errorCallback(response) {
                         $log.error(response);
-                       return 'err';
+                        return 'err';
                     });
                 }
             };
-        }]);
+        }
+    ]);

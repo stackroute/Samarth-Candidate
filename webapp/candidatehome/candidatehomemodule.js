@@ -1,7 +1,7 @@
 /* sm-candidateprofile Module is in root folder in smcandidateprofile.js */
 angular.module('sm-candidateprofile')
     .config(['$stateProvider',
-                function($stateProvider) {
+        function($stateProvider) {
             /* skipIfLoggedIn() function redirects user to a particular page
              based on its authentication status i.e.if user is logged in he will be
              automatically redirected to a defined state
@@ -47,43 +47,44 @@ angular.module('sm-candidateprofile')
                             controllerAs: 'login',
                             resolve: {
                                 skipIfLoggedIn: skipIfLoggedIn
-                                /* passing skipIfLoggedIn function here enables skipping login view
-                                 if the user is already authenticated*/
+                                    /* passing skipIfLoggedIn function here enables skipping login view
+                                     if the user is already authenticated*/
                             }
                         }
 
                     }
                 })
-        .state('candidate.register', {
-                parent: 'candidate',
-                url: '/register',
-                views: {
-                    'midcontent@candidate': {
-                        templateUrl: 'registercandidate/templates/register.html',
-                        controller: 'RegisterCtrl as register',
-                        resolve: {
-                            skipIfLoggedIn: skipIfLoggedIn
-                            /* passing skipIfLoggedIn function here enables skipping login view
-                             if the user is already authenticated*/
+                .state('candidate.register', {
+                    parent: 'candidate',
+                    url: '/register',
+                    views: {
+                        'midcontent@candidate': {
+                            templateUrl: 'registercandidate/templates/register.html',
+                            controller: 'RegisterCtrl as register',
+                            resolve: {
+                                skipIfLoggedIn: skipIfLoggedIn
+                                    /* passing skipIfLoggedIn function here enables skipping login view
+                                     if the user is already authenticated*/
+                            }
                         }
                     }
-                }
-            })
-            .state('candidate.dashboard', {
-                parent: 'candidate',
-                url: '/dashboard',
-                views: {
-                    'midcontent@candidate': {
-                        templateUrl: 'candidatehome/templates/dashboard.html',
-                        controller: 'DashboardCtrl',
-                        controllerAs: 'dashboard',
-                        resolve: {
-                            loginRequired: loginRequired
-                            /* passing loginRequired function here enables redirecting user
-                             to the login view if the user is not authenticated .
-                             This will prevent user form accessing this state*/
+                })
+                .state('candidate.dashboard', {
+                    parent: 'candidate',
+                    url: '/dashboard',
+                    views: {
+                        'midcontent@candidate': {
+                            templateUrl: 'candidatehome/templates/dashboard.html',
+                            controller: 'DashboardCtrl',
+                            controllerAs: 'dashboard',
+                            resolve: {
+                                loginRequired: loginRequired
+                                    /* passing loginRequired function here enables redirecting user
+                                     to the login view if the user is not authenticated .
+                                     This will prevent user form accessing this state*/
+                            }
                         }
                     }
-                }
-            });
-    }]);
+                });
+        }
+    ]);
