@@ -8,8 +8,8 @@ services:
       dockerfile: Dockerfile
     network_mode: host
     restart: always
-    expose:
-      - 8080
+    # expose:
+      # - 8080
     ports:
       - "80:8080"
     depends_on:
@@ -49,13 +49,13 @@ services:
       - /data:/data/db
     expose:
       - 27017
-    ports:
-      - "27017:27017"
+    # ports:
+      # - "27017:27017"
   redis:
    # container_name: redis
    image: smebberson/alpine-redis
    restart: always
    expose:
      - 6379
-   ports:
-     - "6379:6379"  
+   # ports:
+     # - "6379:6379"  

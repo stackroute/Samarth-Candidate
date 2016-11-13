@@ -7,6 +7,16 @@
      width: 100%;
  }
 
+
+/*md-backdrop.md-sidenav-backdrop {
+  display: block;
+  position: absolute;
+  height: 100%;
+}*/
+ .height{
+    height: 100%;
+  }
+
  .sideNavData{
     color: black;
     font-size: 25px;
