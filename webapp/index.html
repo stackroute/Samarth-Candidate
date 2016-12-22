@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="samarth-webcomponents/sectionprojectcard/css/sectionprojectcard.css" />
     <link rel="stylesheet" href="samarth-webcomponents/sectionpersonalinfocard/css/sectionpersonalinfocard.css" />
     <link type="text/css" rel="stylesheet" href="angular-flash-alert/dist/angular-flash.css" />
+    <link rel="stylesheet" type="text/css" href="samarth-webcomponents/jobcard/css/style.css">
+
 </head>
 
 <body ng-app="sm-candidateprofile" ng-cloak>
@@ -33,6 +35,7 @@
             <div layout="row">
                 <!--template=applayout/template/content.html-->
                 <div ui-view="content" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
+                <div ui-view="results" flex="100" flex-sm="100" flex-xs="100"></div>
             </div>
         </div>
         <!--template=applayout/template/footer.html-->
@@ -49,16 +52,25 @@
 <script src="/angular-local-storage/dist/angular-local-storage.js"></script>
 <script src="/satellizer/dist/satellizer.js"></script>
 <script src="/html2canvas/build/html2canvas.js"></script>
+<script type="text/javascript" src="/ng-simplePagination/simplePagination.js"></script>
+
 <script src="smcandidateprofile.js"></script>
 <script src="auth/authmodule.js"></script>
 <script src="applayout/appconfig.js"></script>
 <script src="candidatehome/candidatehomemodule.js"></script>
 <script type="text/javascript" src="candidatehome/controllers/dashboardCtrl.js"></script>
+<script type="text/javascript" src="candidatehome/factory/dashboardFactory.js"></script>
 <script type="text/javascript" src="candidatelogin/controllers/LoginCtrl.js"></script>
 <script type="text/javascript" src="registercandidate/controllers/RegisterCtrl.js"></script>
 <script type="text/javascript" src="registercandidate/services/registerService.js"></script>
 <script type="text/javascript" src="applayout/controllers/navctrl.js"></script>
 <script type="text/javascript" src="applayout/services/languagechange.js"></script>
+ <!-- <script type="text/javascript" src="samarth-webcomponents/jobcard/services/blob.js"></script>
+ <script type="text/javascript" src="samarth-webcomponents/jobcard/jobcard.js"></script> -->
+ <!-- <script type="text/javascript" src="samarth-webcomponents/jobcard/services/jobcardservices.js"></script> -->
+ <script src="jobSearch/jobSearch.js"></script>
+ <script src="jobSearch/factory/jobSearchFactory.js"></script>
+ <script src="jobSearch/controller/jobSearchCtrl.js"></script>
 <!-- <script type="text/javascript" src="applayout/sideNav.js"></script> -->
 <!-- Inclusion of bower components -->
 <script type="text/javascript" src="samarth-webcomponents/samarth-webcomponents.js"></script>

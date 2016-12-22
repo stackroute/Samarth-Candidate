@@ -5,14 +5,23 @@ angular.module('sm-candidateprofile')
         '$auth',
         '$rootScope',
         '$scope',
+        'dashboardFactory',
         function(
             $auth,
             $rootScope,
-            $scope) {
+            $scope,dashboardFactory) {
             $scope.uname = $auth.getPayload().uname;
+            console.log("In dashboard "+$scope.uname);
+              var bar  = $scope.uname;
 
+            dashboardFactory.getCandidatebyID(bar).then(function(response) {
+                console.log("hey");
+                console.log(response.data);
+                console.log($scope.profiling);
+                vm.jobprovider = $scope.profiling[0];
+                vm.checked = true;
 
-
+            });
             /* =============================================
             =  Checking whether the user is authenticated
                or not.Based on user's authenticity .
