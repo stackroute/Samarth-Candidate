@@ -24,6 +24,13 @@ angular.module('sm-candidateprofile')
             datagenerate,
             Flash
         ) {
+          $scope.profession=$rootScope.profession;
+          console.log("inside navbar ctrl");
+          console.log($scope.profession);
+          // var navItems={};
+          // openSideNavPanel=openSideNavPanel;
+          // closeSideNavPanel=closeSideNavPanel;
+          // getSidenav=getSidenav;
             /* Global element signout exists in the root scope of the application and is used to
              control
             the visiblility of the signout button in the navbar */
@@ -56,6 +63,19 @@ angular.module('sm-candidateprofile')
             };
             // calling loadnavlang  for loading data initially
             $scope.loadnavlang();
+
+            // function getSidenav()
+            //          {
+            //         navFactory.getSidenav().then(function(response) {
+            //             vm.navItems=response.data;
+            //         });
+            //          }
+            //         function openSideNavPanel() {
+            //         $mdSidenav('left').open();
+            //         };
+            //         function closeSideNavPanel() {
+            //         $mdSidenav('left').close();
+            //         };
 
             /* logout() function which will be actually called in the associated view for
             loggin out the user*/

@@ -16,7 +16,7 @@ angular
             // console.log(jpCode);
             return $http({
                 method: 'GET',
-                url: '/profile/' + id
+                url: '/profile/'+ id
             })
 
         }

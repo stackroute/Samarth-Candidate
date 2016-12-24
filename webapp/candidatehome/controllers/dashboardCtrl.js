@@ -12,12 +12,15 @@ angular.module('sm-candidateprofile')
             $scope,dashboardFactory) {
             $scope.uname = $auth.getPayload().uname;
             console.log("In dashboard "+$scope.uname);
-              var bar  = $scope.uname;
-
+            var bar  = $scope.uname;
             dashboardFactory.getCandidatebyID(bar).then(function(response) {
-                console.log("hey");
-                console.log(response.data);
-                console.log($scope.profiling);
+                // console.log("data " + response.data);
+                // $scope.foo=response.data[0].profession;
+                $scope.profession=response.data[0].profession;
+                $rootScope.profession=$scope.profession;
+                console.log("after root to scope profession");
+                console.log($rootScope.profession);
+                // console.log("profiling " + $scope.profiling[0]);
                 vm.jobprovider = $scope.profiling[0];
                 vm.checked = true;
 

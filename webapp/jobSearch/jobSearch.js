@@ -7,7 +7,7 @@ angular
         $urlRouterProvider.otherwise('/');
         $stateProvider
           .state('candidate.jobSearch', {
-            url:'/jobsearch/:circleName?/:circleDomain?',
+            url:'/jobsearch',
             views: {
               "content@": {
                 templateUrl: './jobSearch/template/jobSearch.html',
@@ -24,7 +24,7 @@ angular
             // }
            })
           .state('candidate.jobSearch.results', {
-            url: '/jobslist/:searchText?',
+            url: 'jobslist/:searchText?',
               views: {
                 "results": {
                    templateUrl: './jobSearch/template/jobSearchResult.html',
