@@ -6,7 +6,8 @@ angular.module('sm-candidateprofile')
      'Pagination',
      'jobSearchFactory',
      '$rootScope',
-  function($scope, $stateParams, Pagination,jobSearchFactory,$rootScope) {
+     '$state',
+  function($scope, $stateParams, Pagination,jobSearchFactory,$rootScope,$state) {
 
       if ($stateParams.searchText !== undefined ) {
             $scope.searchJob($stateParams.searchText);
@@ -35,17 +36,19 @@ angular.module('sm-candidateprofile')
            }
            else{
              $scope.message="Showing " + response.data.length + " Results for Job Search";
+
+             $state.go('candidate.jobSearch.results', result);
              }
            },
           function errorCallbackfun(response) {
             console.log("some error occured");
             $scope.message = "Some Error Occured ";
           });
-          function (err)
-           {
-            $scope.message = err;
-            //console.log($scope.message);
-           }
+          // function (err)
+          //  {
+          //   $scope.message = err;
+          //   //console.log($scope.message);
+          //  }
     //  var profs="";
     //   dashboardFactory.getCandidatebyID()
     //      .then(function(response){
@@ -86,20 +89,19 @@ angular.module('sm-candidateprofile')
                 }
                 else{
                   $scope.message="Showing " + response.data.length + " Results for Job Search";
+
                 }
                 },
                function errorCallbackfun(response) {
                  console.log("some error occured");
                  $scope.message = "Some Error Occured ";
                });
-               function (err)
-                {
-                 $scope.message = err;
-                 //console.log($scope.message);
-                }
-             );
+              //  function (err)
+              //   {
+              //    $scope.message = err;
+              //    //console.log($scope.message);
+              //   }
+            //  );
        };
-
-      //  $scope.searchJob($stateParams.searchText);
    }]);
 })();

@@ -31,6 +31,9 @@ angular
                    controller: 'jobSearchCtrl'
                   }
               },
+              params: {
+                 obj: null
+                  },
            })
         }
     ]);
