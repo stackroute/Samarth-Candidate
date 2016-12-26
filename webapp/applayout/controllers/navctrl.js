@@ -26,38 +26,19 @@ angular.module('sm-candidateprofile')
             navFactory,
             Flash
         ) {
-            if($auth.isAuthenticated())
-    {
-      /*console.log("nav");
-            $rootScope.$on('$stateChangeStart','$location', function(event, toState, toParams, fromState,$location) {
-                console.log("kumari");
-                //if user is already traversing to index stage, ignore this check
-                //Here ignore all those states, which need not have authentication 
-                if (toState.name == 'index') {
-                    //index state does not need prior authentication
-                    $location.path('/home/dashboard');
-                    console.log("sdggdfgfdhgf");
-                }
-
-                });*/
-
-      $state.go('candidate.dashboard');
-   
-}
+            
       
       var navItems={};
       
         navFactory.getSidenav().then(function(response) {
         $scope.navItems=response.data;
     });
-       
-            /* Global element signout exists in the root scope of the application and is used to
+       /* Global element signout exists in the root scope of the application and is used to
              control
             the visiblility of the signout button in the navbar */
             $rootScope.signout = false;
             $rootScope.sideNavLogo = false;
             console.log("Side nav logo" + $scope.sideNavLogo);
-
 
             /* loggedinbackground is defined in rootscope and sets the
             classname for the content ui-view declared
@@ -111,9 +92,13 @@ angular.module('sm-candidateprofile')
                 // datagenerate is a service that call the API to get the json data
                 // datagenerate defined in -->> applayout/services/languagechange.js
                 datagenerate.getjson('section', lang).then(function(result) {
+                    console.log("lan");
                     if (result !== 'err') {
+                        console.log("not error");
                         $scope.$parent.resourceData = result;
+                        console.log("look"+$scope.$parent.resourceData.jobpreferences);
                     } else {
+                        console.log("error lan");
                         // handling the error and by default assigning the English language
                         $scope.loadLangData('English');
 
@@ -140,6 +125,14 @@ angular.module('sm-candidateprofile')
 
             $scope.toggleLeft = buildToggler('left');
             $scope.toggleRight = buildToggler('right');
+            if($auth.isAuthenticated())
+    {
+      
+      $state.go('candidate.dashboard');
+   
+}
+else{
+    $state.go('candidate.login');
+}
         }
-    
     ]);
