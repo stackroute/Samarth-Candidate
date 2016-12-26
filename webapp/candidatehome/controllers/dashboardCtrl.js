@@ -21,8 +21,13 @@ angular.module('sm-candidateprofile')
                 console.log("after root to scope profession");
                 console.log($rootScope.profession);
                 // console.log("profiling " + $scope.profiling[0]);
+<<<<<<< HEAD
                 /*vm.jobprovider = $scope.profiling[0];
                 vm.checked = true;*/
+=======
+                // vm.jobprovider = $scope.profiling[0];
+                // vm.checked = true;
+>>>>>>> 3bab94bb75f74bc113817b70678adf2f95b0a737
 
             });
             /* =============================================
