@@ -36,7 +36,9 @@
             <div layout="row">
                 <!--template=applayout/template/content.html-->
                 <div ui-view="content" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
-                <div ui-view="results" flex="100" flex-sm="100" flex-xs="100"></div>
+                <div>
+                  <div ui-view="results" flex="100" flex-sm="100" flex-xs="100"></div>
+                </div>
             </div>
         </div>
         <!--template=applayout/template/footer.html-->

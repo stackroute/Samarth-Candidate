@@ -24,16 +24,16 @@ angular
             // }
            })
           .state('candidate.jobSearch.results', {
-            url: 'jobslist/:searchText?',
+            url: '/jobslist/:searchText?',
               views: {
                 "results": {
                    templateUrl: './jobSearch/template/jobSearchResult.html',
                    controller: 'jobSearchCtrl'
                   }
               },
-              params: {
-                 'obj': 'null'
-                  },
+              // params: {
+              //    'obj': 'null'
+              //     },
            })
         }
     ]);
