@@ -32,7 +32,7 @@ angular
                   }
               },
               params: {
-                 obj: null
+                 'obj': 'null'
                   },
            })
         }
