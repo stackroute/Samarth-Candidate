@@ -1,8 +1,8 @@
-<div layout="row" layout-align="center" layout-margin="" >
-    <input type="text" name="searchBox" size="32px" layout-xs="size=20px;" md-focus ng-model="searchText" class="md-block">
+<div layout="column" layout-gt-xs="row" layout-align="center" layout-margin="" >
+    <input type="text" name="searchBox" size="70px" layout-xs="size=20px;" md-focus ng-model="searchText" class="md-block">
     <!-- <input type="text" name="searchBox" layout-gt-sm="size=36px;" layout-xs="size=20px;" layout-gt-xs="size=32px;"  md-focus ng-model="searchText" class="md-block"> -->
 
-    <md-button class="md-raised md-primary" ui-sref="candidate.jobSearch.results({searchText:searchText})" >Find Jobs</md-button>
+    <md-button class="md-raised md-primary" ui-sref="candidate.jobSearch.results({searchText:searchText})"><md-icon> search </md-icon>Find Jobs</md-button>
 </div>
 <!-- <div class="md-padding md-display-2" layout layout-align="center center" style="font-size:26;">
      {{message}}
