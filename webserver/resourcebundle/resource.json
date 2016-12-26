@@ -45,8 +45,10 @@
         "addskill": "Add ",
         "addeducation": "Add ",
         "addproject": "Add ",
+        "addjobpreferences":"Add ",
         "addworkexp": "Add",
         "projectheader": "Project",
+        "jobpreferencesheader":"Job Preferences",
         "educationheader": "Qualification",
         "workexpheader": "Work Experience",
         "personalinfoheader": "Personal Information",
@@ -70,7 +72,8 @@
         "Projects": "Projects",
         "workexperience": "Work Experience",
         "Education": "Qualification",
-        "Personalinfo": "Personal info"
+        "Personalinfo": "Personal info",
+        "jobpreferences":"Job Preferences"
     },
     "sectionHindi": {
         "skillheader": "कौशल",
@@ -79,8 +82,10 @@
         "addskill": "नये कौशल जोड़े",
         "addeducation": "नई शिक्षा जोड़े",
         "addproject": "नई परियोजना को जोड़े",
+        "addjobpreferences":"नौकरी वरीयता जोड़ने",
         "addworkexp": "नया काम करने का अनुभव जोड़े",
         "projectheader": "परियोजना",
+        "jobpreferencesheader":"नौकरी वरीयता",
         "educationheader": "शिक्षा",
         "workexpheader": "काम का अनुभव",
         "personalinfoheader": "व्यक्तिगत जानकारी",
@@ -104,7 +109,8 @@
         "Projects": "परियोजनाएं",
         "workexperience": "काम का अनुभव",
         "Education": "शिक्षा",
-        "Personalinfo": "व्यक्तिगत जानकारी"
+        "Personalinfo": "व्यक्तिगत जानकारी",
+        "jobpreferences":"नौकरी वरीयता"
     },
 
     "sectionTelugu": {
@@ -114,8 +120,10 @@
         "addskill": "నైపుణ్యాలు జోడించడానికి",
         "addeducation": "విద్య జోడించడానికి",
         "addproject": "ప్రాజెక్ట్ జోడించవచ్చు",
+        "addjobpreferences":"ఉద్యోగం ప్రాధాన్యత జోడించడానికి",
         "addworkexp": "పని అనుభవం జోడించండి",
         "projectheader": "ప్రాజెక్టు",
+        "jobpreferencesheader":"ఉద్యోగం ప్రాధాన్యత",
         "educationheader": "అర్హతలు",
         "workexpheader": "పని అనుభవం",
         "personalinfoheader": "వ్యక్తిగత సమాచారం",
@@ -139,7 +147,8 @@
         "Projects": "ప్రాజెక్ట్స్",
         "workexperience": "పని అనుభవం",
         "Education": "చదువు",
-        "Personalinfo": "వ్యక్తిగత సమాచారం"
+        "Personalinfo": "వ్యక్తిగత సమాచారం",
+        "jobpreferences":"ఉద్యోగం ప్రాధాన్యత"
     },
 
     "sectionPunjabi": {
@@ -149,8 +158,10 @@
         "addskill": "ਜੋੜੋ ਹੁਨਰ",
         "addeducation": "ਜੋੜੋ ਸਿੱਖਿਆ",
         "addproject": "ਜੋੜੋ ਇਸ ਪ੍ਰਾਜੈਕਟ",
+        "addjobpreferences":"ਨੌਕਰੀ ਤਰਜੀਹ ਨੂੰ ਜੋਡ਼ਨ",
         "addworkexp": "ਜੋੜੋ ਕੰਮ ਦਾ ਅਨੁਭਵ",
         "projectheader": "ਪ੍ਰੋਜੈਕਟ",
+        "jobpreferencesheader":"ਨੌਕਰੀ ਤਰਜੀਹ",
         "educationheader": "ਯੋਗਤਾ",
         "workexpheader": "ਕੰਮ ਦੇ ਇਤਿਹਾਸ",
         "personalinfoheader": "ਵਿਅਕਤੀਗਤ ਜਾਣਕਾਰੀ",
@@ -174,7 +185,8 @@
         "Projects": "ਪ੍ਰੋਜੈਕਟ",
         "workexperience": "ਕੰਮ ਦਾ ਅਨੁਭਵ",
         "Education": "ਸਿੱਖਿਆ",
-        "Personalinfo": "ਨਿੱਜੀ ਜਾਣਕਾਰੀ"
+        "Personalinfo": "ਨਿੱਜੀ ਜਾਣਕਾਰੀ",
+        "jobpreferences":"ਨੌਕਰੀ ਤਰਜੀਹ"
     },
     "sectionBengali": {
         "skillheader": "দক্ষতা",
@@ -183,8 +195,10 @@
         "addskill": "একটি দক্ষতা যোগ করুন",
         "addeducation": "একটি শিক্ষা যোগ করুন",
         "addproject": "একটি প্রকল্প যোগ করুন",
+        "addjobpreferences":"কাজ প্রেফারেন্স যুক্ত",
         "addworkexp": "একটি কাজের অভিজ্ঞতা যোগ করুন",
         "projectheader": "প্রকল্প",
+        "jobpreferencesheader":"কাজ পছন্দ",
         "educationheader": "যোগ্যতা",
         "workexpheader": "কাজের ইতিহাস",
         "personalinfoheader": "ব্যক্তিগত তথ্য",
@@ -208,7 +222,8 @@
         "Projects": "প্রকল্প",
         "workexperience": "কর্মদক্ষতা",
         "Education": "শিক্ষা",
-        "Personalinfo": "ব্যক্তিগত তথ্য"
+        "Personalinfo": "ব্যক্তিগত তথ্য",
+        "jobpreferences":"কাজ পছন্দ"
     },
     "sectionTamil": {
         "skillheader": "திறன்கள்",
@@ -217,8 +232,10 @@
         "addskill": "புதிய திறன் சேர்க்க ",
         "addeducation": "புதிய கல்வி சேர்க்க ",
         "addproject": "புதிய திட்டம் சேர்க்க ",
+        "addjobpreferences":"வேலை முன்னுரிமை சேர்க்க",
         "addworkexp": "புதிய சேர்க்க",
         "projectheader": "திட்டம்",
+        "jobpreferencesheader":"வேலை முன்னுரிமை",
         "educationheader": "தகுதி",
         "workexpheader": "வேலை வரலாறு",
         "personalinfoheader": "சுயவிவரங்கள்",
@@ -242,7 +259,8 @@
         "Projects": "திட்டங்கள்",
         "workexperience": "பணி அனுபவம்",
         "Education": "கல்வி",
-        "Personalinfo": "தனிப்பட்ட தகவல்"
+        "Personalinfo": "தனிப்பட்ட தகவல்",
+        "jobpreferences":"வேலை முன்னுரிமை"
     },
     "sectionMarathi": {
         "skillheader": "कौशल्य",
@@ -251,8 +269,10 @@
         "addskill": "नवीन कौशल्य जोडण्यासाठी ",
         "addeducation": "नवीन शिक्षण जोडा",
         "addproject": " नवीन प्रकल्प जोडण्यासाठी",
+        "addjobpreferences":"नोकरी प्राधान्य जोडा",
         "addworkexp": "नवीन काम अनुभव जोडण्यासाठी",
         "projectheader": "प्रकल्प",
+        "jobpreferencesheader":"नोकरी प्राधान्य",
         "educationheader": "योग्यता",
         "workexpheader": "कामाचा इतिहास",
         "personalinfoheader": "वैयक्तिक माहिती",
@@ -276,7 +296,8 @@
         "Projects": "प्रकल्प",
         "workexperience": "कामाचा अनुभव",
         "Education": "शिक्षण",
-        "Personalinfo": "वैयक्तिक माहिती"
+        "Personalinfo": "वैयक्तिक माहिती",
+        "jobpreferences":"नोकरी प्राधान्य"
     }
 
 
