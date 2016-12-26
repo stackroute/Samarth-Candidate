@@ -1,4 +1,3 @@
-/* Datagenerate is responsible for navbar and having $http as dependencies*/
 angular.module('sm-candidateprofile')
     .factory('datagenerate', [
         '$http',

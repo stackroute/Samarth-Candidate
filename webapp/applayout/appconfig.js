@@ -3,9 +3,11 @@ angular.module('sm-candidateprofile')
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         // console.log('inside appconfig');
         // Url routing starts here
+        $urlRouterProvider.when('/','/home/login');
+        $urlRouterProvider.otherwise('/home/login');
         $stateProvider
-            .state('candidate', {
-                url: '/home',
+            .state('candidate', {               
+             url: '/home',
                 views: {
                     'content@': {
                         templateUrl: '/applayout/templates/content.html'
@@ -19,9 +21,9 @@ angular.module('sm-candidateprofile')
                     }
                 }
             });
-
+           
         // redirects to login page if user request a non-existing state
-        $urlRouterProvider.otherwise('/home/login');
+        
     }]);
 
 /* NOTE :- home state child  routes are in candidatehome/candidatehomemodules.js
