@@ -55,6 +55,11 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
     $mdThemingProvider.theme('default')
         .primaryPalette('customPrimary')
         .backgroundPalette('customBackground');
-}]);
+}])
+.config(['$locationProvider', function($locationProvider) {
+ $locationProvider.hashPrefix('');
+}])
+ .config(function($compileProvider) {
+ $compileProvider.preAssignBindingsEnabled(true);
+});
 
-/* Module's config with routes is in file applayout/appconfig.js*/
