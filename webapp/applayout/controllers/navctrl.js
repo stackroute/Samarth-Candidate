@@ -15,6 +15,7 @@ angular.module('sm-candidateprofile')
         '$scope',
         '$state',
         'datagenerate',
+        'navFactory',
         'Flash',
         function($auth,
             $mdSidenav,
@@ -22,21 +23,41 @@ angular.module('sm-candidateprofile')
             $scope,
             $state,
             datagenerate,
+            navFactory,
             Flash
         ) {
-          $scope.profession=$rootScope.profession;
-          console.log("inside navbar ctrl");
-          console.log($scope.profession);
-          // var navItems={};
-          // openSideNavPanel=openSideNavPanel;
-          // closeSideNavPanel=closeSideNavPanel;
-          // getSidenav=getSidenav;
+            if($auth.isAuthenticated())
+    {
+      /*console.log("nav");
+            $rootScope.$on('$stateChangeStart','$location', function(event, toState, toParams, fromState,$location) {
+                console.log("kumari");
+                //if user is already traversing to index stage, ignore this check
+                //Here ignore all those states, which need not have authentication 
+                if (toState.name == 'index') {
+                    //index state does not need prior authentication
+                    $location.path('/home/dashboard');
+                    console.log("sdggdfgfdhgf");
+                }
+
+                });*/
+
+      $state.go('candidate.dashboard');
+   
+}
+      
+      var navItems={};
+      
+        navFactory.getSidenav().then(function(response) {
+        $scope.navItems=response.data;
+    });
+       
             /* Global element signout exists in the root scope of the application and is used to
              control
             the visiblility of the signout button in the navbar */
             $rootScope.signout = false;
             $rootScope.sideNavLogo = false;
             console.log("Side nav logo" + $scope.sideNavLogo);
+
 
             /* loggedinbackground is defined in rootscope and sets the
             classname for the content ui-view declared
@@ -63,19 +84,6 @@ angular.module('sm-candidateprofile')
             };
             // calling loadnavlang  for loading data initially
             $scope.loadnavlang();
-
-            // function getSidenav()
-            //          {
-            //         navFactory.getSidenav().then(function(response) {
-            //             vm.navItems=response.data;
-            //         });
-            //          }
-            //         function openSideNavPanel() {
-            //         $mdSidenav('left').open();
-            //         };
-            //         function closeSideNavPanel() {
-            //         $mdSidenav('left').close();
-            //         };
 
             /* logout() function which will be actually called in the associated view for
             loggin out the user*/
@@ -133,4 +141,5 @@ angular.module('sm-candidateprofile')
             $scope.toggleLeft = buildToggler('left');
             $scope.toggleRight = buildToggler('right');
         }
+    
     ]);

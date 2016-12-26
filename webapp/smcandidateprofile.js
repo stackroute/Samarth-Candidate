@@ -4,8 +4,8 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
     'LocalStorageModule',
     'ngFlash',
     'samarth-webcomponents',
-    'satellizer',
     'simplePagination',
+    'satellizer',
     'ui.router'
 ])
 .config(['$mdThemingProvider', function($mdThemingProvider) {

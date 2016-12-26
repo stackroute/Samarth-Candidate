@@ -4,8 +4,7 @@ angular.module('sm-candidateprofile')
         // console.log('inside appconfig');
         // Url routing starts here
         $stateProvider
-            .state('candidate', {
-                url: '/home',
+            .state('candidate', {                url: '/home',
                 views: {
                     'content@': {
                         templateUrl: '/applayout/templates/content.html'

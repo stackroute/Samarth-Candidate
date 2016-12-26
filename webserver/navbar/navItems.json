@@ -1,15 +1,17 @@
 {
-	"role": "candidate",
+	
    "sidenavmenuitems":[
-{
+   	{
 	"icon":"dashboard",
 	"navTitle":"Dashboard",
 	"traverse":"candidate.dashboard"
 },
-{
+   	{
 	"icon":"youtube_searched_for_black",
 	"navTitle":"Job Search",
 	"traverse":"candidate.jobSearch"
 }
+
+
 ]
 }

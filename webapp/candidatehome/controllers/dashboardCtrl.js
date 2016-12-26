@@ -5,11 +5,11 @@ angular.module('sm-candidateprofile')
         '$auth',
         '$rootScope',
         '$scope',
-        'dashboardFactory',
+        'dashboardFactory','$state',
         function(
             $auth,
             $rootScope,
-            $scope,dashboardFactory) {
+            $scope,dashboardFactory,$state) {
             $scope.uname = $auth.getPayload().uname;
             console.log("In dashboard "+$scope.uname);
             var bar  = $scope.uname;
@@ -21,8 +21,8 @@ angular.module('sm-candidateprofile')
                 console.log("after root to scope profession");
                 console.log($rootScope.profession);
                 // console.log("profiling " + $scope.profiling[0]);
-                vm.jobprovider = $scope.profiling[0];
-                vm.checked = true;
+                /*vm.jobprovider = $scope.profiling[0];
+                vm.checked = true;*/
 
             });
             /* =============================================
@@ -49,6 +49,7 @@ angular.module('sm-candidateprofile')
                 //$rootscope.sideNavLogo=true;
                 $rootScope.sideNavLogo = true;
                 $rootScope.signout = true;
+                $state.go('candidate.dashboard');
                 // $Scope.$parent.sideNavLogo = true;
                 // set to loggedinbackground if authenticated i.e set the background as white
                 $rootScope.loggedinbackground = 'loggedinbackground';
