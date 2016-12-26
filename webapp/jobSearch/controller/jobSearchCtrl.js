@@ -36,7 +36,8 @@ angular.module('sm-candidateprofile')
              $scope.message = "No jobs found for "+profs+" profession";
            }
            else{
-             $scope.message="Showing " + response.data.length + " Results for Job Search";
+             // $scope.message="Showing " + response.data.length + " Results for your "+profs+" Profession in Job Search";
+             $scope.message="Showing " + response.data.length + " Results for "+profs+" Profession in Job Search";
 
              // $state.go('candidate.jobSearch.results', result);
              $state.go('candidate.jobSearch.results', {'obj':'result'});
