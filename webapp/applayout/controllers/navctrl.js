@@ -15,7 +15,6 @@ angular.module('sm-candidateprofile')
         '$scope',
         '$state',
         'datagenerate',
-        'navFactory',
         'Flash',
         function($auth,
             $mdSidenav,
@@ -23,17 +22,9 @@ angular.module('sm-candidateprofile')
             $scope,
             $state,
             datagenerate,
-            navFactory,
             Flash
         ) {
-            
-      
-      var navItems={};
-      
-        navFactory.getSidenav().then(function(response) {
-        $scope.navItems=response.data;
-    });
-       /* Global element signout exists in the root scope of the application and is used to
+            /* Global element signout exists in the root scope of the application and is used to
              control
             the visiblility of the signout button in the navbar */
             $rootScope.signout = false;
@@ -88,19 +79,15 @@ angular.module('sm-candidateprofile')
             // the function loadLangData() is called from the different language
             // button that display in the navbar
             // loadLangData() is declared as $parent to make it available in child controller
-            $scope.$parent.loadLangData = function(lang) {
+            $scope.loadLangData = function(lang) {
                 // datagenerate is a service that call the API to get the json data
                 // datagenerate defined in -->> applayout/services/languagechange.js
                 datagenerate.getjson('section', lang).then(function(result) {
-                    console.log("lan");
                     if (result !== 'err') {
-                        console.log("not error");
-                        $scope.$parent.resourceData = result;
-                        console.log("look"+$scope.$parent.resourceData.jobpreferences);
+                        $rootScope.resourceData = result;
                     } else {
-                        console.log("error lan");
                         // handling the error and by default assigning the English language
-                        $scope.loadLangData('English');
+                        $scope.loadLangData('Hindi');
 
                         /* After loading default lang English flash message is displayed that
                         language is not supported */
@@ -115,7 +102,7 @@ angular.module('sm-candidateprofile')
                 });
             };
             // on loading navctrl, calling loadLangData() function with default English language
-            $scope.loadLangData('English');
+            $scope.loadLangData('Hindi');
 
             function buildToggler(componentId) {
                 return function() {
@@ -125,14 +112,5 @@ angular.module('sm-candidateprofile')
 
             $scope.toggleLeft = buildToggler('left');
             $scope.toggleRight = buildToggler('right');
-            if($auth.isAuthenticated())
-    {
-      
-      $state.go('candidate.dashboard');
-   
-}
-else{
-    $state.go('candidate.login');
-}
         }
     ]);
