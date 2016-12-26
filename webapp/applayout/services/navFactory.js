@@ -1,6 +1,7 @@
-
-  angular
-    .module('sm-candidateprofile')
+(function(){
+ 'use strict'
+angular
+  .module('sm-candidateprofile')
 	.factory('navFactory', navFactory);
 	function navFactory($http) {
 		var factory = {getSidenav:getSidenav};
@@ -13,5 +14,6 @@
 			return $http(req);
 		};
 	}
+})();	
 
 
