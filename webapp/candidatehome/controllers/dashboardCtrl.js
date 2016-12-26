@@ -48,8 +48,8 @@ angular.module('sm-candidateprofile')
                 //$rootscope.sideNavLogo=true;
                 $rootScope.sideNavLogo = true;
                 $rootScope.signout = true;
-                $state.go('candidate.dashboard');
-                // $Scope.$parent.sideNavLogo = true;
+/*                $state.go('candidate.dashboard');
+*/                // $Scope.$parent.sideNavLogo = true;
                 // set to loggedinbackground if authenticated i.e set the background as white
                 $rootScope.loggedinbackground = 'loggedinbackground';
             } else {
