@@ -14,14 +14,6 @@ angular
                 controller: 'jobSearchCtrl'
                }
             }
-            // resolve: {
-            //     circleName: ['$stateParams', function($stateParams) {
-            //                 return $stateParams.circleName;
-            //     }],
-            //     circleDomain: ['$stateParams', function($stateParams) {
-            //                 return $stateParams.circleDomain;
-            //     }]
-            // }
            })
           .state('candidate.jobSearch.results', {
             url: '/jobslist/:searchText?',

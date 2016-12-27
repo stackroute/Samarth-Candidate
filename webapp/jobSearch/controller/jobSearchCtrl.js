@@ -8,6 +8,7 @@ angular.module('sm-candidateprofile')
      '$rootScope',
      '$state',
   function($scope, $stateParams, Pagination,jobSearchFactory,$rootScope,$state) {
+      $scope.subheader="Discover opportunities and connect people who can help you to get jobs!";
       $scope.foo=$rootScope.profession;
         // $scope.foo=$stateParams.profession;
         // console.log("rootscope profession value in foo " + $scope.foo);
