@@ -9,14 +9,13 @@ angular.module('sm-candidateprofile')
             .state('candidate', {               
              url: '/home',
                 views: {
+                    'content@': {
+                        templateUrl: '/applayout/templates/content.html'
+                    },
                     navbar: {
                         templateUrl: '/applayout/templates/navbar.html',
                         controller: 'navCtrl'
                     },
-                    'content@': {
-                        templateUrl: '/applayout/templates/content.html'
-                    },
-                    
                     footer: {
                         templateUrl: '/applayout/templates/footer.html'
                     }

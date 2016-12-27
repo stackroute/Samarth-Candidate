@@ -5,18 +5,28 @@ angular.module('sm-candidateprofile')
         '$auth',
         '$rootScope',
         '$scope',
+        'dashboardFactory','$state',
         function(
             $auth,
             $rootScope,
-            $scope) {
+            $scope,dashboardFactory,$state) {
             $scope.uname = $auth.getPayload().uname;
-
-
-
+            console.log("In dashboard "+$scope.uname);
+            var bar  = $scope.uname;
+            dashboardFactory.getCandidatebyID(bar).then(function(response) {
+                // console.log("data " + response.data);
+                // $scope.foo=response.data[0].profession;
+                $scope.profession=response.data[0].profession;
+                $rootScope.profession=$scope.profession;
+                console.log("after root to scope profession");
+                console.log($rootScope.profession);
+                // console.log("profiling " + $scope.profiling[0]);
+                // vm.jobprovider = $scope.profiling[0];
+                // vm.checked = true;
+            });
             /* =============================================
             =  Checking whether the user is authenticated
                or not.Based on user's authenticity .
-
                    if return of $auth.isAuthenticated() is->
                        "true" ->   signout flag in root
                                    scope is set to true
@@ -27,18 +37,17 @@ angular.module('sm-candidateprofile')
                                    is set to false i.e signout
                                    button is will be hidden in
                                    the navbar .
-
                NOTE :- to check the sign declaration in rootscope
                        , check applayout/controllers/navctrl=
             =============================================*/
-            console.log('DashboardCtrl');
-            // console.log(resourceData.jobpreferences);
+
             if ($auth.isAuthenticated()) {
                 // set to true if authenticated
                 //$rootscope.sideNavLogo=true;
                 $rootScope.sideNavLogo = true;
                 $rootScope.signout = true;
-                // $Scope.$parent.sideNavLogo = true;
+/*                $state.go('candidate.dashboard');
+*/                // $Scope.$parent.sideNavLogo = true;
                 // set to loggedinbackground if authenticated i.e set the background as white
                 $rootScope.loggedinbackground = 'loggedinbackground';
             } else {
