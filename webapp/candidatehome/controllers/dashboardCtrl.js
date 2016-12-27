@@ -27,7 +27,6 @@ angular.module('sm-candidateprofile')
             /* =============================================
             =  Checking whether the user is authenticated
                or not.Based on user's authenticity .
-
                    if return of $auth.isAuthenticated() is->
                        "true" ->   signout flag in root
                                    scope is set to true
@@ -38,7 +37,6 @@ angular.module('sm-candidateprofile')
                                    is set to false i.e signout
                                    button is will be hidden in
                                    the navbar .
-
                NOTE :- to check the sign declaration in rootscope
                        , check applayout/controllers/navctrl=
             =============================================*/
