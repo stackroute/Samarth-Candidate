@@ -1,7 +1,7 @@
 var obj = require("./resource.json");
 var router = require('express').Router();
 var fs = require("fs");
-
+console.log("resourcebundlerouter.js");
 router.get("/navlanguage", function(req, res) {
 	res.status(200).json(obj.navlanguage);
 		

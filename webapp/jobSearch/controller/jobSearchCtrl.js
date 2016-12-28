@@ -34,7 +34,7 @@ angular.module('sm-candidateprofile')
            $scope.pagination.numPages = Math.ceil(response.data.length / $scope.pagination.perPage);
            $scope.message = "";
            if (response.data.length == 0) {
-             $scope.message = "No jobs found for "+profs+" profession";
+             $scope.message = "Oops! Currently No Job available for "+profs+" profession";
            }
            else{
              // $scope.message="Showing " + response.data.length + " Results for your "+profs+" Profession in Job Search";
@@ -87,7 +87,6 @@ angular.module('sm-candidateprofile')
                 $scope.pagination.numPages = Math.ceil(response.data.length / $scope.pagination.perPage);
                 $scope.message = "";
                 if (response.data.length == 0) {
-                  // $scope.message = "No Result Found ! Enter Text to Get Jobs";
                   $scope.message = "No Result Found for "+" "+"'"+ searchText+"'"+" "+"! Try more general keywords. ";
                 }
                 else{
