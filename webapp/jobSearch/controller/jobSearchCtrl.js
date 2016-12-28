@@ -87,8 +87,8 @@ angular.module('sm-candidateprofile')
                 $scope.pagination.numPages = Math.ceil(response.data.length / $scope.pagination.perPage);
                 $scope.message = "";
                 if (response.data.length == 0) {
-                  $scope.message = "No Result Found ! Enter Text to Get Jobs";
-                  // console.log("in if");
+                  // $scope.message = "No Result Found ! Enter Text to Get Jobs";
+                  $scope.message = "No Result Found for "+" "+"'"+ searchText+"'"+" "+"! Try more general keywords. ";
                 }
                 else{
                   $scope.message="Showing " + response.data.length + " Results for Job Search";
