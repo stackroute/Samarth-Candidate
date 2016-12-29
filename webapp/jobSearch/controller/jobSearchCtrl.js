@@ -12,6 +12,10 @@ angular.module('sm-candidateprofile')
       $scope.subheader="Discover opportunities and connect people who can help you to get jobs!";
      // I am using rootscope for getting candidate object , we can also get it by calling $auth.getPayload() and then calling dashboard factory
      //Another way by passing stateParams through navbarCtrl
+      $scope.message ="";
+      $scope.message1="";
+      $scope.message2="";
+
       $scope.candidate=$rootScope.candidate;
       $scope.profession=$scope.candidate.profession;
       var profs=$scope.profession;
@@ -38,9 +42,9 @@ angular.module('sm-candidateprofile')
            console.log($scope.result);
            $scope.pagination = Pagination.getNew(6);
            $scope.pagination.numPages = Math.ceil(response.data.length / $scope.pagination.perPage);
-           $scope.message = "";
+           // $scope.message = "";
            if (response.data.length == 0) {
-             $scope.message = "Oops! Currently No Job available for "+profs+" profession";
+             $scope.message = "Sorry! Currently No New Job available for "+profs+" profession";
            }
            else{
              // $scope.message="Showing " + response.data.length + " Results for your "+profs+" Profession in Job Search";
@@ -52,7 +56,7 @@ angular.module('sm-candidateprofile')
              }
            })
           .catch(function(error) {
-            console.log("some error occured "+err);
+            // console.log("some error occured "+err);
             $scope.message = "Some Error Occured "+err;
           });
         };
@@ -69,9 +73,12 @@ angular.module('sm-candidateprofile')
                 console.log($scope.result);
                 $scope.pagination = Pagination.getNew(6);
                 $scope.pagination.numPages = Math.ceil(response.data.length / $scope.pagination.perPage);
-                $scope.message = "";
+                // $scope.message = "";
                 if (response.data.length == 0) {
-                  $scope.message = "No Result Found for "+" "+"'"+ searchText+"'"+" "+"! Try more general keywords. ";
+                  // $scope.message = "No Result Found for "+" "+"'"+ searchText+"'"+" "+"! Try more general keywords. ";
+                  $scope.message = "No Result Found for "+" "+"'";
+                  $scope.message1 =searchText
+                  $scope.message2="'"+" "+"! Try more general keywords. ";
                 }
                 else{
                   $scope.message="Showing " + response.data.length + " Results for Job Search";
