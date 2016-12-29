@@ -7,12 +7,18 @@ angular.module('sm-candidateprofile')
      'jobSearchFactory',
      '$rootScope',
      '$state',
-  function($scope, $stateParams, Pagination,jobSearchFactory,$rootScope,$state) {
+     '$mdDialog',
+  function($scope, $stateParams, Pagination,jobSearchFactory,$rootScope,$state,$mdDialog) {
       $scope.subheader="Discover opportunities and connect people who can help you to get jobs!";
-      $scope.foo=$rootScope.profession;
-        // $scope.foo=$stateParams.profession;
-        // console.log("rootscope profession value in foo " + $scope.foo);
-      var profs=$scope.foo;
+     // I am using rootscope for getting candidate object , we can also get it by calling $auth.getPayload() and then calling dashboard factory
+     //Another way by passing stateParams through navbarCtrl
+      $scope.candidate=$rootScope.candidate;
+      $scope.profession=$scope.candidate.profession;
+      var profs=$scope.profession;
+
+      console.log("candidate obj");
+      console.log($scope.candidate);
+      console.log("profession from candidate rootscope "+$scope.profession);
       console.log("searchText params value after checking  "+ $stateParams.searchText);
       console.log("getting profession value from dashboardctrl " + profs);
 
@@ -50,35 +56,13 @@ angular.module('sm-candidateprofile')
             $scope.message = "Some Error Occured "+err;
           });
         };
-    //  var profs="";
-    //   dashboardFactory.getCandidatebyID()
-    //      .then(function(response){
-    //        $scope.profiling = response.data;
-    //        $scope.profession=response.data[0].profession;
-    //        profs=response.data[0].profession;
-    //        console.log("hello from profesiion in jobsearch ctrl");
-    //        console.log("$scope.profession " + profs);
-    //      });
-    //  professionService.profession()
-    //     .then(function(response) {
-    //        $scope.profiling = response.data;
-    //        for(var i=0;i<response.data.length;i++)
-    //        {
-    //          console.log("hiii");
-    //          profs+=response.data[i].name+"-";
-    //        }
-    //         console.log("circles arrray "+profs);
-    //      },
-    //      function(err) {
-    //         console.log("circles array "+err);
-    //      });
-
+  
         function searchJob(searchText) {
          //var arr=key.split(/[ ,]+/);
          console.log("params inside fun searchJob " + searchText);
             //jobSearchFactory.searchJobDetails()
             jobSearchFactory.searchJobs(searchText,profs)
-             .then(function successCallbackfun(response) {
+             .then(function(response) {
                 $scope.message="";
                 $scope.result = response.data;
                 console.log("result with searchtext and Prof");
@@ -100,5 +84,26 @@ angular.module('sm-candidateprofile')
                  $scope.message = "Some Error Occured "+err;
               });      
        };
+      
+        $scope.apply=function(jobcode)
+         {
+         jobSearchFactory.applyJob($scope.candidateid,jobcode)
+          .then(function(response){
+             $mdDialog.show(
+            $mdDialog.alert()
+            .parent(angular.element(document.querySelector('#popupContainer')))
+            .clickOutsideToClose(true)
+            .title("Message")
+            .textContent(jobcode+"suggested to the candidateid:"+$stateParams.candidateid)
+            .ariaLabel('Alert Dialog Demo')
+            .ok('Got it!')
+            );
+           })
+          .catch(function(error) {
+                 console.log("some error occured "+err);
+                 $scope.message = "Some Error Occured "+err;
+              }); 
+        }
+
    }]);
 })();
