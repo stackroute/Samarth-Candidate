@@ -4,8 +4,6 @@ angular
   .module('sm-candidateprofile')
   .config(['$stateProvider', '$urlRouterProvider',
       function($stateProvider, $urlRouterProvider) {
-       //  $urlRouterProvider.when('/','/home/login');
-       // $urlRouterProvider.otherwise('/home/login');
         $urlRouterProvider.otherwise('/');
         $stateProvider
           .state('candidate.jobSearch', {
@@ -25,9 +23,9 @@ angular
                    controller: 'jobSearchCtrl'
                   }
               },
-              // params: {
-              //    'obj': 'null'
-              //     },
+              params: {
+                 'obj': 'null'
+                  },
            })
         }
     ]);

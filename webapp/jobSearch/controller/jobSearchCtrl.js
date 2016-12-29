@@ -15,9 +15,10 @@ angular.module('sm-candidateprofile')
       $scope.message ="";
       $scope.message1="";
       $scope.message2="";
-
+      $scope.result=[];
       $scope.candidate=$rootScope.candidate;
       $scope.profession=$scope.candidate.profession;
+      $scope.candidateid=$scope.candidate.candidateid;
       var profs=$scope.profession;
 
       console.log("candidate obj");
@@ -32,7 +33,41 @@ angular.module('sm-candidateprofile')
         }
         else{
            searchJobProfs();
+           console.log($scope.result);
         }
+        console.log("Checking value before if of applied");
+        console.log($scope.result);
+        for(var i=0;i<$scope.result.length;i++)
+        {  
+        jobSearchFactory.status($scope.candidateid,$scope.result[i].jb.jobcode)
+        .then(function(response){
+          console.log("result and status");
+          $scope.result.forEach(function(job)
+          {
+            if(job.jb.jobcode==response.data[0].jobcode)
+            {
+              console.log(job.jb.jobcode);
+              if(response.data[0].status=="applied")
+              {
+                job.jb.applyStatus=true
+                console.log(job.jb.applyStatus);
+
+              }
+              else{
+                job.jb.applyStatus=false
+              }
+              console.log(job.jb.applyStatus);
+            }
+          })
+         
+        })
+        .catch(function(error) {
+            
+            $scope.message = "Some Error Occured "+err;
+          });
+        
+        console.log($scope.result[i].jb.jobcode+"status"+$scope.candidateid);
+       }
        
         function searchJobProfs(){
           console.log('profs', profs);
@@ -111,6 +146,5 @@ angular.module('sm-candidateprofile')
                  $scope.message = "Some Error Occured "+err;
               }); 
         }
-
    }]);
 })();
