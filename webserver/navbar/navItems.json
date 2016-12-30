@@ -9,6 +9,11 @@
 	"icon":"youtube_searched_for_black",
 	"navTitle":"Job Search",
 	"traverse":"candidate.jobSearch"
+},
+{
+	"icon":"done",
+	"navTitle":"Applied Jobs",
+	"traverse":"candidate.appliedJob"
 }
 ]
 }
