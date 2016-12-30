@@ -15,7 +15,7 @@ angular.module('sm-candidateprofile')
             var bar  = $scope.uname;
             dashboardFactory.getCandidatebyID(bar).then(function(response) {
                 // console.log("data " + response.data);
-                console.log("showing rootscope candidate");
+                console.log("showing rootscope candidate details");
                 $rootScope.candidate=response.data[0];
                 console.log($rootScope.candidate);
                 
