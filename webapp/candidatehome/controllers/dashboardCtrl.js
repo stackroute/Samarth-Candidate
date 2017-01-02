@@ -18,14 +18,10 @@ angular.module('sm-candidateprofile')
                 console.log("showing rootscope candidate details");
                 $rootScope.candidate=response.data[0];
                 console.log($rootScope.candidate);
-                
                 // $scope.profession=response.data[0].profession;
                 // $rootScope.profession=$scope.profession;
                 // console.log("after root to scope profession");
                 // console.log($rootScope.profession);
-                // console.log("profiling " + $scope.profiling[0]);
-                // vm.jobprovider = $scope.profiling[0];
-                // vm.checked = true;
             });
             /* =============================================
             =  Checking whether the user is authenticated

@@ -10,7 +10,6 @@ angular.module('sm-candidateprofile')
      '$mdDialog',
   function($scope, $stateParams, Pagination,jobSearchFactory,$rootScope,$state,$mdDialog) {
       $scope.subheader="Discover opportunities and connect people who can help you to get jobs!";
-
       $scope.message ="";
       $scope.message1="";
       $scope.message2="";
@@ -22,7 +21,6 @@ angular.module('sm-candidateprofile')
       console.log("candidate obj");
       console.log($scope.candidate);
       console.log($scope.candidateid);
-
       console.log("searchText params value after checking  "+ $stateParams.searchText);
       console.log("getting profession value from dashboardctrl " + profs);
 
@@ -41,7 +39,6 @@ angular.module('sm-candidateprofile')
            console.log($scope.result);
            $scope.pagination = Pagination.getNew(6);
            $scope.pagination.numPages = Math.ceil(response.data.length / $scope.pagination.perPage);
-           // $scope.message = "";
            
              for(var i=0;i<$scope.result.length;i++)
                  {  
@@ -78,13 +75,10 @@ angular.module('sm-candidateprofile')
              // $scope.message="Showing " + response.data.length + " Results for your "+profs+" Profession in Job Search";
              $scope.message="Showing " + response.data.length + " Results for "+profs+" Profession in Job Search";
 
-             // $state.go('candidate.jobSearch.results', result);
              $state.go('candidate.jobSearch.results', {'obj':'result'});
-
              }
            })
           .catch(function(error) {
-            // console.log("some error occured "+err);
             $scope.message = "Some Error Occured "+err;
           });
         };
@@ -164,8 +158,6 @@ angular.module('sm-candidateprofile')
             .catch(function(error){
               console.log(error);
            });
-          // $scope.status = '';
-        
         // function() {//cancel job apply left
         //    }); 
         });
