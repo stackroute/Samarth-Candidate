@@ -6,11 +6,27 @@
 
     <job-card data="data">
       <buttons>
-        <md-button class="md-primary" aria-label="view Details" ui-sref="index.jobPost({'key':1,'key1':data.jb})">
+        <md-button class="md-primary" aria-label="view Details" ui-sref="candidate.jobPost({'key':1,'key1':data.jb})">
           <md-tooltip>
             View Details
           </md-tooltip>  <md-icon class="material-icons">contacts</md-icon>
         </md-button>
+        
+
+          <md-button class="md-primary" ng-show="data.jb.offer" ng-click="decline(data.jb.jobcode)">
+          <md-tooltip>
+            decline
+          </md-tooltip>  <md-icon class="material-icons">close</md-icon>
+        </md-button>
+        <md-button class="md-primary" ng-show="data.jb.offer" ng-click="join(data.jb.jobcode)">
+          <md-tooltip>
+            Join
+          </md-tooltip>  <md-icon class="material-icons">check</md-icon>
+        </md-button>
+        <div ng-show="data.jb.offer">
+          <p>Congrats! you are offered to this job</p>
+        </div>
+
       </buttons>
     </job-card>
    </div>
