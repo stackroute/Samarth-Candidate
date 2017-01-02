@@ -35,7 +35,12 @@
           $scope.offersResult = results.data;
           if(results.data.length>0)
           {
-            alert("congrats! you are selected in "+results.data[0].jobcode);
+            var alert = $mdDialog.alert()
+          .title('huhooo')
+          .textContent('You got the offer..!')
+          .ok('ok')
+
+             $mdDialog.show(alert);
           }
           
         })
@@ -50,7 +55,7 @@
     $scope.join=function(jobcode){
 
       var confirm = $mdDialog.confirm()
-          .title('Apply')
+          .title('Join')
           .textContent('You are about to join!, please confirm..!')
           .ok('Confirm')
           .cancel('Cancel');
@@ -69,7 +74,7 @@
     $scope.decline=function(jobcode){
 
       var confirm = $mdDialog.confirm()
-          .title('Apply')
+          .title('Decline')
           .textContent('You are about to decline job!, please confirm..!')
           .ok('Confirm')
           .cancel('Cancel');
