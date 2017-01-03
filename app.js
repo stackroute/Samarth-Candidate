@@ -53,8 +53,9 @@ function isUserAuthenticated(req, res, next) {
 }
 
 app.use('/', authRoutes);
-app.use('/', navItems);
 app.use('/resource', resourcebundle);
+app.use('/', navItems);
+
 
 /* ============================================
 =            proxy implementation            =
