@@ -2,6 +2,8 @@
     <div class="coverbackground">
         <my-skillcard candidateid="uname" showheader="false">
             <cardactions></cardactions>
+            <buttons>
+            </buttons>
             <badges></badges>
         </my-skillcard>
     </div>
@@ -79,6 +81,20 @@
                             <my-projectsectioncard candidateid="uname" showheader="true" test="resourceData" languagedata="resourceData">
                                 <verify></verify>
                             </my-projectsectioncard>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div layout="column">
+                <div layout="row">
+                    <div flex="15" flex-offset="10" hide-xs hide-sm>
+                        <span class="label">{{resourceData.jobpreferences}}</span >
+                        </div>
+                        <div flex="60" flex-xs="100" flex-sm="100">
+                            <my-jobpreferencessectioncard candidateid="uname" showheader="true" test="resourceData" languagedata="resourceData">
+                                <verify></verify>
+                            </my-jobpreferencessectioncard>
                         </div>
                     </div>
                 </div>

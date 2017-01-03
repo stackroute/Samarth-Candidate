@@ -15,6 +15,7 @@ angular.module('sm-candidateprofile')
         '$scope',
         '$state',
         'datagenerate',
+        'navFactory',
         'Flash',
         function($auth,
             $mdSidenav,
@@ -22,9 +23,17 @@ angular.module('sm-candidateprofile')
             $scope,
             $state,
             datagenerate,
+            navFactory,
             Flash
         ) {
-            /* Global element signout exists in the root scope of the application and is used to
+            
+      
+      var navItems={};
+      
+        navFactory.getSidenav().then(function(response) {
+        $scope.navItems=response.data;
+    });
+       /* Global element signout exists in the root scope of the application and is used to
              control
             the visiblility of the signout button in the navbar */
             $rootScope.signout = false;
@@ -83,9 +92,13 @@ angular.module('sm-candidateprofile')
                 // datagenerate is a service that call the API to get the json data
                 // datagenerate defined in -->> applayout/services/languagechange.js
                 datagenerate.getjson('section', lang).then(function(result) {
+                    console.log("lan");
                     if (result !== 'err') {
+                        console.log("not error");
                         $scope.$parent.resourceData = result;
+                        console.log("look"+$scope.$parent.resourceData.jobpreferences);
                     } else {
+                        console.log("error lan");
                         // handling the error and by default assigning the English language
                         $scope.loadLangData('English');
 
@@ -112,5 +125,14 @@ angular.module('sm-candidateprofile')
 
             $scope.toggleLeft = buildToggler('left');
             $scope.toggleRight = buildToggler('right');
+            if($auth.isAuthenticated())
+    {
+      
+      $state.go('candidate.dashboard');
+   
+}
+else{
+    $state.go('candidate.login');
+}
         }
     ]);

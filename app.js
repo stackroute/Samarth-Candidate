@@ -9,6 +9,7 @@ let cookieParser = require('cookie-parser');
 
 let authRoutes = require('./webserver/auth/authrouter');
 let authByToken = require('./webserver/auth/authbytoken');
+const navItems = require('./webserver/navbar/navigateRouter.js');
 
 let resourcebundle = require('./webserver/resourcebundle/resourcebundlerouter.js');
 
@@ -52,6 +53,7 @@ function isUserAuthenticated(req, res, next) {
 }
 
 app.use('/', authRoutes);
+app.use('/', navItems);
 app.use('/resource', resourcebundle);
 
 /* ============================================
