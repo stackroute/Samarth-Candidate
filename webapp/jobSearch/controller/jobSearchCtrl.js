@@ -158,8 +158,6 @@ angular.module('sm-candidateprofile')
             .catch(function(error){
               console.log(error);
            });
-        // function() {//cancel job apply left
-        //    }); 
         });
        }
    }]);
