@@ -30,7 +30,6 @@ angular.module('sm-candidateprofile')
         else{
            searchJobProfs();  
         }
-       
         function searchJobProfs(){
           console.log('profs', profs);
           jobSearchFactory.searchJobsByProfession(profs).then(function(response) {
