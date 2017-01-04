@@ -12,7 +12,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '8082');
+var port = normalizePort('8082');
 app.set('port', port);
 
 /**
@@ -25,6 +25,7 @@ var server = http.createServer(app);
  */
 
 server.listen(port);
+console.log(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
@@ -89,4 +90,5 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
   app.onAppStart(addr);
+  console.log(addr);
 }

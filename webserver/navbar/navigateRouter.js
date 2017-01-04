@@ -1,7 +1,7 @@
 var obj = require("./navItems.json");
 var router = require('express').Router();
 var fs = require("fs");
-
+console.log("hello from nav riute.js");
 router.get("/sidenavbar", function(req, res) {
 	res.status(200).json(obj);
 });
