@@ -6,20 +6,15 @@ angular
 
     function dashboardFactory($http) {
         var service = {
-
             getCandidatebyID: getCandidatebyID
-
         };
         return service;
-
         function getCandidatebyID(id) {
             // console.log(jpCode);
             return $http({
                 method: 'GET',
                 url: '/profile/'+ id
             })
-
         }
-
       }
   })();

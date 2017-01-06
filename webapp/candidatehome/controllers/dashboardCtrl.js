@@ -15,19 +15,17 @@ angular.module('sm-candidateprofile')
             var bar  = $scope.uname;
             dashboardFactory.getCandidatebyID(bar).then(function(response) {
                 // console.log("data " + response.data);
-                // $scope.foo=response.data[0].profession;
-                $scope.profession=response.data[0].profession;
-                $rootScope.profession=$scope.profession;
-                console.log("after root to scope profession");
-                console.log($rootScope.profession);
-                // console.log("profiling " + $scope.profiling[0]);
-                // vm.jobprovider = $scope.profiling[0];
-                // vm.checked = true;
+                console.log("showing rootscope candidate details");
+                $rootScope.candidate=response.data[0];
+                console.log($rootScope.candidate);
+                // $scope.profession=response.data[0].profession;
+                // $rootScope.profession=$scope.profession;
+                // console.log("after root to scope profession");
+                // console.log($rootScope.profession);
             });
             /* =============================================
             =  Checking whether the user is authenticated
                or not.Based on user's authenticity .
-
                    if return of $auth.isAuthenticated() is->
                        "true" ->   signout flag in root
                                    scope is set to true
@@ -38,7 +36,6 @@ angular.module('sm-candidateprofile')
                                    is set to false i.e signout
                                    button is will be hidden in
                                    the navbar .
-
                NOTE :- to check the sign declaration in rootscope
                        , check applayout/controllers/navctrl=
             =============================================*/

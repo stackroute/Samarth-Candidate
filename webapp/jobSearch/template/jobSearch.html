@@ -1,8 +1,12 @@
-<div layout="row" layout-align="center" layout-margin="" >
-    <input type="text" name="searchBox" size="30px" layout-xs="size=24px;" md-focus ng-model="searchText" class="md-block">
-    <md-button class="md-raised md-primary" ui-sref="candidate.jobSearch.results({searchText:searchText})" >Find Jobs</md-button>
-</div>
-<div class="md-padding md-display-2" layout layout-align="center center" style="font-size:30;">
-     {{message}}
+<div style="font-size:24px;" layout="row" layout-align="center center" layout-xs="column" layout-padding md-colors="{background: 'cyan-100'}">
+      <!-- <p style="color:white"> -->
+      <span class="md-headline" >{{subheader}}</span>
+      <!-- </p> -->
+</div>     
+<div layout="column" layout-gt-xs="row" layout-align="center" layout-margin="" >
+    <div layout="row" class="md-whiteframe-2dp" layout-padding md-colors="{background: 'grey-400'}">
+        <input type="text" name="searchBox" size="70px" layout-xs="size=24px;" md-focus ng-model="searchText" class="md-block" placeholder="Start your job search here">
+        <md-button class="md-raised md-primary" ui-sref="candidate.jobSearch.results({searchText:searchText})"><md-icon> search </md-icon>Find Jobs</md-button>
+    </div>
 </div>
 <div ui-view="results"></div>

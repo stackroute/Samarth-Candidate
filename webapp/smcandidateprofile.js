@@ -1,6 +1,7 @@
 let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
     'ngMaterial',
     'ngMessages',
+    'ngMdIcons',
     'LocalStorageModule',
     'ngFlash',
     'samarth-webcomponents',

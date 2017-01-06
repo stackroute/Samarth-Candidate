@@ -1,0 +1,46 @@
+<div layout="row" layout-xs="column" md-colors="{background: 'grey-100'}" layout-align="center center"  id="heading" class="md-headline" style="font-size:20;">
+ Showing {{results.length}} jobs applied by the candidate
+</div>
+<div layout-gt-sm="row" layout-sm="column" layout="column" layout-align="center center" layout-wrap class="md-padding" flex-gt-sm flex-sm>
+    <div ng-repeat="data in results | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage" flex-xs flex-gt-xs='50' flex-gt-sm='30' flex-gt-md='30' >
+
+    <job-card data="data">
+      <buttons>
+        <md-button class="md-primary" aria-label="view Details" ui-sref="candidate.jobPost({'key':1,'key1':data.jb})">
+          <md-tooltip>
+            View Details
+          </md-tooltip>  <md-icon class="material-icons">contacts</md-icon>
+        </md-button>
+        
+
+          <md-button class="md-primary" ng-show="data.jb.offer" ng-click="decline(data.jb.jobcode)">
+          <md-tooltip>
+            decline
+          </md-tooltip>  <md-icon class="material-icons">close</md-icon>
+        </md-button>
+        <md-button class="md-primary" ng-show="data.jb.offer" ng-click="join(data.jb.jobcode)">
+          <md-tooltip>
+            Join
+          </md-tooltip>  <md-icon class="material-icons">check</md-icon>
+        </md-button>
+        
+        
+
+      </buttons>
+      <message>
+        <div ng-show="data.jb.offer" layout="row">
+          <p>Congrats! you are offered to this job</p>
+        </div>
+      </message>
+
+    </job-card>
+   </div>
+  <div layout class="md-padding" flex>
+    <div layout layout-align="start start" flex="50">
+        <md-button class="md-raised md-primary" ng-click="pagination.prevPage()" ng-hide="pagination.page == 0">Previous</md-button>
+    </div>
+    <div layout layout-align="end end" flex="50">
+        <md-button class="md-raised md-primary" ng-click="pagination.nextPage()" ng-hide="pagination.page + 1 >= pagination.numPages">Next</md-button>
+    </div>
+  </div>
+</div>
