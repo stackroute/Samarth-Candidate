@@ -30,7 +30,6 @@ angular.module('sm-candidateprofile')
         else{
            searchJobProfs();  
         }
-       
         function searchJobProfs(){
           console.log('profs', profs);
           jobSearchFactory.searchJobsByProfession(profs).then(function(response) {
@@ -89,34 +88,42 @@ angular.module('sm-candidateprofile')
             //jobSearchFactory.searchJobDetails()
             jobSearchFactory.searchJobs(searchText,profs)
              .then(function(response) {
+              let temp = [];
+                for( let a = 0; a < response.data.length; a = a + 1)
+                {
+                  if(profs === response.data[a].jb.profession[0])
+                  {
+                    temp.push(response.data[a]);
+                  }
+                }
                 $scope.message="";
-                $scope.result = response.data;
+                $scope.result = temp;
                 console.log("result with searchtext and Prof");
                 console.log($scope.result);
                 $scope.pagination = Pagination.getNew(6);
-                $scope.pagination.numPages = Math.ceil(response.data.length / $scope.pagination.perPage);
+                $scope.pagination.numPages = Math.ceil(temp.length / $scope.pagination.perPage);
                 // $scope.message = "";
-                if (response.data.length == 0) {
+                if (temp.length == 0) {
                   // $scope.message = "No Result Found for "+" "+"'"+ searchText+"'"+" "+"! Try more general keywords. ";
                   $scope.message = "No Result Found for "+" "+"'";
                   $scope.message1 =searchText
                   $scope.message2="'"+" "+"! Try more general keywords. ";
                 }
                 else{
-                  $scope.message="Showing " + response.data.length + " Results for Job Search";
+                  $scope.message="Showing " + temp.length + " Results for Job Search";
                   // console.log($scope.message);
                 }
                 for(var i=0;i<$scope.result.length;i++)
                  {  
                  jobSearchFactory.status($scope.candidateid,$scope.result[i].jb.jobcode)
-                  .then(function(response){
+                  .then(function(temp){
                      // console.log("result and status");
                      $scope.result.forEach(function(job)
                      {
-                     if(job.jb.jobcode==response.data[0].jobcode)
+                     if(job.jb.jobcode==temp[0].jobcode)
                      {
                      // console.log(job.jb.jobcode);
-                     if(response.data[0].status=="applied")
+                     if(temp[0].status=="applied")
                      {
                       job.jb.applyStatus=true
                       // console.log(job.jb.applyStatus);
@@ -152,14 +159,12 @@ angular.module('sm-candidateprofile')
            $mdDialog.show(confirm).then(function() {
            $scope.flag[key]=true;
            jobSearchFactory.applyJob($scope.candidateid,jobcode)
-            .then(function(response){
-             console.log(response);
+            .then(function(temp){
+             console.log(temp);
             })
             .catch(function(error){
               console.log(error);
            });
-        // function() {//cancel job apply left
-        //    }); 
         });
        }
    }]);
