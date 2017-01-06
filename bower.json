@@ -28,5 +28,8 @@
     "angular-flash-alert": "^2.3.0",
     "samarth-webcomponents": "https://github.com/stackroute/Samarth-WebComponents.git#dev-wave-11",
     "ng-simplePagination": "^1.0.3"
+  },
+  "resolutions": {
+    "angular": "1.6.1"
   }
 }
