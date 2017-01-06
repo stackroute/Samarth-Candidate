@@ -31,10 +31,7 @@
     "ng-simplePagination": "^1.0.3"
   },
   "resolutions": {
-<<<<<<< HEAD
-    "angular": "^1.4.8"
-=======
+
     "angular": "1.6.1"
->>>>>>> 809c065216434f84582ec07d9ff851682fb3816f
   }
 }
