@@ -2,49 +2,59 @@
 <html>
 
 <head>
-    <title>Samarth - SkillProfile | NIIT Foundation</title>
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900" rel="stylesheet" type="text/css" />
-    <link href="/angular-material/angular-material.css" rel="stylesheet" />
-    <link href="/google-material-icons/dist/material-icons-font.css" rel="stylesheet" />
-    <link href="./angular-material-icons/angular-material-icons.css" rel="stylesheet">
+	<title>Samarth - SkillProfile | NIIT Foundation</title>
+	<base href="/" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300" />
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900" rel="stylesheet" type="text/css" />
+	<link href="/angular-material/angular-material.css" rel="stylesheet" />
+	<link href="/google-material-icons/dist/material-icons-font.css" rel="stylesheet" />
+	<link href="./angular-material-icons/angular-material-icons.css" rel="stylesheet">
 
-    <link href="samarth-webcomponents/questionbox/css/questionbox.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="applayout/css/applayout.css" />
-    <link rel="stylesheet" type="text/css" href="candidatelogin/css/signin.css" />
-    <link rel="stylesheet" type="text/css" href="registercandidate/css/signup.css" />
-    <link rel="stylesheet" href="samarth-webcomponents/skillcard/css/skillcard.css" />
-    <link rel="stylesheet" href="samarth-webcomponents/sectionworkexperiencecard/css/workexpriencecard.css" />
-    <link rel="stylesheet" href="samarth-webcomponents/sectionskillcard/css/sectionskillcard.css" />
-    <!-- <link rel="stylesheet" href="samarth-webcomponents/sectionseducationcard/css/sectionseducationcard.css" /> -->
-    <link rel="stylesheet" href="samarth-webcomponents/sectionprojectcard/css/sectionprojectcard.css" />
-    <link rel="stylesheet" href="samarth-webcomponents/sectionpersonalinfocard/css/sectionpersonalinfocard.css" />
-    <link type="text/css" rel="stylesheet" href="angular-flash-alert/dist/angular-flash.css" />
-    <link rel="stylesheet" type="text/css" href="samarth-webcomponents/jobcard/css/style.css">
-    <link rel="stylesheet" href="samarth-webcomponents/sectionjobpreferencescard/css/sectionjobpreferencescard.css" />
+	<link href="samarth-webcomponents/questionbox/css/questionbox.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="applayout/css/applayout.css" />
+	<link rel="stylesheet" type="text/css" href="candidatelogin/css/signin.css" />
+	<link rel="stylesheet" type="text/css" href="registercandidate/css/signup.css" />
+	<link rel="stylesheet" href="samarth-webcomponents/skillcard/css/skillcard.css" />
+	<link rel="stylesheet" href="samarth-webcomponents/sectionworkexperiencecard/css/workexpriencecard.css" />
+	<link rel="stylesheet" href="samarth-webcomponents/sectionskillcard/css/sectionskillcard.css" />
+	<!-- <link rel="stylesheet" href="samarth-webcomponents/sectionseducationcard/css/sectionseducationcard.css" /> -->
+	<link rel="stylesheet" href="samarth-webcomponents/sectionprojectcard/css/sectionprojectcard.css" />
+	<link rel="stylesheet" href="samarth-webcomponents/sectionpersonalinfocard/css/sectionpersonalinfocard.css" />
+	<link type="text/css" rel="stylesheet" href="angular-flash-alert/dist/angular-flash.css" />
+	<link rel="stylesheet" type="text/css" href="samarth-webcomponents/jobcard/css/style.css">
+	<link rel="stylesheet" href="samarth-webcomponents/sectionjobpreferencescard/css/sectionjobpreferencescard.css" />
 </head>
 
 <body ng-app="sm-candidateprofile" ng-cloak>
-    <div layout="column" flex="grow" layout-fill>
-        <!--template=applayout/template/navbar.html,controller=applayout/controllers/navctrl.js-->
-        <div ui-view="navbar"></div>
-        <div flex="noshrink" flex="100" ng-class="loggedinbackground">
-            <!-- loggedinbackground root variable
-            is declared in applayout / controllers/navctrl.js -->
-            <div layout="row">
-                <!--template=applayout/template/content.html-->
-                <div ui-view="content" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
-                <div>
-                  <div ui-view="results" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
-                </div>
-            </div>
-        </div>
-        <!--template=applayout/template/footer.html-->
-        <div ui-view="footer"></div>
-    </div>
+	<script>
+		if('serviceWorker' in navigator) {
+		  navigator.serviceWorker.register('./service-worker.js').then(function(registration) {
+			// Registration was successful
+		  }).catch(function(err) {
+			// registration failed :(
+			console.log('ServiceWorker registration failed: ', err);
+		  });
+		}
+	</script>
+	<div layout="column" flex="grow" layout-fill>
+		<!--template=applayout/template/navbar.html,controller=applayout/controllers/navctrl.js-->
+		<div ui-view="navbar"></div>
+		<div flex="noshrink" flex="100" ng-class="loggedinbackground">
+			<!-- loggedinbackground root variable
+			is declared in applayout / controllers/navctrl.js -->
+			<div layout="row">
+				<!--template=applayout/template/content.html-->
+				<div ui-view="content" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
+				<div>
+				  <div ui-view="results" class="maincontent" flex="100" flex-sm="100" flex-xs="100"></div>
+				</div>
+			</div>
+		</div>
+		<!--template=applayout/template/footer.html-->
+		<div ui-view="footer"></div>
+	</div>
 </body>
 <script src="/angular/angular.js"></script>
 <script src="/angular-animate/angular-animate.js"></script>
