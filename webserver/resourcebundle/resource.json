@@ -64,6 +64,7 @@
         "name": "Name",
         "location": "Location",
         "email": "Email id",
+        "adharcard": "Adhar card",
         "searchjob": "Search Job",
         "create": "Create new account",
         "forgetP": "Forgot Password ?",
