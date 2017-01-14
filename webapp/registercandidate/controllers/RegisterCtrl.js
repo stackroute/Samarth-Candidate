@@ -38,6 +38,7 @@ angular.module('sm-candidateprofile')
                 $auth.signup({
 
                     name: vm.user.name,
+                    adharcard: vm.user.adharcard,
                     mobile: vm.user.number,
                     email: vm.user.email,
                     location: vm.user.location,
