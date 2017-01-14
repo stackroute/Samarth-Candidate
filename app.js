@@ -22,7 +22,7 @@ let platformProxy = proxy.createProxyServer();
 let app = express();
 
 app.onAppStart = function(addr) {
-    console.error('Samarth-Candidateprofile web app is now Running on port:', addr.port);
+	console.error('Samarth-Candidateprofile web app is now Running on port:', addr.port);
 };
 app.use(cookieParser());
 
@@ -30,26 +30,26 @@ app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'webapp')));
 
 function isUserAuthenticated(req, res, next) {
-    let token = req.body.usrtoken || req.query.usrtoken || req.headers[
-        'x-user-access-token'];
+	let token = req.body.usrtoken || req.query.usrtoken || req.headers[
+		'x-user-access-token'];
 
-    if (!token) {
-        // console.log('Token not found for authentication validation....!');
-        return res.status(403).json({
-            error: 'Invalid user request or unauthorised request..!'
-        });
-    }
+	if (!token) {
+		// console.log('Token not found for authentication validation....!');
+		return res.status(403).json({
+			error: 'Invalid user request or unauthorised request..!'
+		});
+	}
 
-    authByToken.isUserAuthenticated(token, function(user) {
-            req.user = user;
-            next();
-        },
-        function(err) {
-            res.status(403).json({
-                error: err
-            });
-        }
-    );
+	authByToken.isUserAuthenticated(token, function(user) {
+			req.user = user;
+			next();
+		},
+		function(err) {
+			res.status(403).json({
+				error: err
+			});
+		}
+	);
 }
 
 app.use('/', authRoutes);
@@ -63,17 +63,17 @@ app.use('/', navItems);
 
 // The below app route config should be placed after all the local resources have ended
 app.use('/', function(req, res) {
-    let options = {
-        target: {
-            host: 'localhost',
-            port: 8081
-        }
-    };
-    platformProxy.web(req, res, options);
+	let options = {
+		target: {
+			host: 'localhost',
+			port: 8081
+		}
+	};
+	platformProxy.web(req, res, options);
 });
 
 platformProxy.on('error', function(err, req, res) {
-    console.error('Error in proxy pass: ', err);
+	console.error('Error in proxy pass: ', err);
 });
 
 
@@ -81,27 +81,27 @@ platformProxy.on('error', function(err, req, res) {
 
 
 app.use(function(req, res, next) {
-    let err = new Error('Resource not found');
-    err.status = 404;
-    return res.status(err.status).json({
-        error: err.message
-    });
+	let err = new Error('Resource not found');
+	err.status = 404;
+	return res.status(err.status).json({
+		error: err.message
+	});
 });
 
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        logger.error('Internal error in watch processor: ', err);
-        return res.status(err.status || 500).json({
-            error: err.message
-        });
-    });
+	app.use(function(err, req, res, next) {
+		logger.error('Internal error in watch processor: ', err);
+		return res.status(err.status || 500).json({
+			error: err.message
+		});
+	});
 }
 
 app.use(function(err, req, res, next) {
-    logger.error('Internal error in watch processor: ', err);
-    return res.status(err.status || 500).json({
-        error: err.message
-    });
+	logger.error('Internal error in watch processor: ', err);
+	return res.status(err.status || 500).json({
+		error: err.message
+	});
 });
 
 module.exports = app;
