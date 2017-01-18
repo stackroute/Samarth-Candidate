@@ -6,6 +6,7 @@ let favicon = require('serve-favicon');
 let morgan = require('morgan');
 let mongoose = require('mongoose');
 let cookieParser = require('cookie-parser');
+let async = require('async');
 
 let authRoutes = require('./webserver/auth/authrouter');
 let authByToken = require('./webserver/auth/authbytoken');
