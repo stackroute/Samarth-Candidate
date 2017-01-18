@@ -13,23 +13,16 @@
                 </div>
             </md-input-container>
         </div>
-        <div layout="row" layout-align="center center">
+        <!-- <div layout="row" layout-align="center center">
             <md-input-container class="md-icon-float" flex>
                 <label>{{resourceData.adharcard}}</label>
                 <md-icon class="material-icons">person</md-icon>
                 <input type="text" required md-no-asterisk ng-model="register.user.adharcard" name="adharcard" ng-pattern="/^[0-9]{10,12}$/">
-                <!-- ^[0-9]{10,12}$ -->
-                <!-- min="0" max="99" -->
-                <!-- /[^\d](\d{9}|\d{11})[^\d]/ -->
-                <!-- ^\d{4}\s\d{4}\s\d{4}$ 4-4-4 digits comes-->
-                <!-- ^\d{4}\s\d{4}\s\d{4}$ -->
-                <!-- ^[0-9]{12}(?:[0-9]{3})?$ -->
-                <!-- \(\d{11}\) -->
                 <div ng-messages="signupForm.adharcard.$error">
                     <div ng-message="required">Enter the adhar card</div>
                 </div>
             </md-input-container>
-        </div>
+        </div> -->
         <div layout="row" layout-align="center center">
             <md-input-container class="md-icon-float" flex>
                 <label>{{resourceData.mobile}}</label>
@@ -54,12 +47,12 @@
             <md-input-container flex>
                 <label>Profession</label>
                 <md-icon class="material-icons">work</md-icon>
-                <md-select name="profession" ng-model="register.user.profession" required>
+                <md-select name="profession" ng-model="register.user.profession">
                     <md-option ng-repeat="(key, value) in register.professions" ng-value="value.professions">{{value.professions}}</md-option>
                 </md-select>
-                <div ng-messages="signupForm.profession.$error">
+                <!-- <div ng-messages="signupForm.profession.$error">
                     <div ng-message="required">Please Select your profession</div>
-                </div>
+                </div> -->
             </md-input-container>
         </div>
         <div layout="row" layout-align="center center">
@@ -76,12 +69,12 @@
             <md-input-container flex>
                 <label>Placement center</label>
                 <md-icon class="material-icons">business_center</md-icon>
-                <md-select name="placementcenter" ng-model="register.user.placementcenter" required>
+                <md-select name="placementcenter" ng-model="register.user.placementcenter" >
                     <md-option ng-repeat="(key, value) in register.placementcenters" ng-value="value.placementcenters">{{value.placementcenters}}</md-option>
                 </md-select>
-                <div ng-messages="signupForm.placementcenter.$error">
+               <!--  <div ng-messages="signupForm.placementcenter.$error">
                     <div ng-message="required">Please Select your placement center</div>
-                </div>
+                </div> -->
             </md-input-container>
         </div> -->
 
