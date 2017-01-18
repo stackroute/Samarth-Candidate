@@ -8,11 +8,43 @@ angular.module('sm-candidateprofile')
 
             return $http.get('/candidate/profession')
                 .then(function(res) {
-                    console.log("got ", res);
+                    console.log("got profession ", res);
                     return res;
                 }, function(error) {
                     return error;
                 });
         }
         return objprofile;
-    }]);
+    }])
+    .factory('locationFacto',
+        function($http) 
+    {
+        var factory = {
+            locationReq :locationReq
+        };
+        return factory;
+
+        function locationReq() {
+            var req = {};
+            req.url = '/placement/location';
+            req.method = 'GET';
+            return $http(req);
+        };
+    })
+    .factory('placementCenter', ['$http',
+    function($http) {
+
+        return {
+            getCenterName: function() {
+                return $http({
+                    method: 'get',
+                    url: '/center/getall/',
+                }).then(function success(response) {
+                    return response.data;
+                }, function error(err) {
+                    console.log("error", err);
+                });
+            }
+        }
+    }
+    ]);
