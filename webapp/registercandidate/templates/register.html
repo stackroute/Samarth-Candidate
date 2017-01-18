@@ -13,16 +13,18 @@
                 </div>
             </md-input-container>
         </div>
-        <!-- <div layout="row" layout-align="center center">
+        <div layout="row" layout-align="center center">
             <md-input-container class="md-icon-float" flex>
                 <label>{{resourceData.adharcard}}</label>
                 <md-icon class="material-icons">person</md-icon>
-                <input type="text" required md-no-asterisk ng-model="register.user.adharcard" name="adharcard" ng-pattern="/^[0-9]{10,12}$/">
+                <input type="text" required md-no-asterisk ng-model="register.user.adharcard" name="adharcard" ng-pattern="/^[0-9]{12}(?:[0-9]{3})?$/">
+                <!-- ^\d{4}\s\d{4}\s\d{4}$ 4-4-4 digits comes-->
+                <!-- ^[0-9]{12}(?:[0-9]{3})?$ -->
                 <div ng-messages="signupForm.adharcard.$error">
-                    <div ng-message="required">Enter the adhar card</div>
+                    <div ng-message="pattern">Enter correct adhaar card number</div>
                 </div>
             </md-input-container>
-        </div> -->
+        </div>
         <div layout="row" layout-align="center center">
             <md-input-container class="md-icon-float" flex>
                 <label>{{resourceData.mobile}}</label>
@@ -55,7 +57,8 @@
                 </div> -->
             </md-input-container>
         </div>
-        <div layout="row" layout-align="center center">
+
+       <!--  <div layout="row" layout-align="center center">
             <md-input-container class=" md-icon-float" flex>
                 <label>{{resourceData.location}}</label>
                 <md-icon class="material-icons">place</md-icon>
@@ -63,21 +66,39 @@
                 <div ng-messages="signupForm.Location.$error">
                     <div ng-message="required">This is required.</div>
                 </div>
-            </md-input-container>
-        </div>
-        <!-- <div layout="row" layout-align="center center">
-            <md-input-container flex>
-                <label>Placement center</label>
-                <md-icon class="material-icons">business_center</md-icon>
-                <md-select name="placementcenter" ng-model="register.user.placementcenter" >
-                    <md-option ng-repeat="(key, value) in register.placementcenters" ng-value="value.placementcenters">{{value.placementcenters}}</md-option>
-                </md-select>
-               <!--  <div ng-messages="signupForm.placementcenter.$error">
+            </md-input-container> -->
+            <!-- </div> -->
+                    <!-- Location -->
+            <md-autocomplete
+            md-selected-item="vm.user.location"
+            md-search-text-change=""
+            md-search-text="locationInputText"
+            md-selected-item-change=""
+            md-items="item in vm.location | filter: locationInputText"
+            md-item-text="item"
+            md-min-length="0"
+            md-floating-label="Location"
+            md-menu-class="autocomplete-custom-template">
+                <md-item-template>
+                    <span md-highlight-text="locationInputText" md-highlight-flags="^i">{{item}}</span>
+                </md-item-template>
+            </md-autocomplete>
+
+                    <!-- Placement center -->
+      <div layout="row" layout-align="center center">
+        <md-input-container flex>
+            <label>Placement center</label>
+            <md-icon class="material-icons">business_center</md-icon>
+            <md-select name="placementcenter" ng-model="register.user.placementcenter">
+                <md-option ng-repeat="(key, value) in register.placementcenters" ng-value="value.placementcenters">{{value.placementcenters}}</md-option>
+            </md-select>
+                <!-- <div ng-messages="signupForm.placementcenter.$error">
                     <div ng-message="required">Please Select your placement center</div>
                 </div> -->
             </md-input-container>
-        </div> -->
+        </div>
 
+                    <!-- Password -->
         <div layout="row" layout-align="center center">
             <md-input-container class="md-icon-float" flex>
                 <label>{{resourceData.password}}</label>
@@ -98,20 +119,20 @@
                     <!-- <div class="msg-error" ng-show="signupForm.Cfpassword.$error.noMatch"> -->
                     <div ng-show="register.user.password !== register.user.cpwd">
                         Passwords do not match</div>
-                </div>
-            </md-input-container>
-        </div>
-        <flash-message duration="6000"></flash-message>
-        <div layout="row" layout-align="center center">
-            <div layout="row" layout-align="center center" layout-wrap flex flex-gt-sm="40">
-                <md-button type="submit" ng-disabled="signupForm.$invalid" class="md-raised md-primary createAccount" ng-click="register.register()">
-                    {{resourceData.create}}
-                </md-button>
+                    </div>
+                </md-input-container>
             </div>
-        </div>
-        <div class="clearfix"> </div>
-        <div layout="row" layout-align="center center">
-            <a flex style="text-align:center" ui-sref="candidate.login">{{resourceData.havesign}}</a>
-        </div>
-    </form>
-</div>
+            <flash-message duration="6000"></flash-message>
+            <div layout="row" layout-align="center center">
+                <div layout="row" layout-align="center center" layout-wrap flex flex-gt-sm="40">
+                    <md-button type="submit" ng-disabled="signupForm.$invalid" class="md-raised md-primary createAccount" ng-click="register.register()">
+                        {{resourceData.create}}
+                    </md-button>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+            <div layout="row" layout-align="center center">
+                <a flex style="text-align:center" ui-sref="candidate.login">{{resourceData.havesign}}</a>
+            </div>
+        </form>
+    </div>
