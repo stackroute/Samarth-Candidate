@@ -4,11 +4,12 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
     'ngMdIcons',
     'LocalStorageModule',
     'ngFlash',
+    'ngFileUpload',
     'samarth-webcomponents',
     'simplePagination',
     'satellizer',
     'ui.router'
-])
+    ])
 .config(['$mdThemingProvider', function($mdThemingProvider) {
     let customPrimary = {
         50: '#00d1f8',
