@@ -1,27 +1,59 @@
 /* RegisterCtrl controller -> responsible for authentication and having $state,
- $auth as dependencies*/
+$auth as dependencies*/
 angular.module('sm-candidateprofile')
-    .controller('RegisterCtrl', [
-        '$auth',
-        '$state',
-        'Flash',
-        'professionService',
-        function($auth,
-            $state,
-            Flash,
-            professionService) {
-            let vm = this;
-            vm.user = {};
+.controller('RegisterCtrl', [
+    '$auth',
+    '$state',
+    'Flash',
+    'professionService',
+    'locationFacto',
+    function($auth,
+        $state,
+        Flash,
+        professionService,
+        locationFacto) {
+        let vm = this;
+        vm.location = [];
+        vm.centerProfession = [];
+        vm.user = {};
 
 
-            professionService.profession()
-                .then(function success(response) {
+        professionService.profession()
+        .then(function success(response) {
                     //console.log(response);
                     vm.professions = response.data;
                 }, function error(error) {
                     console.log("Error on inserting data");
                 });
 
+        function locationsFac()
+        {
+            locationFacto.locationReq().then(function(data) 
+            {
+              console.log('location--------------');
+              console.log(data);
+              var temp=[];
+              for( var i=0;i<data.data.length;i++)
+              {    
+                  temp[i]= data.data[i].location;
+              }
+              vm.location= temp;
+              console.log(vm.location);
+          })
+        }
+        vm.locationsFac = locationsFac;
+        vm.locationsFac();
+
+
+        // function getCenterProfession(){
+        //   placementCenter.getCenterName().then(function(result) {
+        //     vm.centerProfession=result;
+        // },function(err){
+        //     console.log(err);
+        // });  
+        // }
+        // vm.getCenterProfession = getCenterProfession;
+        // vm.getCenterProfession();
 
             /* Login() function which will be actually called in the associated view for
             registering the user*/
@@ -57,4 +89,4 @@ angular.module('sm-candidateprofile')
                 // $auth.signup ends
             };
         }
-    ]);
+        ]);
