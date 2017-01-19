@@ -7,7 +7,7 @@ let morgan = require('morgan');
 let mongoose = require('mongoose');
 let cookieParser = require('cookie-parser');
 let async = require('async');
-
+let apiRoutes = require('./webserver/auth/apirouter');
 let authRoutes = require('./webserver/auth/authrouter');
 let authByToken = require('./webserver/auth/authbytoken');
 const navItems = require('./webserver/navbar/navigateRouter.js');
@@ -52,7 +52,7 @@ function isUserAuthenticated(req, res, next) {
 		}
 	);
 }
-
+app.use('/', apiRoutes);
 app.use('/', authRoutes);
 app.use('/resource', resourcebundle);
 app.use('/', navItems);

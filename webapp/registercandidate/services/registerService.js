@@ -6,7 +6,7 @@ angular.module('sm-candidateprofile')
         //gets the circle from neo4j and mongo
         objprofile.profession = function() {
 
-            return $http.get('/candidate/profession')
+            return $http.get('/placement/profession')
                 .then(function(res) {
                     console.log("got profession ", res);
                     return res;

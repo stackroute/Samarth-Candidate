@@ -1,7 +1,5 @@
 /* Overridden Interceptor of Satellizer for intercepting and authentication every request
-
 ===================DO NOT CHANGE Unless Required =========================================
-
 */
 let SatellizerInterceptor = (function() {
     function Interceptor(SatellizerConfig, SatellizerShared, SatellizerStorage, $q, $rootScope) {
@@ -9,13 +7,11 @@ let SatellizerInterceptor = (function() {
         this.SatellizerConfig = SatellizerConfig;
         this.SatellizerShared = SatellizerShared;
         this.SatellizerStorage = SatellizerStorage;
-
         /* request interceptor method  */
         this.request = function(config) {
             if (config.skipAuthorization) {
                 return config;
             }
-
             if (_this.SatellizerShared.isAuthenticated()) {
                 let tokenName = _this.SatellizerConfig.tokenPrefix ? [_this.SatellizerConfig.tokenPrefix, _this.SatellizerConfig.tokenName]
                     .join('_') : _this.SatellizerConfig.tokenName;
@@ -23,16 +19,14 @@ let SatellizerInterceptor = (function() {
                 if (_this.SatellizerConfig.tokenHeader && _this.SatellizerConfig.tokenType) {
                     token = _this.SatellizerConfig.tokenType + ' ' + token;
                 }
-
                 /* Inclusion of all required tokens in the header
                 Any custom header can be included by using config.headers here*/
                 config.headers[_this.SatellizerConfig.tokenHeader] = token;
-                config.headers['x-access-token'] = _this.SatellizerShared.getPayload()['sm-token'];
+                // config.headers['x-access-token'] = _this.SatellizerShared.getPayload()['sm-token'];
             }
             return config;
         };
         // request end
-
         /* responseError handler of the interceptor*/
         this.responseError = function(rejection) {
             if (rejection.status === 401 || rejection.status === 403) {
@@ -44,7 +38,6 @@ let SatellizerInterceptor = (function() {
         // response end
     }
     // Interceptor function ends
-
     Interceptor.Factory = function(SatellizerConfig,
         SatellizerShared, SatellizerStorage, $q, $rootScope) {
         return new Interceptor(SatellizerConfig,
@@ -62,8 +55,6 @@ let SatellizerInterceptor = (function() {
     return Interceptor;
 }());
 // Interceptor declaration change
-
-
 // Injecting all the required dependencies into the interceptor declared above
 SatellizerInterceptor.Factory.$inject = ['SatellizerConfig',
     'SatellizerShared',
@@ -71,7 +62,6 @@ SatellizerInterceptor.Factory.$inject = ['SatellizerConfig',
     '$q',
     '$rootScope'
 ];
-
 // Pushing the interceptor into $httpProvider
 let SatellizerHttpProviderConfig = (function() {
     function HttpProviderConfig($httpProvider) {
@@ -82,7 +72,6 @@ let SatellizerHttpProviderConfig = (function() {
     return HttpProviderConfig;
 }());
 // SatellizerHttpProviderConfig ends
-
 /* sm-candidateprofile Module is in root folder in smcandidateprofile.js */
 angular.module('sm-candidateprofile')
     // injecting the satellizer interceptor into module
@@ -96,7 +85,7 @@ angular.module('sm-candidateprofile')
         /* local storage name prefix "satellizer_YOUR-TOKEN-NAME"*/
         $authProvider.tokenPrefix = 'satellizer';
         /* token header that needs to be injected in every request via interceptor*/
-        $authProvider.tokenHeader = 'x-user-access-token';
+        // $authProvider.tokenHeader = 'x-user-access-token';
         /* default -> "Bearer" reset to blank required*/
         $authProvider.tokenType = '';
         /* Turn off default interceptor provided by satellizer*/
