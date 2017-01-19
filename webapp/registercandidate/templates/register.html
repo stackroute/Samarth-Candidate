@@ -69,7 +69,7 @@
             </md-input-container> -->
             <!-- </div> -->
                     <!-- Location -->
-            <md-autocomplete
+           <!--  <md-autocomplete
             md-selected-item="vm.user.location"
             md-search-text-change=""
             md-search-text="locationInputText"
@@ -82,15 +82,29 @@
                 <md-item-template>
                     <span md-highlight-text="locationInputText" md-highlight-flags="^i">{{item}}</span>
                 </md-item-template>
-            </md-autocomplete>
+            </md-autocomplete> -->
+
+                        <!-- Location -->
+
+        <div layout="row" layout-align="center center">
+        <md-input-container flex>
+            <label>Location</label>
+            <md-icon class="material-icons">place</md-icon>
+            <md-select name="location" ng-model="register.user.location">
+                <md-option ng-repeat="locations in register.location" ng-value="locations">{{locations}}</md-option>
+            </md-select>
+            </md-input-container>
+        </div>
+
 
                     <!-- Placement center -->
+
       <div layout="row" layout-align="center center">
         <md-input-container flex>
             <label>Placement center</label>
             <md-icon class="material-icons">business_center</md-icon>
-            <md-select name="placementcenter" ng-model="register.user.placementcenter">
-                <md-option ng-repeat="(key, value) in register.placementcenters" ng-value="value.placementcenters">{{value.placementcenters}}</md-option>
+            <md-select name="placementCenter" ng-model="register.user.placementCenter">
+                <md-option ng-repeat="centers in register.placementCenter" ng-value="centers.centerCode">{{centers.centerCode}}</md-option>
             </md-select>
                 <!-- <div ng-messages="signupForm.placementcenter.$error">
                     <div ng-message="required">Please Select your placement center</div>

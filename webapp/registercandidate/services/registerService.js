@@ -31,7 +31,7 @@ angular.module('sm-candidateprofile')
             return $http(req);
         };
     })
-    .factory('placementCenter', ['$http',
+    .factory('centerPlacement', ['$http',
     function($http) {
 
         return {
@@ -39,7 +39,8 @@ angular.module('sm-candidateprofile')
                 return $http({
                     method: 'get',
                     url: '/center/getall/',
-                }).then(function success(response) {
+                }).then(function(response) {
+                    console.log(response);
                     return response.data;
                 }, function error(err) {
                     console.log("error", err);

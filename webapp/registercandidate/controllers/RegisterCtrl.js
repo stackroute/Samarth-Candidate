@@ -7,14 +7,16 @@ angular.module('sm-candidateprofile')
     'Flash',
     'professionService',
     'locationFacto',
+    'centerPlacement',
     function($auth,
         $state,
         Flash,
         professionService,
-        locationFacto) {
+        locationFacto,
+        centerPlacement) {
         let vm = this;
         vm.location = [];
-        vm.centerProfession = [];
+        vm.placementCenter = [];
         vm.user = {};
 
 
@@ -45,15 +47,16 @@ angular.module('sm-candidateprofile')
         vm.locationsFac();
 
 
-        // function getCenterProfession(){
-        //   placementCenter.getCenterName().then(function(result) {
-        //     vm.centerProfession=result;
-        // },function(err){
-        //     console.log(err);
-        // });  
-        // }
-        // vm.getCenterProfession = getCenterProfession;
-        // vm.getCenterProfession();
+        function getPlacementCenter(){
+          centerPlacement.getCenterName().then(function(result) {
+            vm.placementCenter=result;
+            console.log(vm.placementCenter);
+        },function(err){
+            console.log(err);
+        });  
+        }
+        vm.getPlacementCenter = getPlacementCenter;
+        vm.getPlacementCenter();
 
             /* Login() function which will be actually called in the associated view for
             registering the user*/
@@ -74,6 +77,7 @@ angular.module('sm-candidateprofile')
                     mobile: vm.user.number,
                     email: vm.user.email,
                     location: vm.user.location,
+                    centerCode: vm.user.centerCode,
                     pwd: vm.user.password,
                     profession: vm.user.profession
 
