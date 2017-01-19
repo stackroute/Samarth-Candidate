@@ -27,7 +27,7 @@ let SatellizerInterceptor = (function() {
                 /* Inclusion of all required tokens in the header
                 Any custom header can be included by using config.headers here*/
                 config.headers[_this.SatellizerConfig.tokenHeader] = token;
-                config.headers['x-access-token'] = _this.SatellizerShared.getPayload()['sm-token'];
+                // config.headers['x-access-token'] = _this.SatellizerShared.getPayload()['sm-token'];
             }
             return config;
         };
@@ -96,7 +96,7 @@ angular.module('sm-candidateprofile')
         /* local storage name prefix "satellizer_YOUR-TOKEN-NAME"*/
         $authProvider.tokenPrefix = 'satellizer';
         /* token header that needs to be injected in every request via interceptor*/
-        $authProvider.tokenHeader = 'x-user-access-token';
+        // $authProvider.tokenHeader = 'x-user-access-token';
         /* default -> "Bearer" reset to blank required*/
         $authProvider.tokenType = '';
         /* Turn off default interceptor provided by satellizer*/

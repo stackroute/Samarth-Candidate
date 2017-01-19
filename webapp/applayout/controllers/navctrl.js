@@ -10,6 +10,8 @@
 angular.module('sm-candidateprofile')
     .controller('navCtrl', [
         '$auth',
+        '$http',
+        '$localStorage',
         '$mdSidenav',
         '$rootScope',
         '$scope',
@@ -18,6 +20,8 @@ angular.module('sm-candidateprofile')
         'navFactory',
         'Flash',
         function($auth,
+            $http,
+            $localStorage,
             $mdSidenav,
             $rootScope,
             $scope,
@@ -80,6 +84,9 @@ angular.module('sm-candidateprofile')
                 // resetting the visibility of the content view backgound  in index.html
                 $rootScope.loggedinbackground = 'loggedoutbackground';
                 // redirects to a mentioned state if successfull
+                // $auth.removeToken();
+                $http.defaults.headers.common['x-access-token']='';
+                delete $localStorage.tokenDetails;
                 $state.go('candidate.login');
             };
             // logout ends

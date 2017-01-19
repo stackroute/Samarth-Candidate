@@ -81,7 +81,7 @@ angular.module('sm-candidateprofile')
                     let message = 'Successfully completed registration..!';
                     Flash.create('success', message);
                     // redirects to a mentioned state if successfull
-                    $state.go('candidate.dashboard');
+                    $state.go('candidate.login');
                 }).catch(function() {
                     let message = 'Some Error ! Please Try Again';
                     Flash.create('danger', message);
