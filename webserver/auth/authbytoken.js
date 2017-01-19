@@ -6,7 +6,7 @@ const config = require('../config/config');
 let signup = function(newUser, callback, unauthCB) {
     let newUserObj = new UserModel({
         uname: newUser.mobile,
-        hash_pwd: newUser.pwd,
+        pwd: newUser.pwd,
         status: 'active',
         createdon: new Date(),
         lastseenon: new Date()
@@ -28,15 +28,18 @@ let signup = function(newUser, callback, unauthCB) {
         //newUser.profession = 'test',
 
         authCandidate.registerCandidate(newUser).then(
-            function(candidate) {
+            function(details) {
+                // console.log("details...");
+                // console.log(details);
                 let sessionUser = {
                     uname: user.uname,
-                    cid: candidate.candidateid,
-                    lang: candidate.mothertongue,
-                    name: candidate.name,
-                    email: candidate.email,
-                    gender: candidate.gender,
-                    'sm-token': 'TBD'
+                    cid: details.candidate.candidateid,
+                    lang: details.candidate.mothertongue,
+                    name: details.candidate.name,
+                    email: details.candidate.email,
+                    role: details.candidate.userRole,
+                    gender: details.candidate.gender,
+                    'sm-token': details.token
                 };
 
                 // console.log('Registered successfully ', sessionUser);

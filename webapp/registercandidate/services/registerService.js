@@ -2,12 +2,9 @@ angular.module('sm-candidateprofile')
     .service('professionService', ['$http', function($http) {
         var objprofile = {};
         // var userdata = $window.localStorage["member-user"];
-
         //gets the circle from neo4j and mongo
         objprofile.profession = function() {
-
-            return $http.get(' /placement/profession')
-
+            return $http.get('/placement/profession')
                 .then(function(res) {
                     console.log("got profession ", res);
                     return res;
@@ -24,7 +21,6 @@ angular.module('sm-candidateprofile')
             locationReq :locationReq
         };
         return factory;
-
         function locationReq() {
             var req = {};
             req.url = '/placement/location';
@@ -32,15 +28,15 @@ angular.module('sm-candidateprofile')
             return $http(req);
         };
     })
-    .factory('placementCenter', ['$http',
+    .factory('centerPlacement', ['$http',
     function($http) {
-
         return {
             getCenterName: function() {
                 return $http({
                     method: 'get',
                     url: '/center/getall/',
-                }).then(function success(response) {
+                }).then(function(response) {
+                    console.log(response);
                     return response.data;
                 }, function error(err) {
                     console.log("error", err);

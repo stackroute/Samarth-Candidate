@@ -83,11 +83,12 @@ angular.module('sm-candidateprofile')
         /* required register api endpoint*/
         $authProvider.signupUrl = '/signup';
         /* local storage name prefix "satellizer_YOUR-TOKEN-NAME"*/
+        $authProvider.tokenType = 'Bearer';
         $authProvider.tokenPrefix = 'satellizer';
         /* token header that needs to be injected in every request via interceptor*/
         // $authProvider.tokenHeader = 'x-user-access-token';
         /* default -> "Bearer" reset to blank required*/
-        $authProvider.tokenType = '';
+        //$authProvider.tokenType = "Bearer";
         /* Turn off default interceptor provided by satellizer*/
         $authProvider.httpInterceptor = false;
         return new SatellizerHttpProviderConfig($httpProvider);
