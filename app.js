@@ -7,13 +7,14 @@ let morgan = require('morgan');
 let mongoose = require('mongoose');
 let cookieParser = require('cookie-parser');
 let async = require('async');
-
+// let apiRoutes = require('./webserver/auth/apirouter');
 let authRoutes = require('./webserver/auth/authrouter');
 let authByToken = require('./webserver/auth/authbytoken');
+let apiRoutes = require('./webserver/auth/apirouter');
 const navItems = require('./webserver/navbar/navigateRouter.js');
-
+let placement=require("./webserver/placement/coordinatorrouter.js");
 let resourcebundle = require('./webserver/resourcebundle/resourcebundlerouter.js');
-
+const bearerToken = require('express-bearer-token');
 mongoose.connect('mongodb://localhost:27017/samarthplatformdb');
 
 // Creating proxy object
@@ -52,10 +53,16 @@ function isUserAuthenticated(req, res, next) {
 		}
 	);
 }
-
+app.use(bearerToken());
+// app.use('/', apiRoutes);
 app.use('/', authRoutes);
-app.use('/resource', resourcebundle);
 app.use('/', navItems);
+app.use('/placement',placement);
+app.use('/resource', resourcebundle);
+
+
+app.use('/', apiRoutes); 
+// app.use('/', navItems);
 
 
 /* ============================================

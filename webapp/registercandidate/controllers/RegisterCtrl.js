@@ -18,8 +18,6 @@ angular.module('sm-candidateprofile')
         vm.location = [];
         vm.placementCenter = [];
         vm.user = {};
-
-
         professionService.profession()
         .then(function success(response) {
                     //console.log(response);
@@ -27,7 +25,6 @@ angular.module('sm-candidateprofile')
                 }, function error(error) {
                     console.log("Error on inserting data");
                 });
-
         function locationsFac()
         {
             locationFacto.locationReq().then(function(data) 
@@ -46,7 +43,6 @@ angular.module('sm-candidateprofile')
         vm.locationsFac = locationsFac;
         vm.locationsFac();
 
-
         function getPlacementCenter(){
           centerPlacement.getCenterName().then(function(result) {
             vm.placementCenter=result;
@@ -58,6 +54,7 @@ angular.module('sm-candidateprofile')
         vm.getPlacementCenter = getPlacementCenter;
         vm.getPlacementCenter();
 
+
             /* Login() function which will be actually called in the associated view for
             registering the user*/
             vm.register = function __register() {
@@ -66,12 +63,10 @@ angular.module('sm-candidateprofile')
                 of the user . This returns a promise and accepts an object with all the
                 required fields which
                 needs to be sent to the api for registration
-
                 NOTE :- To change the registration api endpoint/URI , please override
                 $authProvider.signupUrl with new
                 value in /auth/authmodule.js */
                 $auth.signup({
-
                     name: vm.user.name,
                     adharcard: vm.user.adharcard,
                     mobile: vm.user.number,
@@ -80,7 +75,6 @@ angular.module('sm-candidateprofile')
                     centerCode: vm.user.centerCode,
                     pwd: vm.user.password,
                     profession: vm.user.profession
-
                 }).then(function() {
                     let message = 'Successfully completed registration..!';
                     Flash.create('success', message);
