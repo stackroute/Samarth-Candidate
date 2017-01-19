@@ -10,8 +10,9 @@ let async = require('async');
 let apiRoutes = require('./webserver/auth/apirouter');
 let authRoutes = require('./webserver/auth/authrouter');
 let authByToken = require('./webserver/auth/authbytoken');
+let apiRoutes = require('./webserver/auth/apirouter');
 const navItems = require('./webserver/navbar/navigateRouter.js');
-
+let placement=require("./webserver/placement/coordinatorrouter.js");
 let resourcebundle = require('./webserver/resourcebundle/resourcebundlerouter.js');
 
 mongoose.connect('mongodb://localhost:27017/samarthplatformdb');
@@ -56,6 +57,9 @@ app.use('/', apiRoutes);
 app.use('/', authRoutes);
 app.use('/resource', resourcebundle);
 app.use('/', navItems);
+app.use('/placement',placement);
+app.use('/', apiRoutes); 
+// app.use('/', navItems);
 
 
 /* ============================================
