@@ -67,6 +67,7 @@
                 </div>
             </md-input-container> -->
             <!-- </div> -->
+             
                     <!-- Location -->
            <!--  <md-autocomplete
             md-selected-item="vm.user.location"
@@ -87,7 +88,7 @@
         <md-input-container flex>
             <label>Location</label>
             <md-icon class="material-icons">place</md-icon>
-            <md-select name="location" ng-model="register.user.location">
+            <md-select ng-change="register.getPlacCenter(register.user.location)" name="location" ng-model="register.user.location">
                 <md-option ng-repeat="locations in register.location" ng-value="locations">{{locations}}</md-option>
             </md-select>
             </md-input-container>
@@ -102,9 +103,6 @@
             <md-select name="placementCenter" ng-model="register.user.placementCenter">
                 <md-option ng-repeat="centers in register.placementCenter" ng-value="centers.centerCode">{{centers.centerCode}}</md-option>
             </md-select>
-                <!-- <div ng-messages="signupForm.placementcenter.$error">
-                    <div ng-message="required">Please Select your placement center</div>
-                </div> -->
             </md-input-container>
         </div>
                     <!-- Password -->
