@@ -9,7 +9,7 @@ var urlEncodedParser = bodyParser.urlencoded({
 
 router.post('/signup', jsonBodyParser, urlEncodedParser, function(req, res) {
     // Validate for mandatory data
-    console.log(req.body);
+    // console.log(req.body);
     if (!req.body.name ||
         !req.body.mobile ||
         !req.body.email ||
