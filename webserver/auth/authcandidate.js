@@ -8,7 +8,7 @@ let registerCandidate = function(candidateObj) {
         let options = {
             method: 'POST',
             json: true,
-            url: 'http://' + platformURL + '/candidate/',
+            url: 'http://' + platformURL + '/register/',
             form: candidateObj
         };
 

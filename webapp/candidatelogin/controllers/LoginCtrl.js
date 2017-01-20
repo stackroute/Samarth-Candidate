@@ -2,11 +2,15 @@
 angular.module('sm-candidateprofile')
     .controller('LoginCtrl', [
         '$auth',
+        '$http',
+        '$localStorage',
         '$log',
         '$state',
         'Flash',
         function(
             $auth,
+            $http,
+            $localStorage,
             $log,
             $state,
             Flash) {
@@ -30,7 +34,16 @@ angular.module('sm-candidateprofile')
                     // username of the user entered in the login form
                     pwd: vm.user.password
                 }).then(function(response) {
-                    $log.error('response --->', response);
+                    // $log.error('response --->', response);
+                    $auth.setToken(response.token);
+                    console.log("token....");
+                    console.log("response....");
+                    console.log(response);
+                    console.log('$auth.getPayload()[sm-token]');
+                    console.log($auth.getPayload()['sm-token']);
+                    console.log($auth.getPayload());
+                    $localStorage.tokenDetails = { token: $auth.getPayload()['sm-token'] };
+                    $http.defaults.headers.common['x-access-token'] = $auth.getPayload()['sm-token'];
                     // redirects to a mentioned state if successfull
                     $state.go('candidate.dashboard');
                 }).catch(function(response) {

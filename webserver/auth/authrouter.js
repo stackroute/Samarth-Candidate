@@ -9,6 +9,7 @@ var urlEncodedParser = bodyParser.urlencoded({
 
 router.post('/signup', jsonBodyParser, urlEncodedParser, function(req, res) {
     // Validate for mandatory data
+    // console.log(req.body);
     if (!req.body.name ||
         !req.body.mobile ||
         !req.body.email ||
@@ -72,7 +73,8 @@ router.post('/signin', jsonBodyParser, urlEncodedParser, function(req, res) {
                         error: 'Internal error in processing request, please retry later..!'
                     });
                 }
-
+                console.log("user...");
+console.log(user);
                 user.token = jwtToken;
                 return res.status(200).json(user);
             },

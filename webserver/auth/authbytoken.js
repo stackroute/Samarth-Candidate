@@ -1,6 +1,7 @@
 let jwt = require('jsonwebtoken');
 let UserModel = require('./users');
 let authCandidate = require('./authcandidate');
+const config = require('../config/config'); 
 
 let signup = function(newUser, callback, unauthCB) {
     let newUserObj = new UserModel({
@@ -27,15 +28,18 @@ let signup = function(newUser, callback, unauthCB) {
         //newUser.profession = 'test',
 
         authCandidate.registerCandidate(newUser).then(
-            function(candidate) {
+            function(details) {
+                // console.log("details...");
+                // console.log(details);
                 let sessionUser = {
                     uname: user.uname,
-                    cid: candidate.candidateid,
-                    lang: candidate.mothertongue,
-                    name: candidate.name,
-                    email: candidate.email,
-                    gender: candidate.gender,
-                    'sm-token': 'TBD'
+                    cid: details.candidate.candidateid,
+                    lang: details.candidate.mothertongue,
+                    name: details.candidate.name,
+                    email: details.candidate.email,
+                    role: details.candidate.userRole,
+                    gender: details.candidate.gender,
+                    'sm-token': details.token
                 };
 
                 // console.log('Registered successfully ', sessionUser);
@@ -81,16 +85,16 @@ let signin = function(uname, pwd, callback, unauthCB) {
 
             // Now that user is authenticated locally, fetch the corresponding candidate token
             authCandidate.getCandidateAuthToken(user).then(
-                function(candidate) {
+                function(details) { 
                     let sessionUser = {
                         uname: user.uname,
-                        uname: user.uname,
-                        cid: candidate.candidateid,
-                        lang: candidate.mothertongue,
-                        name: candidate.name,
-                        email: candidate.email,
-                        gender: candidate.gender,
-                        'sm-token': 'TBD'
+                        // uname: user.uname,
+                        cid: details.candidate.candidateid,
+                        lang: details.candidate.mothertongue,
+                        name: details.candidate.name,
+                        email: details.candidate.email,
+                        gender: details.candidate.gender,
+                        'sm-token': details.token
                     };
 
                     // console.log('Got token successfully ', sessionUser);
@@ -113,14 +117,14 @@ let signout = function(cb) {
 
 let generateJWTToken = function(user, cb) {
     let payload = user;
-    let secretOrPrivateKey = 'SAMARTH-WEBAPP-SECRET';
+    // let secretOrPrivateKey = 'SAMARTH-WEBAPP-SECRET';
     let options = {
         algorithm: 'HS256',
         expiresIn: 36000,
         issuer: user.mobile
     };
 
-    jwt.sign(payload, secretOrPrivateKey, options, function(err, jwtToken) {
+    jwt.sign(payload, config.SECRETKEY, options, function(err, jwtToken) { //added config.secretkey
         // console.log('Sending token ', user, jwtToken);
         cb(err, user, jwtToken);
     });

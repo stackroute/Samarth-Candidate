@@ -8,6 +8,7 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
     'samarth-webcomponents',
     'simplePagination',
     'satellizer',
+    'ngStorage',
     'ui.router'
     ])
 .config(['$mdThemingProvider', function($mdThemingProvider) {
@@ -63,5 +64,11 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
 }])
  .config(function($compileProvider) {
  $compileProvider.preAssignBindingsEnabled(true);
-});
+})
+ .run(function($http, $localStorage) {
+        // keep user logged in after page refresh
+        if ($localStorage.tokenDetails) {
+            $http.defaults.headers.common['x-access-token'] = $localStorage.tokenDetails.token;
+        }
+ });
 
