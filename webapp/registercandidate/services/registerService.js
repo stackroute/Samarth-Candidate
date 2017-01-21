@@ -6,7 +6,7 @@ angular.module('sm-candidateprofile')
         objprofile.profession = function() {
             return $http.get('/placement/profession')
                 .then(function(res) {
-                    console.log("got profession ", res);
+                    // console.log("got profession ", res);
                     return res;
                 }, function(error) {
                     return error;
@@ -31,15 +31,16 @@ angular.module('sm-candidateprofile')
     .factory('centerPlacement', ['$http',
     function($http) {
         return {
-            getCenterName: function() {
+            getCenterName: function(city) {
+                console.log(city);
                 return $http({
                     method: 'get',
-                    url: '/center/getall/',
+                    url: '/placement/getPlacementCenter/'+ city,
                 }).then(function(response) {
-                    console.log(response);
+                    // console.log(response);
                     return response.data;
                 }, function error(err) {
-                    console.log("error", err);
+                    // console.log("error", err);
                 });
             }
         }

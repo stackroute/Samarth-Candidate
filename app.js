@@ -12,11 +12,11 @@ let authRoutes = require('./webserver/auth/authrouter');
 let authByToken = require('./webserver/auth/authbytoken');
 let apiRoutes = require('./webserver/auth/apirouter');
 const navItems = require('./webserver/navbar/navigateRouter.js');
-let placement=require("./webserver/placement/coordinatorrouter.js");
+let placement=require("./webserver/placement/candidateregrouter.js");
 let resourcebundle = require('./webserver/resourcebundle/resourcebundlerouter.js');
 const bearerToken = require('express-bearer-token');
 mongoose.connect('mongodb://localhost:27017/samarthplatformdb');
-
+const logger = require('./applogger');
 // Creating proxy object
 let platformProxy = proxy.createProxyServer();
 

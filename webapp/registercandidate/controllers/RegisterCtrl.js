@@ -18,6 +18,7 @@ angular.module('sm-candidateprofile')
         vm.location = [];
         vm.placementCenter = [];
         vm.user = {};
+
         professionService.profession()
         .then(function success(response) {
                     //console.log(response);
@@ -29,8 +30,8 @@ angular.module('sm-candidateprofile')
         {
             locationFacto.locationReq().then(function(data) 
             {
-              console.log('location--------------');
-              console.log(data);
+              // console.log('location--------------');
+              // console.log(data.data[0].location);
               var temp=[];
               for( var i=0;i<data.data.length;i++)
               {    
@@ -42,16 +43,20 @@ angular.module('sm-candidateprofile')
         }
         vm.locationsFac = locationsFac;
         vm.locationsFac();
-        function getPlacementCenter(){
-          centerPlacement.getCenterName().then(function(result) {
+
+
+        vm.getPlacCenter = function(city) {
+            console.log("Value in controller");
+            console.log(city);
+          centerPlacement.getCenterName(city).then(function(result) {
             vm.placementCenter=result;
             console.log(vm.placementCenter);
         },function(err){
             console.log(err);
         });  
         }
-        vm.getPlacementCenter = getPlacementCenter;
-        vm.getPlacementCenter();
+
+
             /* Login() function which will be actually called in the associated view for
             registering the user*/
             vm.register = function __register() {
