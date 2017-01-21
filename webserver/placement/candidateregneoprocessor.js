@@ -56,12 +56,14 @@ getLocation = function(successCB, errCB) {
 };
 getPlacementCenter = function (Location, SuccessCB, errorCB) {
      db.cypher({
-            query: 'MATCH (n:Location{name:{Location}})<-[rel:memberOf]-(c:circle) RETURN c.name,c.cname    ',
+
+            query: 'MATCH (n:Location{name:{Location}})<-[rel:memberOf]-(c:circle) RETURN c.name,c.cname',
             params: {
                 Location: Location
             },
         }, function(err,results) {
          console.log(results);
+         console.log("done");
          if(err)
          {
              SuccessCB(err,null)
