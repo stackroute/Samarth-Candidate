@@ -56,7 +56,8 @@ getLocation = function(successCB, errCB) {
 };
 getPlacementCenter = function (location, SuccessCB, errorCB) {
      db.cypher({
-         query: 'MATCH (l:circle{address:location})',
+         // query: 'MATCH (l:circle{address:location})',
+            query: 'MATCH(n:Location{name:{Location}})<-[rel:memberOf]-(c:circle) RETURN c.name',
          params: {
              location: location
          },
