@@ -32,12 +32,12 @@ angular.module('sm-candidateprofile')
     function($http) {
         return {
             getCenterName: function(city) {
-                console.log(city);
+                // console.log(city);
                 return $http({
                     method: 'get',
                     url: '/placement/getPlacementCenter/'+ city,
                 }).then(function(response) {
-                    // console.log(response);
+                    console.log(response);
                     return response.data;
                 }, function error(err) {
                     // console.log("error", err);

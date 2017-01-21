@@ -67,22 +67,6 @@
                 </div>
             </md-input-container> -->
             <!-- </div> -->
-             
-                    <!-- Location -->
-           <!--  <md-autocomplete
-            md-selected-item="vm.user.location"
-            md-search-text-change=""
-            md-search-text="locationInputText"
-            md-selected-item-change=""
-            md-items="item in vm.location | filter: locationInputText"
-            md-item-text="item"
-            md-min-length="0"
-            md-floating-label="Location"
-            md-menu-class="autocomplete-custom-template">
-                <md-item-template>
-                    <span md-highlight-text="locationInputText" md-highlight-flags="^i">{{item}}</span>
-                </md-item-template>
-            </md-autocomplete> -->
 
         <div layout="row" layout-align="center center">
         <md-input-container flex>
@@ -96,15 +80,31 @@
 
                     <!-- Placement center -->
 
-      <div layout="row" layout-align="center center">
+      <!-- <div layout="row" layout-align="center center">
         <md-input-container flex>
             <label>Placement center</label>
             <md-icon class="material-icons">business_center</md-icon>
             <md-select name="placementCenter" ng-model="register.user.placementCenter">
-                <md-option ng-repeat="centers in register.placementCenter" ng-value="centers.centerCode">{{centers.centerCode}}</md-option>
+                <md-option ng-repeat="centers in register.placementCenter" ng-value="centers">{{centers}}</md-option>
             </md-select>
             </md-input-container>
-        </div>
+        </div> -->
+
+<!-- <tr ng-repeat="(key, value) in data">
+  <td> {{key}} </td> <td> {{ value }} </td>
+</tr> -->
+
+        <div layout="row" layout-align="center center">
+        <md-input-container flex>
+            <label>Placement center</label>
+            <md-icon class="material-icons">business_center</md-icon>
+            <md-select name="placementCenter" ng-model="register.user.placementCenter">
+                <md-option ng-repeat="centers in register.placementCenter" ng-value="centers">{{centers['c.name']+" "+centers['c.cname']}}</md-option>
+            </md-select>
+            </md-input-container>
+        </div> 
+        
+
                     <!-- Password -->
         <div layout="row" layout-align="center center">
             <md-input-container class="md-icon-float" flex>

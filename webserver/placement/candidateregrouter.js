@@ -92,7 +92,7 @@ router.get('/getPlacementCenter/:city', function(req,res){
      console.log(req.params.city);
      // console.log(city);
     candidateregneoprocessor.getPlacementCenter(req.params.city,function(getNeoCenter){
-        console.log("o"+getNeoCenter);
+        console.log(getNeoCenter);
             res.status(200).json(getNeoCenter);
     },
     function(error){

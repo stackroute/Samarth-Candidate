@@ -74,7 +74,7 @@ angular.module('sm-candidateprofile')
                     mobile: vm.user.number,
                     email: vm.user.email,
                     location: vm.user.location,
-                    centerCode: vm.user.centerCode,
+                    placementCenter: vm.user.placementCenter,
                     pwd: vm.user.password,
                     profession: vm.user.profession
                 }).then(function() {

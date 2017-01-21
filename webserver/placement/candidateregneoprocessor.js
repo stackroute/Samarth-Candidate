@@ -54,20 +54,20 @@ getLocation = function(successCB, errCB) {
         }
     });
 };
-getPlacementCenter = function (location, SuccessCB, errorCB) {
+getPlacementCenter = function (Location, SuccessCB, errorCB) {
      db.cypher({
-         query: 'MATCH (l:circle{address:location})',
-         params: {
-             location: location
-         },
-     }, function(err,results) {
-         console.log("done");
+            query: 'MATCH (n:Location{name:{Location}})<-[rel:memberOf]-(c:circle) RETURN c.name,c.cname    ',
+            params: {
+                Location: Location
+            },
+        }, function(err,results) {
+         console.log(results);
          if(err)
          {
              SuccessCB(err,null)
          }
          else{
-             SuccessCB(null,results)
+             SuccessCB(results)
          }
      });
 
