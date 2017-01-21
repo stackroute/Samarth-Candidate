@@ -1,13 +1,13 @@
 let router = require('express').Router();
 let async = require('async');
 
-let coordinatorprocessor = require('./coordinatorneoprocessor.js');
+let candidateregneoprocessor = require('./candidateregneoprocessor.js');
 
 router.get('/profession', function(req, res) 
 {
 	try 
 	{
-		coordinatorprocessor.getProfessions(function(professions) 
+		candidateregneoprocessor.getProfessions(function(professions) 
 		{
 			res.status(200).json(professions);
 		}, function(err) 
@@ -28,7 +28,7 @@ router.get('/role', function(req, res)
 {
 	try 
 	{
-		coordinatorprocessor.getRole(function(role) 
+		candidateregneoprocessor.getRole(function(role) 
 		{
 			res.status(200).json(role);
 		}, function(err) 
@@ -49,7 +49,7 @@ router.get('/language', function(req, res)
 {
 	try 
 	{
-		coordinatorprocessor.getLanguage(function(language) 
+		candidateregneoprocessor.getLanguage(function(language) 
 		{
 			res.status(200).json(language);
 		}, function(err) 
@@ -70,7 +70,7 @@ router.get('/location', function(req, res)
 {
 	try 
 	{
-		coordinatorprocessor.getLocation(function(location) 
+		candidateregneoprocessor.getLocation(function(location) 
 		{
 			res.status(200).json(location);
 		}, function(err) 
@@ -86,4 +86,17 @@ router.get('/location', function(req, res)
 		});
 	}
 });
+
+router.get('/getPlacementCenter/:city', function(req,res){
+     console.log("Route done");
+     console.log(req.params.city);
+     // console.log(city);
+    candidateregneoprocessor.getPlacementCenter(req.params.city,function(getNeoCenter){
+        console.log("o"+getNeoCenter);
+            res.status(200).json(getNeoCenter);
+    },
+    function(error){
+            res.status(500).json(error);
+    });
+})
 module.exports = router;

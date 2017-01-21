@@ -35,7 +35,7 @@ angular.module('sm-candidateprofile')
                 console.log(city);
                 return $http({
                     method: 'get',
-                    url: '/center/getPlacementCenter/'+ city,
+                    url: '/placement/getPlacementCenter/'+ city,
                 }).then(function(response) {
                     // console.log(response);
                     return response.data;

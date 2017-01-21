@@ -54,10 +54,28 @@ getLocation = function(successCB, errCB) {
         }
     });
 };
+getPlacementCenter = function (location, SuccessCB, errorCB) {
+     db.cypher({
+         query: 'MATCH (l:circle{address:location})',
+         params: {
+             location: location
+         },
+     }, function(err,results) {
+         console.log("done");
+         if(err)
+         {
+             SuccessCB(err,null)
+         }
+         else{
+             SuccessCB(null,results)
+         }
+     });
 
+    };
 module.exports = {
     getLocation: getLocation,
     getLanguage: getLanguage,
     getRole: getRole,
-    getProfessions: getProfessions
+    getProfessions: getProfessions,
+    getPlacementCenter: getPlacementCenter
 }
