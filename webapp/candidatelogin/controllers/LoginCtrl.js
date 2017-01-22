@@ -36,9 +36,9 @@ angular.module('sm-candidateprofile')
                 }).then(function(response) {
                     // $log.error('response --->', response);
                     $auth.setToken(response.token);
-                    console.log("token....");
-                    console.log("response....");
-                    console.log(response);
+                    // console.log("token....");
+                    // console.log("response....");
+                    // console.log(response);
                     console.log('$auth.getPayload()[sm-token]');
                     console.log($auth.getPayload()['sm-token']);
                     console.log($auth.getPayload());
@@ -56,4 +56,5 @@ angular.module('sm-candidateprofile')
                 // $auth.login ends
             };
         }
+
     ]);

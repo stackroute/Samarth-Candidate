@@ -9,7 +9,9 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
     'simplePagination',
     'satellizer',
     'ngStorage',
-    'ui.router'
+    'ui.router',
+    'mm.acl',
+    'samarth.accessdenied'
     ])
 .config(['$mdThemingProvider', function($mdThemingProvider) {
     let customPrimary = {
@@ -70,5 +72,35 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
         if ($localStorage.tokenDetails) {
             $http.defaults.headers.common['x-access-token'] = $localStorage.tokenDetails.token;
         }
- });
+ })
 
+
+ .run(['$rootScope', '$state', '$auth', '$http','$localStorage', 'AclService', function ($rootScope, $state, $auth, $http, $localStorage, AclService) {
+
+   var aclData = {
+     guest :['candidate.login','candidate.register','candidate.accessdenied'],
+     candidate: ['candidate.register','candidate.dashboard', 'candidate.jobSearch',
+                  'candidate.appliedJob','candidate.jobPost','candidate','index.appliedJob']
+   }
+   AclService.setAbilities(aclData);
+
+   $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams){
+     if ($auth.isAuthenticated()) {
+     AclService.attachRole($auth.getPayload().role);
+     }
+     else {
+       AclService.attachRole('guest');
+     }
+ if(!AclService.can(toState.name)){
+   $rootScope.sideicon = false;
+   $rootScope.logout = false;
+   AclService.flushRoles();
+   AclService.attachRole('guest');
+   $auth.removeToken();
+   $http.defaults.headers.common['x-access-token']='';
+   delete $localStorage.tokenDetails;
+     e.preventDefault();
+     $state.transitionTo('candidate.accessdenied');
+     }
+ })
+ }]);
