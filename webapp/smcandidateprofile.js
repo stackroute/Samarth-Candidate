@@ -91,9 +91,9 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
      else {
        AclService.attachRole('guest');
      }
-     alert(toState.name);
-     alert($auth.getPayload().role);
-     alert(AclService.can(toState.name));
+    //  alert(toState.name);
+    //  alert($auth.getPayload().role);
+    //  alert(AclService.can(toState.name));
  if(!AclService.can(toState.name)){
    $rootScope.sideicon = false;
    $rootScope.logout = false;
