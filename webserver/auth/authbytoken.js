@@ -29,8 +29,7 @@ let signup = function(newUser, callback, unauthCB) {
 
         authCandidate.registerCandidate(newUser).then(
             function(details) {
-                // console.log("details...");
-                // console.log(details);
+               
                 let sessionUser = {
                     uname: user.uname,
                     cid: details.candidate.candidateid,
@@ -86,16 +85,17 @@ let signin = function(uname, pwd, callback, unauthCB) {
             // Now that user is authenticated locally, fetch the corresponding candidate token
             authCandidate.getCandidateAuthToken(user).then(
                 function(details) { 
-                    let sessionUser = {
-                        uname: user.uname,
-                        // uname: user.uname,
-                        cid: details.candidate.candidateid,
-                        lang: details.candidate.mothertongue,
-                        name: details.candidate.name,
-                        email: details.candidate.email,
-                        gender: details.candidate.gender,
-                        'sm-token': details.token
-                    };
+                     
+                let sessionUser = {
+                    uname: user.uname,
+                    cid: details.candidate.candidateid,
+                    lang: details.candidate.mothertongue,
+                    name: details.candidate.name,
+                    email: details.candidate.email,
+                    role: details.candidate.userRole,
+                    gender: details.candidate.gender,
+                    'sm-token': details.token
+                };
 
                     // console.log('Got token successfully ', sessionUser);
                     // generate JWTToken
