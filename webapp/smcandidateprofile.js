@@ -79,7 +79,7 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
 
    var aclData = {
      guest :['candidate.login','candidate.register','candidate.accessdenied'],
-     candidate: ['candidate.register','candidate.dashboard', 'candidate.jobSearch',
+     candidate: ['candidate.dashboard', 'candidate.jobSearch',
                   'candidate.appliedJob','candidate.jobPost','candidate','index.appliedJob']
    }
    AclService.setAbilities(aclData);
@@ -91,6 +91,9 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
      else {
        AclService.attachRole('guest');
      }
+     alert(toState.name);
+     alert($auth.getPayload().role);
+     alert(AclService.can(toState.name));
  if(!AclService.can(toState.name)){
    $rootScope.sideicon = false;
    $rootScope.logout = false;
