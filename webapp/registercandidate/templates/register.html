@@ -90,16 +90,13 @@
             </md-input-container>
         </div> -->
 
-<!-- <tr ng-repeat="(key, value) in data">
-  <td> {{key}} </td> <td> {{ value }} </td>
-</tr> -->
 
         <div layout="row" layout-align="center center">
         <md-input-container flex>
             <label>Placement center</label>
             <md-icon class="material-icons">business_center</md-icon>
             <md-select name="placementCenter" ng-model="register.user.placementCenter">
-                <md-option ng-repeat="centers in register.placementCenter" ng-value="centers">{{centers['c.name']+" "+centers['c.cname']}}</md-option>
+                <md-option ng-repeat="centers in register.placementCenter" ng-value="centers['c.name']">{{centers['c.cname']}}</md-option>
             </md-select>
             </md-input-container>
         </div> 
