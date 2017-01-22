@@ -79,7 +79,7 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
 
    var aclData = {
      guest :['candidate.login','candidate.register','candidate.accessdenied'],
-     candidate: ['candidate.dashboard', 'candidate.jobSearch',
+     candidate: ['candidate.dashboard', 'candidate.jobSearch','candidate.jobSearch.results',
                   'candidate.appliedJob','candidate.jobPost','candidate','index.appliedJob']
    }
    AclService.setAbilities(aclData);
