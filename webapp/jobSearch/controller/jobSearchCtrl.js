@@ -78,7 +78,7 @@ angular.module('sm-candidateprofile')
              }
            })
           .catch(function(error) {
-            $scope.message = "Some Error Occured "+err;
+            $scope.message = "Some Error Occured "+error;
           });
         };
   

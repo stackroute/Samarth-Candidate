@@ -18,8 +18,6 @@
                 <label>{{resourceData.adharcard}}</label>
                 <md-icon class="material-icons">person</md-icon>
                 <input type="text" required md-no-asterisk ng-model="register.user.adharcard" name="adharcard" ng-pattern="/^[0-9]{12}(?:[0-9]{3})?$/">
-                <!-- ^\d{4}\s\d{4}\s\d{4}$ 4-4-4 digits comes-->
-                <!-- ^[0-9]{12}(?:[0-9]{3})?$ -->
                 <div ng-messages="signupForm.adharcard.$error">
                     <div ng-message="pattern">Enter correct adhaar card number</div>
                 </div>
@@ -99,8 +97,8 @@
                 <md-option ng-repeat="centers in register.placementCenter" ng-value="centers['c.name']">{{centers['c.cname']}}</md-option>
             </md-select>
             </md-input-container>
-        </div> 
-        
+        </div>
+
 
                     <!-- Password -->
         <div layout="row" layout-align="center center">

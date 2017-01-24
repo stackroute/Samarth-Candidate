@@ -28,13 +28,13 @@ angular.module('sm-candidateprofile')
                 });
         function locationsFac()
         {
-            locationFacto.locationReq().then(function(data) 
+            locationFacto.locationReq().then(function(data)
             {
               // console.log('location--------------');
               // console.log(data.data[0].location);
               var temp=[];
               for( var i=0;i<data.data.length;i++)
-              {    
+              {
                   temp[i]= data.data[i].location;
               }
               vm.location= temp;
@@ -53,7 +53,7 @@ angular.module('sm-candidateprofile')
             console.log(vm.placementCenter);
         },function(err){
             console.log(err);
-        });  
+        });
         }
 
 
@@ -81,12 +81,11 @@ angular.module('sm-candidateprofile')
                     let message = 'Successfully completed registration..!';
                     Flash.create('success', message);
                     // redirects to a mentioned state if successfull
-                    $state.go('candidate.dashboard');
+                    $state.go('candidate.login');
                 }).catch(function() {
                     let message = 'Some Error ! Please Try Again';
                     Flash.create('danger', message);
                 });
                 // $auth.signup ends
             };
-        }
-        ]);
+        }]);

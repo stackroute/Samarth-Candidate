@@ -55,6 +55,4 @@ angular.module('sm-candidateprofile')
                 });
                 // $auth.login ends
             };
-        }
-
-    ]);
+        }]);

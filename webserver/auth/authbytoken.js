@@ -1,7 +1,7 @@
 let jwt = require('jsonwebtoken');
 let UserModel = require('./users');
 let authCandidate = require('./authcandidate');
-const config = require('../config/config'); 
+const config = require('../config/config');
 
 let signup = function(newUser, callback, unauthCB) {
     let newUserObj = new UserModel({
@@ -29,16 +29,16 @@ let signup = function(newUser, callback, unauthCB) {
 
         authCandidate.registerCandidate(newUser).then(
             function(details) {
-               
+
                 let sessionUser = {
                     uname: user.uname,
-                    cid: details.candidate.candidateid,
-                    lang: details.candidate.mothertongue,
-                    name: details.candidate.name,
-                    email: details.candidate.email,
-                    role: details.candidate.userRole,
-                    gender: details.candidate.gender,
-                    'sm-token': details.token
+                    cid: details.candidateid,
+                    lang: details.mothertongue,
+                    name: details.name,
+                    email: details.email,
+                    role: details.userRole,
+                    gender: details.gender,
+                    'sm-token': 'TBD'
                 };
 
                 // console.log('Registered successfully ', sessionUser);
@@ -84,8 +84,8 @@ let signin = function(uname, pwd, callback, unauthCB) {
 
             // Now that user is authenticated locally, fetch the corresponding candidate token
             authCandidate.getCandidateAuthToken(user).then(
-                function(details) { 
-                     
+                function(details) {
+
                 let sessionUser = {
                     uname: user.uname,
                     cid: details.candidate.candidateid,
