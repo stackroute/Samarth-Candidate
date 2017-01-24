@@ -54,8 +54,7 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
         contrastDefaultColor: 'light',
         contrastDarkColors: '50 100 200 300 400 500 600 700 800 900 A100 A200 A400 A700'
     };
-    $mdThemingProvider.definePalette('customBackground',
-        customBackground);
+    $mdThemingProvider.definePalette('customBackground',customBackground);
 
     $mdThemingProvider.theme('default')
         .primaryPalette('customPrimary')
@@ -73,14 +72,12 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
             $http.defaults.headers.common['x-access-token'] = $localStorage.tokenDetails.token;
         }
  })
-
-
  .run(['$rootScope', '$state', '$auth', '$http','$localStorage', 'AclService', function ($rootScope, $state, $auth, $http, $localStorage, AclService) {
 
    var aclData = {
      guest :['candidate.login','candidate.register','candidate.accessdenied'],
-     candidate: ['candidate.dashboard', 'candidate.jobSearch','candidate.jobSearch.results',
-                  'candidate.appliedJob','candidate.jobPost','candidate','index.appliedJob']
+     candidate: ['candidate.login','candidate.dashboard', 'candidate.jobSearch','candidate.jobSearch.results',
+                  'candidate.appliedJob','candidate.jobPost','index.appliedJob']
    }
    AclService.setAbilities(aclData);
 

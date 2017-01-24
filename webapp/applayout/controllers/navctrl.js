@@ -30,7 +30,7 @@ angular.module('sm-candidateprofile')
             Flash
         ) {
             var navItems={};
-      
+
         navFactory.getSidenav().then(function(response) {
         $scope.navItems=response.data;
     });
@@ -39,7 +39,6 @@ angular.module('sm-candidateprofile')
             the visiblility of the signout button in the navbar */
             $rootScope.signout = false;
             $rootScope.sideNavLogo = false;
-            console.log("Side nav logo" + $scope.sideNavLogo);
             /* loggedinbackground is defined in rootscope and sets the
             classname for the content ui-view declared
             in index.html dynamically .
