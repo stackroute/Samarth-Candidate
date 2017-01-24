@@ -10,6 +10,7 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
     'satellizer',
     'ngStorage',
     'ui.router',
+    'ui.bootstrap',
     'mm.acl',
     'samarth.accessdenied'
     ])
@@ -79,7 +80,7 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
 
    var aclData = {
      guest :['candidate.login','candidate.register','candidate.accessdenied'],
-     candidate: ['candidate.dashboard', 'candidate.jobSearch',
+     candidate: ['candidate.login','candidate.dashboard', 'candidate.jobSearch',
                   'candidate.appliedJob','candidate.jobPost','candidate','index.appliedJob']
    }
    AclService.setAbilities(aclData);
