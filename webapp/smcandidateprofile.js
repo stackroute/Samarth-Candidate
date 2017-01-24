@@ -10,7 +10,6 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
     'satellizer',
     'ngStorage',
     'ui.router',
-    'ui.bootstrap',
     'mm.acl',
     'samarth.accessdenied'
     ])
