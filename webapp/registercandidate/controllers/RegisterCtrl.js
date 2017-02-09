@@ -38,7 +38,7 @@ angular.module('sm-candidateprofile')
                   temp[i]= data.data[i].location;
               }
               vm.location= temp;
-              console.log(vm.location);
+              // console.log(vm.location);
           })
         }
         vm.locationsFac = locationsFac;
