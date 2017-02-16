@@ -57,8 +57,9 @@ let myApp = angular.module('sm-candidateprofile', ['ngAnimate',
     $mdThemingProvider.definePalette('customBackground',customBackground);
 
     $mdThemingProvider.theme('default')
+        // .primaryPalette('indigo')
         .primaryPalette('customPrimary')
-        .backgroundPalette('customBackground');
+        // .backgroundPalette('customBackground');
 }])
 .config(['$locationProvider', function($locationProvider) {
  $locationProvider.hashPrefix('');

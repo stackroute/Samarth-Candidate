@@ -11,13 +11,11 @@ angular.module('sm-candidateprofile')
             $rootScope,
             $scope,dashboardFactory,$state) {
             $scope.uname = $auth.getPayload().uname;
-            console.log("In dashboard "+$scope.uname);
+           
             var bar  = $scope.uname;
             dashboardFactory.getCandidatebyID(bar).then(function(response) {
-                // console.log("data " + response.data);
-                console.log("showing rootscope candidate details");
                 $rootScope.candidate=response.data[0];
-                console.log($rootScope.candidate);
+                
                 // $scope.profession=response.data[0].profession;
                 // $rootScope.profession=$scope.profession;
                 // console.log("after root to scope profession");
