@@ -72,6 +72,7 @@ angular.module('sm-candidateprofile')
                     name: vm.user.name,
                     adharcard: vm.user.adharcard,
                     mobile: vm.user.number,
+                    regid : vm.user.regid,
                     email: vm.user.email,
                     location: vm.user.location,
                     placementCenter: vm.user.placementCenter,

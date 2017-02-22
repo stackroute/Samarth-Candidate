@@ -23,6 +23,16 @@
                 </div>
             </md-input-container>
         </div>
+         <div layout="row" layout-align="center center">
+            <md-input-container class="md-icon-float" flex>
+                <label>Registration id</label>
+                <md-icon class="material-icons">person</md-icon>
+                <input type="number" name="regid" md-no-asterisk ng-model="register.user.regid" required>
+                <div ng-messages="signupForm.regid.$error">
+                    <div ng-message="required">Should be a 6 digit number</div>
+                </div>
+            </md-input-container>
+        </div>
         <div layout="row" layout-align="center center">
             <md-input-container class="md-icon-float" flex>
                 <label>{{resourceData.mobile}}</label>
